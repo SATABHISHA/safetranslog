@@ -35,8 +35,6 @@ class _LoginUserState extends State<LoginUser> {
 
                         SizedBox(width: 10,),
 
-
-
                       ],
                     ),
                   );
