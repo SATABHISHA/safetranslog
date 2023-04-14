@@ -18,7 +18,7 @@ class _LoginUserState extends State<LoginUser> {
         backgroundColor: Colors.blueAccent,
         appBar: AppBar(
           // backgroundColor: Color.fromRGBO(71, 71, 71, 1.0),
-          backgroundColor: Colors.redAccent,
+          backgroundColor: Colors.blueAccent,
           centerTitle: false,
           automaticallyImplyLeading: false,
           actions: [
@@ -44,7 +44,18 @@ class _LoginUserState extends State<LoginUser> {
 
         ),
         body: Container(
-          child: Column(),
+          child: Stack(
+            children: [
+               Row(
+                crossAxisAlignment:CrossAxisAlignment.center,
+                mainAxisAlignment:MainAxisAlignment.center,
+                children: [
+                  SizedBox(height: 20,),
+                  Image.asset("images/safetransloglogo.png", width: 150, height: 150,)
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
