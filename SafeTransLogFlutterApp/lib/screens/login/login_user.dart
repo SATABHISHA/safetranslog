@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 
 class LoginUser extends StatefulWidget {
   // const LoginUser({Key? key}) : super(key: key);
@@ -74,6 +75,20 @@ class _LoginUserState extends State<LoginUser> {
                             padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                             child: Text('Let\'s Start', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19)),
                           ),
+                          SizedBox(height: 20,),
+                          IntlPhoneField(
+                            decoration: InputDecoration(
+                              // hintText: 'Phone Number'
+                              // labelText: 'Phone Number',
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(),
+                              ),
+                            ),
+                            initialCountryCode: 'IN',
+                            onChanged: (phone) {
+                              print(phone.completeNumber);
+                            },
+                          )
                         ],
                       ),
                     ),
