@@ -76,18 +76,21 @@ class _LoginUserState extends State<LoginUser> {
                             child: Text('Let\'s Start', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19)),
                           ),
                           SizedBox(height: 20,),
-                          IntlPhoneField(
-                            decoration: InputDecoration(
-                              // hintText: 'Phone Number'
-                              // labelText: 'Phone Number',
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                            child: IntlPhoneField(
+                              decoration: InputDecoration(
+                                // hintText: 'Phone Number'
+                                // labelText: 'Phone Number',
+                                border: OutlineInputBorder(
+                                  borderSide: BorderSide(),
+                                ),
                               ),
+                              initialCountryCode: 'IN',
+                              onChanged: (phone) {
+                                print(phone.completeNumber);
+                              },
                             ),
-                            initialCountryCode: 'IN',
-                            onChanged: (phone) {
-                              print(phone.completeNumber);
-                            },
                           )
                         ],
                       ),
