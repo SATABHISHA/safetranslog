@@ -16,10 +16,10 @@ class _LoginUserState extends State<LoginUser> {
         return false;
       },
       child: Scaffold(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Color.fromRGBO(2, 72, 254, 1.0),
         appBar: AppBar(
           // backgroundColor: Color.fromRGBO(71, 71, 71, 1.0),
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: Color.fromRGBO(2, 72, 254, 1.0),
           centerTitle: false,
           automaticallyImplyLeading: false,
           actions: [
