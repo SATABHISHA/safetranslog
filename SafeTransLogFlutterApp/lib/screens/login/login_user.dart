@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:safetranslog/screens/login/rounded_button.dart';
+
+import '../../config/SizeConfig.dart';
+import '../../config/constants.dart';
 
 class LoginUser extends StatefulWidget {
   // const LoginUser({Key? key}) : super(key: key);
@@ -61,12 +65,12 @@ class _LoginUserState extends State<LoginUser> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(20.0),
+                    padding: EdgeInsets.all(20.0),
                     child: Container(
                       width: double.infinity,
-                      height: 180,
                       // color: Colors.white,
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Colors.white),
                       child: Column(
@@ -91,7 +95,20 @@ class _LoginUserState extends State<LoginUser> {
                                 print(phone.completeNumber);
                               },
                             ),
-                          )
+                          ),
+
+
+                          //----button code starts
+                          Container(
+                            width: double.infinity,
+                            height: 85,
+                            child: RoundedButton(colour: GlobalConstants.colorSubAppBar, title: 'Continue', onPressed:() async {
+                              // EasyLoading.show(status: 'Loading...');
+
+                            }
+                            ),
+                          ),
+                          //----button code ends
                         ],
                       ),
                     ),
