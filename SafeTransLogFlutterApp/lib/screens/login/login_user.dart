@@ -76,8 +76,13 @@ class _LoginUserState extends State<LoginUser> {
                       child: Column(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                            padding: const EdgeInsets.fromLTRB(0, 24, 0, 0),
                             child: Text('Let\'s Start', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19)),
+                          ),
+                          SizedBox(height: 10,),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                            child: Text('Enter your 10 digits Mobile No', style: TextStyle(fontWeight: FontWeight.normal, fontSize: 15, color: Color.fromRGBO(144, 145, 154, 1.0))),
                           ),
                           SizedBox(height: 20,),
                           Padding(
@@ -102,10 +107,13 @@ class _LoginUserState extends State<LoginUser> {
                           Container(
                             width: double.infinity,
                             height: 85,
-                            child: RoundedButton(colour: GlobalConstants.colorSubAppBar, title: 'Continue', onPressed:() async {
-                              // EasyLoading.show(status: 'Loading...');
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                              child: RoundedButton(colour: Color.fromRGBO(6, 66, 222, 1.0), title: 'Continue', onPressed:() async {
+                                // EasyLoading.show(status: 'Loading...');
 
-                            }
+                              }
+                              ),
                             ),
                           ),
                           //----button code ends
