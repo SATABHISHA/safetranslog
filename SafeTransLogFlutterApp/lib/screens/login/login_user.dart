@@ -21,7 +21,7 @@ class _LoginUserState extends State<LoginUser> {
       },
       child: Scaffold(
         backgroundColor: Color.fromRGBO(2, 72, 254, 1.0),
-        appBar: AppBar(
+        /*appBar: AppBar(
           // backgroundColor: Color.fromRGBO(71, 71, 71, 1.0),
           backgroundColor: Color.fromRGBO(2, 72, 254, 1.0),
           centerTitle: false,
@@ -47,99 +47,104 @@ class _LoginUserState extends State<LoginUser> {
             ),
           ],
 
-        ),
-        body: Container(
-          // color: Colors.lightGreenAccent,
-          child: Stack(
-            children: [
-              Column(
-             crossAxisAlignment:CrossAxisAlignment.stretch,
-             mainAxisAlignment:MainAxisAlignment.start,
-             children: [
-               SizedBox(height: 20,),
-               Image.asset("images/safetransloglogo.png", width: 150, height: 150,),
-               SizedBox(height: 20,),
-               Center(child: Text('SafeTranslog.com', style: TextStyle(color: Colors.white, fontSize: 20),)),
-             ],
-                ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.end,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(20.0),
-                    child: Container(
-                      width: double.infinity,
-                      // color: Colors.white,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Colors.white),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 24, 0, 0),
-                            child: Text('Let\'s Start', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19)),
-                          ),
-                          SizedBox(height: 10,),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                            child: Text('Enter your 10 digits Mobile No', style: TextStyle(fontWeight: FontWeight.normal, fontSize: 15, color: Color.fromRGBO(144, 145, 154, 1.0))),
-                          ),
-                          SizedBox(height: 20,),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                            child: IntlPhoneField(
-                              decoration: InputDecoration(
-                                // hintText: 'Phone Number'
-                                // labelText: 'Phone Number',
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide(),
+        ),*/
+        body: SafeArea(
+          child: Container(
+            // color: Colors.lightGreenAccent,
+            child: Stack(
+              children: [
+                Column(
+               crossAxisAlignment:CrossAxisAlignment.stretch,
+               mainAxisAlignment:MainAxisAlignment.start,
+               children: [
+                 Align(
+                     alignment: Alignment.centerRight,
+                     child: Image.asset("images/safetranslogappbarlogo.png", width: 164, height: 48,)),
+                 SizedBox(height: 20,),
+                 Image.asset("images/safetransloglogo.png", width: 150, height: 150,),
+                 SizedBox(height: 20,),
+                 Center(child: Text('SafeTranslog.com', style: TextStyle(color: Colors.white, fontSize: 20),)),
+               ],
+                  ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(20.0),
+                      child: Container(
+                        width: double.infinity,
+                        // color: Colors.white,
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Colors.white),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 24, 0, 0),
+                              child: Text('Let\'s Start', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19)),
+                            ),
+                            SizedBox(height: 10,),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                              child: Text('Enter your 10 digits Mobile No', style: TextStyle(fontWeight: FontWeight.normal, fontSize: 15, color: Color.fromRGBO(144, 145, 154, 1.0))),
+                            ),
+                            SizedBox(height: 20,),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                              child: IntlPhoneField(
+                                decoration: InputDecoration(
+                                  // hintText: 'Phone Number'
+                                  // labelText: 'Phone Number',
+                                  border: OutlineInputBorder(
+                                    borderSide: BorderSide(),
+                                  ),
+                                ),
+                                initialCountryCode: 'IN',
+                                onChanged: (phone) {
+                                  print(phone.completeNumber);
+                                },
+                              ),
+                            ),
+
+
+                            //----button code starts
+                            Container(
+                              width: double.infinity,
+                              height: 85,
+                              child: Padding(
+                                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                child: RoundedButton(colour: Color.fromRGBO(6, 66, 222, 1.0), title: 'Continue', onPressed:() async {
+                                  // EasyLoading.show(status: 'Loading...');
+
+                                }
                                 ),
                               ),
-                              initialCountryCode: 'IN',
-                              onChanged: (phone) {
-                                print(phone.completeNumber);
-                              },
                             ),
-                          ),
+                            //----button code ends
 
-
-                          //----button code starts
-                          Container(
-                            width: double.infinity,
-                            height: 85,
-                            child: Padding(
-                              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                              child: RoundedButton(colour: Color.fromRGBO(6, 66, 222, 1.0), title: 'Continue', onPressed:() async {
-                                // EasyLoading.show(status: 'Loading...');
-
-                              }
-                              ),
-                            ),
-                          ),
-                          //----button code ends
-                          
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                            child: Text('Terms & Conditions | Privacy Policy', style: TextStyle(color: Color.fromRGBO(0, 70, 164, 1.0)),),
-                          )
-                        ],
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                              child: Text('Terms & Conditions | Privacy Policy', style: TextStyle(color: Color.fromRGBO(0, 70, 164, 1.0)),),
+                            )
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(22, 0, 22, 30),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Text('Updated on 28.04.2023', style: TextStyle(color: Colors.white),),
-                        Text('Version 1.1', style: TextStyle(color: Colors.white),)
-                      ],
-                    ),
-                  )
-                ],
-              )
-            ]
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(22, 0, 22, 30),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text('Updated on 28.04.2023', style: TextStyle(color: Colors.white),),
+                          Text('Version 1.1', style: TextStyle(color: Colors.white),)
+                        ],
+                      ),
+                    )
+                  ],
+                )
+              ]
+            ),
           ),
         ),
       ),
