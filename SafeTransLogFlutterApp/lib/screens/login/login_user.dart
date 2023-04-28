@@ -20,7 +20,8 @@ class _LoginUserState extends State<LoginUser> {
         return false;
       },
       child: Scaffold(
-        backgroundColor: Color.fromRGBO(2, 72, 254, 1.0),
+        // backgroundColor: Color.fromRGBO(2, 72, 254, 1.0),
+
         /*appBar: AppBar(
           // backgroundColor: Color.fromRGBO(71, 71, 71, 1.0),
           backgroundColor: Color.fromRGBO(2, 72, 254, 1.0),
@@ -48,9 +49,22 @@ class _LoginUserState extends State<LoginUser> {
           ],
 
         ),*/
-        body: SafeArea(
-          child: Container(
-            // color: Colors.lightGreenAccent,
+        body: Container(
+          // color: Colors.lightGreenAccent,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  // Color.fromRGBO(2, 72, 254, 1.0),
+                  Colors.blue,
+                  Colors.yellow,
+                  Colors.redAccent,
+
+                ],
+              )
+          ),
+          child: SafeArea(
             child: Stack(
               children: [
                 Column(
@@ -63,7 +77,8 @@ class _LoginUserState extends State<LoginUser> {
                  SizedBox(height: 20,),
                  Image.asset("images/safetransloglogo.png", width: 150, height: 150,),
                  SizedBox(height: 20,),
-                 Center(child: Text('SafeTranslog.com', style: TextStyle(color: Colors.white, fontSize: 20),)),
+                 Center(child: Text('SafeTranslog.com', style: TextStyle(color: Color.fromRGBO(
+                     70, 70, 70, 1.0), fontSize: 20, fontWeight: FontWeight.bold),)),
                ],
                   ),
                 Column(
@@ -76,7 +91,27 @@ class _LoginUserState extends State<LoginUser> {
                       child: Container(
                         width: double.infinity,
                         // color: Colors.white,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Colors.white),
+                        decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromRGBO(215, 227, 105, 1.0),
+                                blurRadius: 15.0,
+                                spreadRadius: 2.0,
+                                offset: Offset(0.0, 0.0),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white
+                            /*gradient: LinearGradient(
+                              begin: Alignment.topRight,
+                              end: Alignment.bottomLeft,
+                              colors: [
+                                Colors.white,
+                                Colors.lightGreenAccent,
+
+                              ],
+                            )*/
+                        ),
                         child: Column(
                           children: [
                             Padding(
@@ -86,7 +121,8 @@ class _LoginUserState extends State<LoginUser> {
                             SizedBox(height: 10,),
                             Padding(
                               padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                              child: Text('Enter your 10 digits Mobile No', style: TextStyle(fontWeight: FontWeight.normal, fontSize: 15, color: Color.fromRGBO(144, 145, 154, 1.0))),
+                              child: Text('Enter your 10 digits Mobile No', style: TextStyle(fontWeight: FontWeight.normal, fontSize: 15, color: Color.fromRGBO(
+                                  74, 74, 75, 1.0))),
                             ),
                             SizedBox(height: 20,),
                             Padding(
