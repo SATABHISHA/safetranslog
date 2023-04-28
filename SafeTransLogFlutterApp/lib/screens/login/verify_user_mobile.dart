@@ -63,9 +63,45 @@ class _VerifyUserMobileState extends State<VerifyUserMobile> {
               )
           ),
           child: SafeArea(
-            child: Stack(
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.max,
                 children: [
-
+                  Center(child: Text('Verification', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),)),
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                      child: Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromRGBO(215, 227, 105, 1.0),
+                                blurRadius: 15.0,
+                                spreadRadius: 2.0,
+                                offset: Offset(0.0, 0.0),
+                              )
+                            ],
+                          // color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                            gradient: LinearGradient(
+                              begin: Alignment.topRight,
+                              end: Alignment.bottomLeft,
+                              colors: [
+                                Colors.white,
+                                Colors.lightGreenAccent,
+                              ],
+                            )
+                        ),
+                        child: Column(
+                          children: [
+                            Image.asset("images/verification.png", width: 288, height: 225,),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
                 ]
             ),
           ),
