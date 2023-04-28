@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:safetranslog/screens/login/login_user.dart';
+import 'package:safetranslog/screens/login/verify_user_mobile.dart';
 import 'package:safetranslog/screens/splash_screen.dart';
 
 void main() async{
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       routes: {
         SplashScreen.id : (context)=> SplashScreen(),
         LoginUser.id : (context)=> LoginUser(),
+        VerifyUserMobile.id : (context)=> VerifyUserMobile(),
       },
     );
   }

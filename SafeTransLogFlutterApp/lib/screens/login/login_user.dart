@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
+import 'package:safetranslog/screens/login/verify_user_mobile.dart';
 
 import '../../config/SizeConfig.dart';
 import '../../config/constants.dart';
@@ -73,7 +74,10 @@ class _LoginUserState extends State<LoginUser> {
                children: [
                  Align(
                      alignment: Alignment.centerRight,
-                     child: Image.asset("images/safetranslogappbarlogo.png", width: 164, height: 48,)),
+                     child: Padding(
+                       padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
+                       child: Image.asset("images/safetranslogappbarlogo.png", width: 164, height: 48,),
+                     )),
                  SizedBox(height: 20,),
                  Image.asset("images/safetransloglogo.png", width: 150, height: 150,),
                  SizedBox(height: 20,),
@@ -151,7 +155,7 @@ class _LoginUserState extends State<LoginUser> {
                                 padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                 child: RoundedButton(colour: Color.fromRGBO(6, 66, 222, 1.0), title: 'Continue', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
-
+                                  Navigator.pushNamed(context, VerifyUserMobile.id);
                                 }
                                 ),
                               ),
