@@ -117,10 +117,26 @@ class _LoginUserState extends State<LoginUser> {
                             ),
                           ),
                           //----button code ends
+                          
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                            child: Text('Terms & Conditions | Privacy Policy', style: TextStyle(color: Color.fromRGBO(0, 70, 164, 1.0)),),
+                          )
                         ],
                       ),
                     ),
                   ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(22, 0, 22, 30),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Text('Updated on 28.04.2023', style: TextStyle(color: Colors.white),),
+                        Text('Version 1.1', style: TextStyle(color: Colors.white),)
+                      ],
+                    ),
+                  )
                 ],
               )
             ]
