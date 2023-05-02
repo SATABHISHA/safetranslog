@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class VerifyUserMobile extends StatefulWidget {
   // const VerifyUserMobile({Key? key}) : super(key: key);
@@ -97,6 +98,10 @@ class _VerifyUserMobileState extends State<VerifyUserMobile> {
                         child: Column(
                           children: [
                             Image.asset("images/verification.png", width: 288, height: 225,),
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                              child: AutoSizeText('Enter the verification code we have just \nsent you on your Mobile No. ', style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold), wrapWords: true, minFontSize: 8, maxFontSize: 20, maxLines: 2, textAlign: TextAlign.center,),
+                            )
                           ],
                         ),
                       ),
