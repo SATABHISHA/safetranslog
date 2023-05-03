@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:pinput/pinput.dart';
 
 class VerifyUserMobile extends StatefulWidget {
   // const VerifyUserMobile({Key? key}) : super(key: key);
@@ -68,7 +69,10 @@ class _VerifyUserMobileState extends State<VerifyUserMobile> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Center(child: Text('Verification', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),)),
+                  Center(child: Text('Verification', style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),)),
                   Expanded(
                     child: Padding(
                       padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
@@ -84,8 +88,8 @@ class _VerifyUserMobileState extends State<VerifyUserMobile> {
                                 offset: Offset(0.0, 0.0),
                               )
                             ],
-                          // color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
+                            // color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
                             gradient: LinearGradient(
                               begin: Alignment.topRight,
                               end: Alignment.bottomLeft,
@@ -97,11 +101,23 @@ class _VerifyUserMobileState extends State<VerifyUserMobile> {
                         ),
                         child: Column(
                           children: [
-                            Image.asset("images/verification.png", width: 288, height: 225,),
+                            Image.asset("images/verification.png", width: 288,
+                              height: 225,),
                             Padding(
                               padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-                              child: AutoSizeText('Enter the verification code we have just \nsent you on your Mobile No. ', style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold), wrapWords: true, minFontSize: 8, maxFontSize: 20, maxLines: 2, textAlign: TextAlign.center,),
-                            )
+                              child: AutoSizeText(
+                                'Enter the verification code we have just \nsent you on your Mobile No. ',
+                                style: TextStyle(color: Colors.black,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                                wrapWords: true,
+                                minFontSize: 8,
+                                maxFontSize: 20,
+                                maxLines: 2,
+                                textAlign: TextAlign.center,),
+                            ),
+
+                           FractionallySizedBox(widthFactor: 1, child: PinputExample()),
                           ],
                         ),
                       ),
@@ -113,5 +129,133 @@ class _VerifyUserMobileState extends State<VerifyUserMobile> {
         ),
       ),
     );
+  }
+}
+
+  class PinputExample extends StatefulWidget {
+  const PinputExample({Key? key}) : super(key: key);
+
+  @override
+  State<PinputExample> createState() => _PinputExampleState();
+  }
+
+  class _PinputExampleState extends State<PinputExample> {
+  final pinController = TextEditingController();
+  final focusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+  pinController.dispose();
+  focusNode.dispose();
+  super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+  const focusedBorderColor = Color.fromRGBO(23, 171, 144, 1);
+  const fillColor = Color.fromRGBO(243, 246, 249, 0);
+  const borderColor = Color.fromRGBO(23, 171, 144, 0.4);
+
+  final defaultPinTheme = PinTheme(
+  width: 56,
+  height: 56,
+  textStyle: const TextStyle(
+  fontSize: 22,
+  color: Color.fromRGBO(30, 60, 87, 1),
+  ),
+  decoration: BoxDecoration(
+  borderRadius: BorderRadius.circular(19),
+  border: Border.all(color: borderColor),
+  ),
+  );
+
+  // return TextField(
+  //   contextMenuBuilder: (_, EditableTextState editableTextState) {
+  //     print('HEHE');
+  //     return AdaptiveTextSelectionToolbar(
+  //       anchors: editableTextState.contextMenuAnchors,
+  //       children: editableTextState.contextMenuButtonItems.map((ContextMenuButtonItem buttonItem) {
+  //         return CupertinoButton(
+  //           borderRadius: null,
+  //           color: const Color(0xffaaaa00),
+  //           disabledColor: const Color(0xffaaaaff),
+  //           onPressed: buttonItem.onPressed,
+  //           padding: const EdgeInsets.all(10.0),
+  //           pressedOpacity: 0.7,
+  //           child: SizedBox(
+  //             width: 200.0,
+  //             child: Text(
+  //               CupertinoTextSelectionToolbarButton.getButtonLabel(context, buttonItem),
+  //             ),
+  //           ),
+  //         );
+  //       }).toList(),
+  //     );
+  //   },
+  // );
+
+  /// Optionally you can use form to validate the Pinput
+  return Form(
+  key: formKey,
+  child: Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+  Directionality(
+  // Specify direction if desired
+  textDirection: TextDirection.ltr,
+  child: Pinput(
+  controller: pinController,
+  focusNode: focusNode,
+  androidSmsAutofillMethod:
+  AndroidSmsAutofillMethod.smsUserConsentApi,
+  listenForMultipleSmsOnAndroid: true,
+  defaultPinTheme: defaultPinTheme,
+  /*validator: (value) {
+  return value == '2222' ? null : 'Pin is incorrect';
+  },*/
+  // onClipboardFound: (value) {
+  //   debugPrint('onClipboardFound: $value');
+  //   pinController.setText(value);
+  // },
+  hapticFeedbackType: HapticFeedbackType.lightImpact,
+  onCompleted: (pin) {
+  debugPrint('onCompleted: $pin');
+  },
+  onChanged: (value) {
+  debugPrint('onChanged: $value');
+  },
+  cursor: Column(
+  mainAxisAlignment: MainAxisAlignment.end,
+  children: [
+  Container(
+  margin: const EdgeInsets.only(bottom: 9),
+  width: 22,
+  height: 1,
+  color: focusedBorderColor,
+  ),
+  ],
+  ),
+  focusedPinTheme: defaultPinTheme.copyWith(
+  decoration: defaultPinTheme.decoration!.copyWith(
+  borderRadius: BorderRadius.circular(8),
+  border: Border.all(color: focusedBorderColor),
+  ),
+  ),
+  submittedPinTheme: defaultPinTheme.copyWith(
+  decoration: defaultPinTheme.decoration!.copyWith(
+  color: fillColor,
+  borderRadius: BorderRadius.circular(19),
+  border: Border.all(color: focusedBorderColor),
+  ),
+  ),
+  errorPinTheme: defaultPinTheme.copyBorderWith(
+  border: Border.all(color: Colors.redAccent),
+  ),
+  ),
+  ),
+  ],
+  ),
+  );
   }
 }
