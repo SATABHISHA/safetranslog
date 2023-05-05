@@ -101,8 +101,11 @@ class _VerifyUserMobileState extends State<VerifyUserMobile> {
                         ),
                         child: Column(
                           children: [
-                            Image.asset("images/verification.png", width: 288,
-                              height: 225,),
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                              child: Image.asset("images/verification.png", width: 288,
+                                height: 225,),
+                            ),
                             Padding(
                               padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
                               child: AutoSizeText(
@@ -117,7 +120,36 @@ class _VerifyUserMobileState extends State<VerifyUserMobile> {
                                 textAlign: TextAlign.center,),
                             ),
 
+                           SizedBox(height: 20,),
                            FractionallySizedBox(widthFactor: 1, child: PinputExample()),
+                           SizedBox(height: 20,),
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                              child: Row(
+                                children: [
+                                  AutoSizeText(
+                                    'Didn\'t received a code! ',
+                                    style: TextStyle(color: Color.fromRGBO(77, 76, 76, 1.0),
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                    wrapWords: true,
+                                    minFontSize: 8,
+                                    maxFontSize: 20,
+                                    maxLines: 2,
+                                    textAlign: TextAlign.center,),
+                                  AutoSizeText(
+                                    'Resend',
+                                    style: TextStyle(color: Colors.red,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                    wrapWords: true,
+                                    minFontSize: 8,
+                                    maxFontSize: 20,
+                                    maxLines: 2,
+                                    textAlign: TextAlign.center,),
+                                ],
+                              ),
+                            )
                           ],
                         ),
                       ),
