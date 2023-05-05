@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:pinput/pinput.dart';
+import 'package:safetranslog/screens/login/rounded_button.dart';
 
 class VerifyUserMobile extends StatefulWidget {
   // const VerifyUserMobile({Key? key}) : super(key: key);
@@ -99,58 +100,79 @@ class _VerifyUserMobileState extends State<VerifyUserMobile> {
                               ],
                             )
                         ),
-                        child: Column(
+                        child: Stack(
                           children: [
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-                              child: Image.asset("images/verification.png", width: 288,
-                                height: 225,),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-                              child: AutoSizeText(
-                                'Enter the verification code we have just \nsent you on your Mobile No. ',
-                                style: TextStyle(color: Colors.black,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                                wrapWords: true,
-                                minFontSize: 8,
-                                maxFontSize: 20,
-                                maxLines: 2,
-                                textAlign: TextAlign.center,),
-                            ),
-
-                           SizedBox(height: 20,),
-                           FractionallySizedBox(widthFactor: 1, child: PinputExample()),
-                           SizedBox(height: 20,),
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-                              child: Row(
-                                children: [
-                                  AutoSizeText(
-                                    'Didn\'t received a code! ',
-                                    style: TextStyle(color: Color.fromRGBO(77, 76, 76, 1.0),
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold),
-                                    wrapWords: true,
-                                    minFontSize: 8,
-                                    maxFontSize: 20,
-                                    maxLines: 2,
-                                    textAlign: TextAlign.center,),
-                                  AutoSizeText(
-                                    'Resend',
-                                    style: TextStyle(color: Colors.red,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold),
-                                    wrapWords: true,
-                                    minFontSize: 8,
-                                    maxFontSize: 20,
-                                    maxLines: 2,
-                                    textAlign: TextAlign.center,),
-                                ],
+                            Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                                child: Image.asset("images/verification.png", width: 288,
+                                  height: 225,),
                               ),
-                            )
-                          ],
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                                child: AutoSizeText(
+                                  'Enter the verification code we have just \nsent you on your Mobile No. ',
+                                  style: TextStyle(color: Colors.black,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                  wrapWords: true,
+                                  minFontSize: 8,
+                                  maxFontSize: 20,
+                                  maxLines: 2,
+                                  textAlign: TextAlign.center,),
+                              ),
+
+                             SizedBox(height: 20,),
+                             FractionallySizedBox(widthFactor: 1, child: PinputExample()),
+                             SizedBox(height: 20,),
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                                child: Row(
+                                  children: [
+                                    AutoSizeText(
+                                      'Didn\'t received a code! ',
+                                      style: TextStyle(color: Color.fromRGBO(77, 76, 76, 1.0),
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold),
+                                      wrapWords: true,
+                                      minFontSize: 8,
+                                      maxFontSize: 20,
+                                      maxLines: 2,
+                                      textAlign: TextAlign.center,),
+                                    AutoSizeText(
+                                      'Resend',
+                                      style: TextStyle(color: Colors.red,
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold),
+                                      wrapWords: true,
+                                      minFontSize: 8,
+                                      maxFontSize: 20,
+                                      maxLines: 2,
+                                      textAlign: TextAlign.center,),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                            //----button code starts
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Container(
+                                width: double.infinity,
+                                height: 85,
+                                child: Padding(
+                                  padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                  child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'VERIFY', onPressed:() async {
+                                    // EasyLoading.show(status: 'Loading...');
+                                    // Navigator.pushNamed(context, VerifyUserMobile.id);
+                                  }
+                                  ),
+                                ),
+                              ),
+                            ),
+                            //----button code ends
+                          ]
                         ),
                       ),
                     ),
