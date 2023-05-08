@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CompanyDetails extends StatefulWidget {
-  const CompanyDetails({Key? key}) : super(key: key);
+  // const CompanyDetails({Key? key}) : super(key: key);
+  static String id = "CompanyDetails";
 
   @override
   State<CompanyDetails> createState() => _CompanyDetailsState();
