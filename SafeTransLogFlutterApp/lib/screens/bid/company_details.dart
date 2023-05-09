@@ -296,9 +296,6 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                                 ],
                               ),
                             ),
-
-
-
                           ],
                         ),
                       ),
@@ -331,5 +328,6 @@ class _CompanyDetailsState extends State<CompanyDetails> {
         ),
     ),
         );
+    
   }
 }
