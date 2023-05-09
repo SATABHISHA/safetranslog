@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+import '../../config/SizeConfig.dart';
+import '../../widgets/reusable_common_widgets/constants.dart';
+
 class CompanyDetails extends StatefulWidget {
   // const CompanyDetails({Key? key}) : super(key: key);
   static String id = "CompanyDetails";
@@ -69,28 +72,234 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                 ),
                   child: Stack(
                     children: [
-                      Column(
-                        children: [
-                          SizedBox(height: 20,),
-                          Center(
-                            child: CircleAvatar(backgroundColor: Colors.blueAccent, radius: 30,
-                              child: CircleAvatar(backgroundColor: Colors.blueAccent, radius: 25, backgroundImage: AssetImage('images/companyprofilepic.png'),),
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(0, 0, 0, 60),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 20,),
+                            Center(
+                              child: CircleAvatar(backgroundColor: Colors.blueAccent, radius: 30,
+                                child: CircleAvatar(backgroundColor: Colors.blueAccent, radius: 25, backgroundImage: AssetImage('images/companyprofilepic.png'),),
 
+                                ),
+                            ),
+                            AutoSizeText(
+                              'Enter your Company Details ',
+                              style: TextStyle(color: Color.fromRGBO(
+                                  37, 37, 37, 1.0),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                              wrapWords: true,
+                              minFontSize: 8,
+                              maxFontSize: 20,
+                              maxLines: 2,
+                              textAlign: TextAlign.center,),
+                            Expanded(
+                              child: ListView(
+                                shrinkWrap: true,
+                                children: [
+                                  //---Company Details, code starts
+                                  SizedBox(height: 15,),
+                                  Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                      child: AutoSizeText(
+                                        'Company Name',
+                                        style: TextStyle(color: Color.fromRGBO(
+                                            86, 85, 85, 1.0),
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
+                                        wrapWords: true,
+                                        minFontSize: 8,
+                                        maxFontSize: 15,
+                                        maxLines: 1,
+                                        textAlign: TextAlign.left,),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                                    child: SizedBox(
+                                      width: double.infinity,
+                                      height: 50,
+                                      child: TextField(
+                                        // controller: _controller_user_id,
+                                        textAlign: TextAlign.left,
+                                        keyboardType: TextInputType.text,
+                                        maxLines: 1,
+                                        onChanged: (value){
+                                          // userId = value;
+                                        },
+                                        style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                        decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
+                                            246, 242, 242, 1.0),hintText: 'Enter Company Name'),
+                                      ),
+                                    ),
+                                  ),
+                                  //---Company Details, code ends
+                                  //---Address, code starts
+                                  SizedBox(height: 15,),
+                                  Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                      child: AutoSizeText(
+                                        'Address',
+                                        style: TextStyle(color: Color.fromRGBO(
+                                            86, 85, 85, 1.0),
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
+                                        wrapWords: true,
+                                        minFontSize: 8,
+                                        maxFontSize: 15,
+                                        maxLines: 1,
+                                        textAlign: TextAlign.left,),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                                    child: SizedBox(
+                                      width: double.infinity,
+                                      height: 50,
+                                      child: TextField(
+                                        // controller: _controller_user_id,
+                                        textAlign: TextAlign.left,
+                                        keyboardType: TextInputType.text,
+                                        onChanged: (value){
+                                          // userId = value;
+                                        },
+                                        style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                        decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
+                                            246, 242, 242, 1.0),hintText: ''),
+                                      ),
+                                    ),
+                                  ),
+                                  //---Address, code ends
+
+                                  //---ZipCode, code starts
+                                  SizedBox(height: 15,),
+                                  Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                      child: AutoSizeText(
+                                        'Zip Code',
+                                        style: TextStyle(color: Color.fromRGBO(
+                                            86, 85, 85, 1.0),
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
+                                        wrapWords: true,
+                                        minFontSize: 8,
+                                        maxFontSize: 15,
+                                        maxLines: 1,
+                                        textAlign: TextAlign.left,),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                                    child: SizedBox(
+                                      width: double.infinity,
+                                      height: 50,
+                                      child: TextField(
+                                        // controller: _controller_user_id,
+                                        textAlign: TextAlign.left,
+                                        keyboardType: TextInputType.text,
+                                        onChanged: (value){
+                                          // userId = value;
+                                        },
+                                        style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                        decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
+                                            246, 242, 242, 1.0),hintText: ''),
+                                      ),
+                                    ),
+                                  ),
+                                  //---ZipCode, code ends
+
+                                  //---Phone No, code starts
+                                  SizedBox(height: 15,),
+                                  Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                      child: AutoSizeText(
+                                        'Phone No',
+                                        style: TextStyle(color: Color.fromRGBO(
+                                            86, 85, 85, 1.0),
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
+                                        wrapWords: true,
+                                        minFontSize: 8,
+                                        maxFontSize: 15,
+                                        maxLines: 1,
+                                        textAlign: TextAlign.left,),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                                    child: SizedBox(
+                                      width: double.infinity,
+                                      height: 50,
+                                      child: TextField(
+                                        // controller: _controller_user_id,
+                                        textAlign: TextAlign.left,
+                                        keyboardType: TextInputType.text,
+                                        onChanged: (value){
+                                          // userId = value;
+                                        },
+                                        style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                        decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
+                                            246, 242, 242, 1.0),hintText: ''),
+                                      ),
+                                    ),
+                                  ),
+                                  //---Phone No, code ends
+
+                                  //---Email Address, code starts
+                                  SizedBox(height: 15,),
+                                  Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                      child: AutoSizeText(
+                                        'Email Address',
+                                        style: TextStyle(color: Color.fromRGBO(
+                                            86, 85, 85, 1.0),
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
+                                        wrapWords: true,
+                                        minFontSize: 8,
+                                        maxFontSize: 15,
+                                        maxLines: 1,
+                                        textAlign: TextAlign.left,),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                                    child: SizedBox(
+                                      width: double.infinity,
+                                      height: 50,
+                                      child: TextField(
+                                        // controller: _controller_user_id,
+                                        textAlign: TextAlign.left,
+                                        keyboardType: TextInputType.text,
+                                        onChanged: (value){
+                                          // userId = value;
+                                        },
+                                        style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                        decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
+                                            246, 242, 242, 1.0),hintText: ''),
+                                      ),
+                                    ),
+                                  ),
+                                  //---Email Address, code ends
+                                ],
                               ),
-                          ),
-                          AutoSizeText(
-                            'Enter your Company Details ',
-                            style: TextStyle(color: Color.fromRGBO(
-                                37, 37, 37, 1.0),
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold),
-                            wrapWords: true,
-                            minFontSize: 8,
-                            maxFontSize: 20,
-                            maxLines: 2,
-                            textAlign: TextAlign.center,),
+                            ),
 
-                        ],
+
+
+                          ],
+                        ),
                       )
                     ],
                   ),
