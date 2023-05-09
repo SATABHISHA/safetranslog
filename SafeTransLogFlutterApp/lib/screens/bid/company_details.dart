@@ -3,6 +3,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 
 import '../../config/SizeConfig.dart';
 import '../../widgets/reusable_common_widgets/constants.dart';
+import '../login/rounded_button.dart';
 
 class CompanyDetails extends StatefulWidget {
   // const CompanyDetails({Key? key}) : super(key: key);
@@ -170,7 +171,7 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                                         },
                                         style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                         decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                            246, 242, 242, 1.0),hintText: ''),
+                                            246, 242, 242, 1.0),hintText: 'Enter Address'),
                                       ),
                                     ),
                                   ),
@@ -209,7 +210,7 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                                         },
                                         style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                         decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                            246, 242, 242, 1.0),hintText: ''),
+                                            246, 242, 242, 1.0),hintText: 'Enter Zip Code'),
                                       ),
                                     ),
                                   ),
@@ -248,7 +249,7 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                                         },
                                         style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                         decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                            246, 242, 242, 1.0),hintText: ''),
+                                            246, 242, 242, 1.0),hintText: 'Enter Phone No'),
                                       ),
                                     ),
                                   ),
@@ -287,7 +288,7 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                                         },
                                         style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                         decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                            246, 242, 242, 1.0),hintText: ''),
+                                            246, 242, 242, 1.0),hintText: 'Enter Email Address'),
                                       ),
                                     ),
                                   ),
@@ -300,7 +301,25 @@ class _CompanyDetailsState extends State<CompanyDetails> {
 
                           ],
                         ),
-                      )
+                      ),
+
+                      //----button code starts
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Container(
+                          width: double.infinity,
+                          height: 85,
+                          child: Padding(
+                            padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                            child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'NEXT', onPressed:() async {
+                              // EasyLoading.show(status: 'Loading...');
+                              // Navigator.pushNamed(context, CompanyDetails.id);
+                            }
+                            ),
+                          ),
+                        ),
+                      ),
+                      //----button code ends
                     ],
                   ),
           ),
