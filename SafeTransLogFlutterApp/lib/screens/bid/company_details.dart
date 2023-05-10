@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/screens/bid/service_provider_details.dart';
 
 import '../../config/SizeConfig.dart';
 import '../../widgets/reusable_common_widgets/constants.dart';
@@ -310,7 +311,7 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                             padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                             child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'NEXT', onPressed:() async {
                               // EasyLoading.show(status: 'Loading...');
-                              // Navigator.pushNamed(context, CompanyDetails.id);
+                              Navigator.pushNamed(context, ServiceProviderDetails.id);
                             }
                             ),
                           ),

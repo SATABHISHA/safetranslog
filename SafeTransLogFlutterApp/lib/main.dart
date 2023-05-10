@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:safetranslog/screens/bid/company_details.dart';
+import 'package:safetranslog/screens/bid/service_provider_details.dart';
 import 'package:safetranslog/screens/login/login_user.dart';
 import 'package:safetranslog/screens/login/verify_user_mobile.dart';
 import 'package:safetranslog/screens/splash_screen.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         LoginUser.id : (context)=> LoginUser(),
         VerifyUserMobile.id : (context)=> VerifyUserMobile(),
         CompanyDetails.id: (context)=> CompanyDetails(),
+        ServiceProviderDetails.id: (context)=> ServiceProviderDetails(),
       },
     );
   }
