@@ -104,7 +104,7 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
                                               });
                                             },
                                           ),
-                                          trailing: ,
+                                          // trailing: ,
                                         ),
                                       ],
                                     ),
