@@ -104,7 +104,21 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
                                               });
                                             },
                                           ),
-                                          // trailing: ,
+                                          trailing: Image.asset('images/trucktypeicon.png', height: 35, width: 35,),
+                                          tileColor: Colors.blueAccent,
+                                        ),
+                                        ListTile(
+                                          title: const Text('Individual'),
+                                          leading: Radio<Service>(
+                                            value: Service.individual,
+                                            groupValue: _character,
+                                            onChanged: (Service? value) {
+                                              setState(() {
+                                                _character = value;
+                                              });
+                                            },
+                                          ),
+                                          trailing: Image.asset('images/trucktypeicon.png', height: 35, width: 35,),
                                         ),
                                       ],
                                     ),
