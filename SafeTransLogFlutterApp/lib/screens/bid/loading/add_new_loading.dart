@@ -6,7 +6,6 @@ class AddNewLoading extends StatefulWidget {
   @override
   State<AddNewLoading> createState() => _AddNewLoadingState();
 }
-
 class _AddNewLoadingState extends State<AddNewLoading> {
   @override
   Widget build(BuildContext context) {
