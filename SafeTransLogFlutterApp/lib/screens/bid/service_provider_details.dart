@@ -120,9 +120,41 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
                                           ),
                                           trailing: Image.asset('images/trucktypeicon.png', height: 35, width: 35,),
                                         ),
+
+                                        ListTile(
+                                          title: const Text('Transporter'),
+                                          leading: Radio<Service>(
+                                            value: Service.transporter,
+                                            groupValue: _character,
+                                            onChanged: (Service? value) {
+                                              setState(() {
+                                                _character = value;
+                                              });
+                                            },
+                                          ),
+                                          trailing: Image.asset('images/trucktypeicon.png', height: 35, width: 35,),
+                                        ),
+
+                                        ListTile(
+                                          title: const Text('Agent/ Broker'),
+                                          leading: Radio<Service>(
+                                            value: Service.agent,
+                                            groupValue: _character,
+                                            onChanged: (Service? value) {
+                                              setState(() {
+                                                _character = value;
+                                              });
+                                            },
+                                          ),
+                                          trailing: Image.asset('images/trucktypeicon.png', height: 35, width: 35,),
+                                        ),
                                       ],
                                     ),
                                   ),
+
+                                ],
+                              ),
+                            ),
                                 ],
                               ),
                             ),
