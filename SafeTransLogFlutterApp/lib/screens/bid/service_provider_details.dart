@@ -89,6 +89,7 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
                                     maxFontSize: 20,
                                     maxLines: 2,
                                     textAlign: TextAlign.center,),
+                                  SizedBox(height: 30,),
                                   Expanded(
                                     child: ListView(
                                       shrinkWrap: true,
@@ -120,7 +121,6 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
                                           ),
                                           trailing: Image.asset('images/trucktypeicon.png', height: 35, width: 35,),
                                         ),
-
                                         ListTile(
                                           title: const Text('Transporter'),
                                           leading: Radio<Service>(
@@ -134,7 +134,6 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
                                           ),
                                           trailing: Image.asset('images/trucktypeicon.png', height: 35, width: 35,),
                                         ),
-
                                         ListTile(
                                           title: const Text('Agent/ Broker'),
                                           leading: Radio<Service>(
@@ -151,10 +150,6 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
                                       ],
                                     ),
                                   ),
-
-                                ],
-                              ),
-                            ),
                                 ],
                               ),
                             ),
