@@ -6,6 +6,8 @@ import 'package:safetranslog/screens/login/login_user.dart';
 import 'package:safetranslog/screens/login/verify_user_mobile.dart';
 import 'package:safetranslog/screens/splash_screen.dart';
 
+import 'screens/bid/loading/add_new_loading.dart';
+
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
@@ -31,6 +33,7 @@ class MyApp extends StatelessWidget {
         CompanyDetails.id: (context)=> CompanyDetails(),
         ServiceProviderDetails.id: (context)=> ServiceProviderDetails(),
         AddLoading.id: (context)=> AddLoading(),
+        AddNewLoading.id: (context)=> AddNewLoading(),
       },
     );
   }
