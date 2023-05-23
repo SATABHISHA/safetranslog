@@ -10,8 +10,9 @@ class AddNewLoading extends StatefulWidget {
   @override
   State<AddNewLoading> createState() => _AddNewLoadingState();
 }
-class _AddNewLoadingState extends State<AddNewLoading> {
+class _AddNewLoadingState extends State<AddNewLoading> with SingleTickerProviderStateMixin {
   VehicleType? _character = VehicleType.LCV;
+  late final _tabController = TabController(length: 4, vsync: this);
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -249,6 +250,37 @@ class _AddNewLoadingState extends State<AddNewLoading> {
                                   Padding(
                                     padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                                     child: AutoSizeText('Choose Type', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 19,),minFontSize: 17,),
+                                  ),
+
+                                  SizedBox(height: 10,),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                    child: Container(
+                                      color: Color.fromRGBO(247, 236, 188, 1.0),
+                                      child: TabBar(
+                                        controller: _tabController,
+                                        labelColor: Colors.black,
+                                        indicatorColor: Color.fromRGBO(255, 152, 7, 1.0),
+                                        isScrollable: true,
+                                        onTap: (value) {
+                                          print('val-=> ${value.toString()}');
+                                        },
+                                        tabs: const <Widget>[
+                                          Tab(
+                                            text: '10 Tyres',
+                                          ),
+                                          Tab(
+                                            text: '12 Tyres',
+                                          ),
+                                          Tab(
+                                            text: '16 Tyres',
+                                          ),
+                                          Tab(
+                                            text: '18 Tyres',
+                                          ),
+                                        ],
+                                      ),
+                                    ),
                                   ),
                                 ],
                               ),
