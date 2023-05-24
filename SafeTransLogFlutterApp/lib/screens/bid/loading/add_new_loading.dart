@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/screens/bid/loading/payment/payment_details.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
-import 'package:safetranslog/screens/payment/payment_details.dart';
 
 enum VehicleType {LCV, TRUCK, HYVA, CONTAINER, TRALLER, TANKAR}
 class AddNewLoading extends StatefulWidget {

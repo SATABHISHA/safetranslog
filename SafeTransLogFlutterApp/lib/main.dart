@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:safetranslog/screens/bid/company_details.dart';
 import 'package:safetranslog/screens/bid/loading/add_loading.dart';
+import 'package:safetranslog/screens/bid/loading/load_listing.dart';
+import 'package:safetranslog/screens/bid/loading/payment/payment_details.dart';
 import 'package:safetranslog/screens/bid/service_provider_details.dart';
 import 'package:safetranslog/screens/login/login_user.dart';
 import 'package:safetranslog/screens/login/verify_user_mobile.dart';
-import 'package:safetranslog/screens/payment/payment_details.dart';
 import 'package:safetranslog/screens/splash_screen.dart';
 
 import 'screens/bid/loading/add_new_loading.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         AddLoading.id: (context)=> AddLoading(),
         AddNewLoading.id: (context)=> AddNewLoading(),
         AddPaymentDetails.id: (context)=> AddPaymentDetails(),
+        LoadListing.id: (context)=> LoadListing(),
       },
     );
   }
