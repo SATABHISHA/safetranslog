@@ -125,7 +125,7 @@ class _VerifyUserMobileState extends State<VerifyUserMobile> {
                               ),
 
                              SizedBox(height: 20,),
-                             FractionallySizedBox(widthFactor: 1, child: PinputExample()),
+                             FractionallySizedBox(widthFactor: 1, child: PinputExample(length: 4, crossAxisAlignment: CrossAxisAlignment.center,)),
                              SizedBox(height: 20,),
                               Padding(
                                 padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -188,7 +188,10 @@ class _VerifyUserMobileState extends State<VerifyUserMobile> {
 }
 
   class PinputExample extends StatefulWidget {
-  const PinputExample({Key? key}) : super(key: key);
+  // const PinputExample({Key? key}) : super(key: key);
+  var length;
+  dynamic crossAxisAlignment = CrossAxisAlignment.center;
+  PinputExample({required this.length, required crossAxisAlignment});
 
   @override
   State<PinputExample> createState() => _PinputExampleState();
@@ -198,6 +201,7 @@ class _VerifyUserMobileState extends State<VerifyUserMobile> {
   final pinController = TextEditingController();
   final focusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
+
 
   @override
   void dispose() {
@@ -251,10 +255,11 @@ class _VerifyUserMobileState extends State<VerifyUserMobile> {
   // );
 
   /// Optionally you can use form to validate the Pinput
-  return Form(
+  return Form (
   key: formKey,
   child: Column(
   mainAxisAlignment: MainAxisAlignment.center,
+  crossAxisAlignment:  widget.crossAxisAlignment,
   children: [
   Directionality(
   // Specify direction if desired
@@ -266,6 +271,7 @@ class _VerifyUserMobileState extends State<VerifyUserMobile> {
   AndroidSmsAutofillMethod.smsUserConsentApi,
   listenForMultipleSmsOnAndroid: true,
   defaultPinTheme: defaultPinTheme,
+  length: widget.length,
   /*validator: (value) {
   return value == '2222' ? null : 'Pin is incorrect';
   },*/

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
+import 'package:safetranslog/screens/login/verify_user_mobile.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/constants.dart';
 
 enum PriceType {Fixed, PerTon}
@@ -238,6 +239,31 @@ class _AddPaymentDetailsState extends State<AddPaymentDetails> {
                                             textAlign: TextAlign.left,),
                                         ),
                                       ),
+                                      SizedBox(height: 5,),
+                                      Align(alignment: Alignment.centerLeft,
+                                          child: FractionallySizedBox(widthFactor: 1, child: PinputExample(length: 3, crossAxisAlignment: CrossAxisAlignment.start,))),
+                                      SizedBox(height: 10,),
+
+                                      //---Remarks filed, code starts
+                                      Padding(
+                                        padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                                        child: SizedBox(
+                                          width: double.infinity,
+                                          height: 100,
+                                          child: TextFormField(
+                                            textAlign: TextAlign.left,
+                                            keyboardType: TextInputType.text,
+                                            maxLines: 10,
+                                            onChanged: (value){
+                                              // userId = value;
+                                            },
+                                            style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                            decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
+                                                246, 242, 242, 1.0),hintText: 'Put your Remarks here'),
+                                          ),
+                                        ),
+                                      )
+                                      //---Remarks filed, code ends
                                     ],
                                   ),
                                 ),
