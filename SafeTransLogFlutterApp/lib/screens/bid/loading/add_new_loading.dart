@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
+import 'package:safetranslog/screens/payment/payment_details.dart';
 
 enum VehicleType {LCV, TRUCK, HYVA, CONTAINER, TRALLER, TANKAR}
 class AddNewLoading extends StatefulWidget {
@@ -298,7 +299,7 @@ class _AddNewLoadingState extends State<AddNewLoading> with SingleTickerProvider
                                 child: RoundedButton(colour: Color.fromRGBO(
                                     244, 80, 49, 1.0), title: 'CONTINUE', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
-                                  // Navigator.pushNamed(context, ServiceProviderDetails.id);
+                                  Navigator.pushNamed(context, AddPaymentDetails.id);
                                 }
                                 ),
                               ),
