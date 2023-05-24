@@ -3,6 +3,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/constants.dart';
 
+enum PriceType {Fixed, PerTon}
+enum PaymentType {Advance, ToPay}
 
 class AddPaymentDetails extends StatefulWidget {
   // const AddPaymentDetails({Key? key}) : super(key: key);
@@ -13,6 +15,8 @@ class AddPaymentDetails extends StatefulWidget {
 }
 
 class _AddPaymentDetailsState extends State<AddPaymentDetails> {
+  PriceType? _pricetype = PriceType.Fixed;
+  PaymentType? _paymenttype = PaymentType.Advance;
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -92,9 +96,9 @@ class _AddPaymentDetailsState extends State<AddPaymentDetails> {
                                           child: AutoSizeText(
                                             'Expected Price',
                                             style: TextStyle(color: Color.fromRGBO(
-                                                86, 85, 85, 1.0),
+                                                0, 0, 0, 1.0),
                                                 fontSize: 18,
-                                                fontWeight: FontWeight.bold),
+                                                fontWeight: FontWeight.normal),
                                             wrapWords: true,
                                             minFontSize: 8,
                                             maxFontSize: 15,
@@ -123,6 +127,117 @@ class _AddPaymentDetailsState extends State<AddPaymentDetails> {
                                       ),
                                       //---Expected Price, code ends
 
+                                      //---radio button, code starts
+                                      Row(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Flexible(
+                                            flex: 1,
+                                            child: ListTile(
+                                              title: const Text('Fixed'),
+                                              leading: Radio<PriceType>(
+                                                value: PriceType.Fixed,
+                                                groupValue: _pricetype,
+                                                onChanged: (PriceType? value) {
+                                                  setState(() {
+                                                    _pricetype = value;
+                                                  });
+                                                },
+                                              ),
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 1,
+                                            child: ListTile(
+                                              title: const Text('Per Ton'),
+                                              leading: Radio<PriceType>(
+                                                value: PriceType.PerTon,
+                                                groupValue: _pricetype,
+                                                onChanged: (PriceType? value) {
+                                                  setState(() {
+                                                    _pricetype = value;
+                                                  });
+                                                },
+                                              ),
+                                            ),
+                                          ),
+
+                                        ],
+                                      ),
+                                      //---radio button, code ends
+
+                                      SizedBox(height: 15,),
+                                      Padding(
+                                        padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                                        child: Container(
+                                            width: double.infinity, color: Color.fromRGBO(
+                                            234, 234, 244, 1.0),
+                                            child: Padding(
+                                              padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
+                                              child: Text('How would you like to pay?', style: TextStyle(color: Colors.black,  fontSize: 15),),
+                                            )
+                                        ),
+                                      ),
+
+                                      //---radio button, code starts
+                                      Row(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Flexible(
+                                            flex: 1,
+                                            child: ListTile(
+                                              title: const Text('Advance'),
+                                              leading: Radio<PaymentType>(
+                                                value: PaymentType.Advance,
+                                                groupValue: _paymenttype,
+                                                onChanged: (PaymentType? value) {
+                                                  setState(() {
+                                                    _paymenttype = value;
+                                                  });
+                                                },
+                                              ),
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 1,
+                                            child: ListTile(
+                                              title: const Text('To Pay'),
+                                              leading: Radio<PaymentType>(
+                                                value: PaymentType.ToPay,
+                                                groupValue: _paymenttype,
+                                                onChanged: (PaymentType? value) {
+                                                  setState(() {
+                                                    _paymenttype = value;
+                                                  });
+                                                },
+                                              ),
+                                            ),
+                                          ),
+
+                                        ],
+                                      ),
+                                      //---radio button, code ends
+
+                                      SizedBox(height: 15,),
+                                      Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Padding(
+                                          padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                          child: AutoSizeText(
+                                            'COC Consignment ?',
+                                            style: TextStyle(color: Color.fromRGBO(
+                                                0, 0, 0, 1.0),
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.normal),
+                                            wrapWords: true,
+                                            minFontSize: 8,
+                                            maxFontSize: 15,
+                                            maxLines: 1,
+                                            textAlign: TextAlign.left,),
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ),
