@@ -251,7 +251,6 @@ class _AddNewLoadingState extends State<AddNewLoading> with SingleTickerProvider
                                     padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                                     child: AutoSizeText('Choose Type', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 19,),minFontSize: 17,),
                                   ),
-
                                   SizedBox(height: 10,),
                                   Padding(
                                     padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
