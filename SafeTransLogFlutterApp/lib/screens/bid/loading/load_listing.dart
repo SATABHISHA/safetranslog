@@ -71,6 +71,24 @@ class _LoadListingState extends State<LoadListing> {
                       child: Stack(
                         children: [
 
+                          ListView.builder(
+                              itemCount: 1,
+                              itemBuilder: (context, int index) {
+                                return Padding(
+                                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                                  child: Container(
+                                    width: double.infinity,
+                                    height: 200,
+                                    decoration: BoxDecoration(color: Color.fromRGBO(242, 241, 248, 1.0), borderRadius: BorderRadius.circular(10.0)),
+                                    child: Column(
+                                      children: [
+
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              }
+                          ),
                           //----button code starts
                           Align(
                             alignment: Alignment.bottomCenter,
