@@ -295,7 +295,8 @@ class _AddNewLoadingState extends State<AddNewLoading> with SingleTickerProvider
                               height: 85,
                               child: Padding(
                                 padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                                child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'NEXT', onPressed:() async {
+                                child: RoundedButton(colour: Color.fromRGBO(
+                                    244, 80, 49, 1.0), title: 'CONTINUE', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
                                   // Navigator.pushNamed(context, ServiceProviderDetails.id);
                                 }
