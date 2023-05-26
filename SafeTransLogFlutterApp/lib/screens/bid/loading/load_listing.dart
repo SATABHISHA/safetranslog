@@ -72,46 +72,85 @@ class _LoadListingState extends State<LoadListing> {
                         children: [
 
                           ListView.builder(
+                              shrinkWrap: true,
                               itemCount: 1,
                               itemBuilder: (context, int index) {
-                                return Padding(
-                                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                                  child: Container(
-                                    width: double.infinity,
-                                    height: 200,
-                                    decoration: BoxDecoration(color: Color.fromRGBO(242, 241, 248, 1.0), borderRadius: BorderRadius.circular(10.0)),
-                                    child: Column(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-                                          child: Row(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              AutoSizeText('Kolkata To Shiliguri', style: TextStyle(color: Colors.blue, fontSize: 14),)
-                                            ],
-                                          ),
-                                        ),
-                                        SizedBox(height: 10,),
-                                        Row(
+                                return Container(
+                                  width: double.infinity,
+                                  // height: 200,
+                                  decoration: BoxDecoration(color: Color.fromRGBO(242, 241, 248, 1.0), borderRadius: BorderRadius.circular(10.0)),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+                                        child: Row(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            Padding(
-                                              padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                                              child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                  AutoSizeText('LCV Required', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
-                                                  SizedBox(height: 5,),
-                                                  Row(children: [Image.asset('images/truckpic.png', width: 25, height: 17.5,), SizedBox(width: 10,), AutoSizeText('4 Tones LCV', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),) ],),
-                                                  SizedBox(height: 15,),
-                                                  AutoSizeText('Rs 24000.00', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.redAccent)),
-                                                  AutoSizeText('(asked price)', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Colors.black)),
-                                                ],
+                                            AutoSizeText('Kolkata To Shiliguri', style: TextStyle(color: Colors.blue, fontSize: 14),)
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(height: 10,),
+                                      Expanded(
+                                        child: Row(
+                                          children: [
+                                            Flexible(
+                                              flex: 1,
+                                              child: Padding(
+                                                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                                child: Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: [
+                                                    AutoSizeText('LCV Required', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                                                    SizedBox(height: 5,),
+                                                    Row(children: [Image.asset('images/truckpic.png', width: 25, height: 17.5,), SizedBox(width: 10,), AutoSizeText('4 Tones LCV', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),) ],),
+                                                    SizedBox(height: 15,),
+                                                    AutoSizeText('Rs 24000.00', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.redAccent)),
+                                                    AutoSizeText('(asked price)', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Colors.black)),
+                                                  ],
+                                                ),
                                               ),
                                             ),
+                                            Flexible(
+                                              flex: 1,
+                                              child: Padding(
+                                                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                                                child: Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                                  children: [
+                                                    Center(
+                                                      child: Container(width: 54, height: 54, decoration: BoxDecoration(borderRadius: BorderRadius.circular(100), color: Color.fromRGBO(187, 186, 180, 1.0)), child: Padding(
+                                                        padding: const EdgeInsets.all(5.0),
+                                                        child: Image.asset('images/profile.png'),
+                                                      ),),
+                                                    ),
+                                                    SizedBox(height: 10,),
+                                                    AutoSizeText('Calcutta Express\nCompany', style: TextStyle(fontSize: 14, color: Colors.black),textAlign: TextAlign.center,),
+                                                    SizedBox(height: 10,),
+                                                    //----button code starts
+                                                    Expanded(
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        child: Padding(
+                                                          padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                                          child: RoundedButton(colour: Color.fromRGBO(244, 80, 49, 1.0), title: 'Place Bid', onPressed:() async {
+                                                            // EasyLoading.show(status: 'Loading...');
+                                                            // Navigator.pushNamed(context, AddNewLoading.id);
+                                                          }
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    //----button code ends
+                                                  ],
+                                                ),
+                                              ),
+                                            )
                                           ],
-                                        )
-                                      ],
-                                    ),
+                                        ),
+                                      )
+                                    ],
                                   ),
                                 );
                               }
