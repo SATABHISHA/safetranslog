@@ -82,7 +82,34 @@ class _LoadListingState extends State<LoadListing> {
                                     decoration: BoxDecoration(color: Color.fromRGBO(242, 241, 248, 1.0), borderRadius: BorderRadius.circular(10.0)),
                                     child: Column(
                                       children: [
-
+                                        Padding(
+                                          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+                                          child: Row(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              AutoSizeText('Kolkata To Shiliguri', style: TextStyle(color: Colors.blue, fontSize: 14),)
+                                            ],
+                                          ),
+                                        ),
+                                        SizedBox(height: 10,),
+                                        Row(
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                              child: Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  AutoSizeText('LCV Required', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                                                  SizedBox(height: 5,),
+                                                  Row(children: [Image.asset('images/truckpic.png', width: 25, height: 17.5,), SizedBox(width: 10,), AutoSizeText('4 Tones LCV', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),) ],),
+                                                  SizedBox(height: 15,),
+                                                  AutoSizeText('Rs 24000.00', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.redAccent)),
+                                                  AutoSizeText('(asked price)', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Colors.black)),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        )
                                       ],
                                     ),
                                   ),
