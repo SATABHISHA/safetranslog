@@ -10,6 +10,7 @@ import 'package:safetranslog/screens/kyc/kyc_name.dart';
 import 'package:safetranslog/screens/login/login_user.dart';
 import 'package:safetranslog/screens/login/verify_user_mobile.dart';
 import 'package:safetranslog/screens/splash_screen.dart';
+import 'package:safetranslog/screens/truck/add_truck.dart';
 
 import 'screens/bid/loading/add_new_loading.dart';
 import 'screens/kyc/kyc_address.dart';
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
         KycName.id: (context)=> KycName(),
         KycAddress.id: (context)=> KycAddress(),
         KycDocs.id: (context)=> KycDocs(),
+        AddTruck.id: (context)=> AddTruck(),
       },
     );
   }

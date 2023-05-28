@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
+import 'package:safetranslog/screens/truck/add_truck.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/constants.dart';
 
 class KycDocs extends StatefulWidget {
@@ -252,7 +253,7 @@ class _KycDocsState extends State<KycDocs> {
                                 padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                 child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Submit', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
-                                  // Navigator.pushNamed(context, AddNewLoading.id);
+                                  Navigator.pushNamed(context, AddTruck.id);
                                 }
                                 ),
                               ),
