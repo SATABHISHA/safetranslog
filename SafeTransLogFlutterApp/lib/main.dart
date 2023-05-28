@@ -6,6 +6,7 @@ import 'package:safetranslog/screens/bid/loading/load_listing.dart';
 import 'package:safetranslog/screens/bid/loading/payment/payment_details.dart';
 import 'package:safetranslog/screens/bid/place_bid.dart';
 import 'package:safetranslog/screens/bid/service_provider_details.dart';
+import 'package:safetranslog/screens/kyc/kyc_name.dart';
 import 'package:safetranslog/screens/login/login_user.dart';
 import 'package:safetranslog/screens/login/verify_user_mobile.dart';
 import 'package:safetranslog/screens/splash_screen.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         LoadListing.id: (context)=> LoadListing(),
         PlaceBid.id: (context)=> PlaceBid(),
         BidConfirmation.id: (context)=> BidConfirmation(),
+        KycName.id: (context)=> KycName(),
       },
     );
   }

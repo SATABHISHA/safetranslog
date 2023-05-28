@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/screens/kyc/kyc_name.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/constants.dart';
 
@@ -93,7 +94,7 @@ class _BidConfirmationState extends State<BidConfirmation> {
                                 padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                 child: RoundedButton(colour: Color.fromRGBO(56, 133, 20, 1.0), title: 'Continue Bidding', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
-                                  // Navigator.pushNamed(context, PlaceBid.id);
+                                  Navigator.pushNamed(context, KycName.id);
                                 }
                                 ),
                               ),
