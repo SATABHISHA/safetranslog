@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/screens/kyc/kyc_address.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/constants.dart';
 
@@ -116,7 +117,7 @@ class _KycNameState extends State<KycName> {
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                246, 242, 242, 1.0),hintText: 'Enter Expected Price'),
+                                                246, 242, 242, 1.0),hintText: ''),
                                           ),
                                         ),
                                       ),
@@ -139,7 +140,7 @@ class _KycNameState extends State<KycName> {
                                 padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                 child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'NEXT', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
-                                  // Navigator.pushNamed(context, LoadListing.id);
+                                  Navigator.pushNamed(context, KycAddress.id);
                                 }
                                 ),
                               ),
