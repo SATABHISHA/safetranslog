@@ -13,6 +13,7 @@ import 'package:safetranslog/screens/splash_screen.dart';
 
 import 'screens/bid/loading/add_new_loading.dart';
 import 'screens/kyc/kyc_address.dart';
+import 'screens/kyc/kyc_docs.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
         BidConfirmation.id: (context)=> BidConfirmation(),
         KycName.id: (context)=> KycName(),
         KycAddress.id: (context)=> KycAddress(),
+        KycDocs.id: (context)=> KycDocs(),
       },
     );
   }
