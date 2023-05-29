@@ -182,6 +182,6 @@ class _DriverListState extends State<DriverList> {
           ),
         ),
       ),
-    );;
+    );
   }
 }

@@ -11,6 +11,7 @@ import 'package:safetranslog/screens/driver/driver_list.dart';
 import 'package:safetranslog/screens/fastag/fastag_home.dart';
 import 'package:safetranslog/screens/fastag/fastag_payment.dart';
 import 'package:safetranslog/screens/gps/gps1.dart';
+import 'package:safetranslog/screens/gps/gps2.dart';
 import 'package:safetranslog/screens/kyc/kyc_name.dart';
 import 'package:safetranslog/screens/login/login_user.dart';
 import 'package:safetranslog/screens/login/verify_user_mobile.dart';
@@ -66,6 +67,7 @@ class MyApp extends StatelessWidget {
         FasTagHome.id: (context)=> FasTagHome(),
         FasTagPayment.id: (context)=> FasTagPayment(),
         Gps1.id: (context)=> Gps1(),
+        Gps2.id: (context)=> Gps2(),
       },
     );
   }
