@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:safetranslog/screens/bid/loading/add_loading.dart';
+import 'package:safetranslog/widgets/reusable_common_widgets/navigation_drawer_list.dart';
 
 import '../login/rounded_button.dart';
 
@@ -14,6 +15,8 @@ class ServiceProviderDetails extends StatefulWidget {
 }
 
 class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  bool _isDrawerOpen = false;
   Service? _character = Service.load;
   @override
   Widget build(BuildContext context) {
@@ -22,6 +25,21 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
         return false;
        },
         child: Scaffold(
+          key: _scaffoldKey,
+          drawer: NavigationDrawerList(
+            callback: (isOpen) {
+              print("isOpen ${isOpen}");
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                setState(() {
+                  if(isOpen == true){
+                    _isDrawerOpen = true;
+                  }else{
+                    _isDrawerOpen = false;
+                  }
+                });
+              });
+            },
+          ),
           body: Container(
             // color: Colors.lightGreenAccent,
             decoration: BoxDecoration(
@@ -42,10 +60,37 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.max ,
                 children: [
-                  Center(child: Text('Service Provider', style: TextStyle(
+                  /*Center(child: Text('Service Provider', style: TextStyle(
                       fontSize: 20,
                       color: Colors.white,
-                      fontWeight: FontWeight.bold),)),
+                      fontWeight: FontWeight.bold),)),*/
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      /*IconButton(onPressed: () async{
+                      print('Clicked');
+                      // Drawer(child: NavigationDrawerList(),);
+                      Scaffold.of(context).openDrawer();
+
+                      }, icon: Image.asset('images/menupic.png', width: 24, height: 13.33,)),*/
+
+                      Builder(
+                          builder: (context) {
+                            return IconButton(icon: Image.asset('images/menupic.png', width: 34, height: 15,), onPressed: () => Scaffold.of(context).openDrawer(),);
+                          }
+                      ),
+                      SizedBox(width: 20,),
+                      Expanded(
+                        child: Container(
+                          width: double.infinity,
+                          child: Text('Service Provider', style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),),
+                        ),
+                      ),
+                    ],
+                  ),
                   Expanded(
                     child: Padding(
                       padding: EdgeInsets.fromLTRB(20, 20, 20, 20),

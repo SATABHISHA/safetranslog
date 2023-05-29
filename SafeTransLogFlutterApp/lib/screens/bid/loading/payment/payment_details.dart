@@ -4,6 +4,7 @@ import 'package:safetranslog/screens/bid/loading/load_listing.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
 import 'package:safetranslog/screens/login/verify_user_mobile.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/constants.dart';
+import 'package:safetranslog/widgets/reusable_common_widgets/navigation_drawer_list.dart';
 
 enum PriceType {Fixed, PerTon}
 enum PaymentType {Advance, ToPay}
@@ -17,6 +18,9 @@ class AddPaymentDetails extends StatefulWidget {
 }
 
 class _AddPaymentDetailsState extends State<AddPaymentDetails> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  bool _isDrawerOpen = false;
+
   PriceType? _pricetype = PriceType.Fixed;
   PaymentType? _paymenttype = PaymentType.Advance;
   @override
@@ -26,6 +30,21 @@ class _AddPaymentDetailsState extends State<AddPaymentDetails> {
         return false;
       },
       child: Scaffold(
+        key: _scaffoldKey,
+        drawer: NavigationDrawerList(
+          callback: (isOpen) {
+            print("isOpen ${isOpen}");
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              setState(() {
+                if(isOpen == true){
+                  _isDrawerOpen = true;
+                }else{
+                  _isDrawerOpen = false;
+                }
+              });
+            });
+          },
+        ),
         body: Container(
           // color: Colors.lightGreenAccent,
           decoration: BoxDecoration(
@@ -46,10 +65,37 @@ class _AddPaymentDetailsState extends State<AddPaymentDetails> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisSize: MainAxisSize.max ,
               children: [
-                Center(child: Text('Payment Details', style: TextStyle(
+                /*Center(child: Text('Payment Details', style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
-                    fontWeight: FontWeight.bold),)),
+                    fontWeight: FontWeight.bold),)),*/
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    /*IconButton(onPressed: () async{
+                      print('Clicked');
+                      // Drawer(child: NavigationDrawerList(),);
+                      Scaffold.of(context).openDrawer();
+
+                      }, icon: Image.asset('images/menupic.png', width: 24, height: 13.33,)),*/
+
+                    Builder(
+                        builder: (context) {
+                          return IconButton(icon: Image.asset('images/menupic.png', width: 34, height: 15,), onPressed: () => Scaffold.of(context).openDrawer(),);
+                        }
+                    ),
+                    SizedBox(width: 20,),
+                    Expanded(
+                      child: Container(
+                        width: double.infinity,
+                        child: Text('Payment Details', style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),),
+                      ),
+                    ),
+                  ],
+                ),
                 Expanded(
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
