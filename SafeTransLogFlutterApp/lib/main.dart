@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:safetranslog/screens/bank/add_bank.dart';
 import 'package:safetranslog/screens/bid/company_details.dart';
 import 'package:safetranslog/screens/bid/loading/add_loading.dart';
 import 'package:safetranslog/screens/bid/loading/bid_confirmation.dart';
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
         AddTruck.id: (context)=> AddTruck(),
         DriverList.id: (context)=> DriverList(),
         WalletHome.id: (context)=> WalletHome(),
+        AddBank.id: (context)=> AddBank(),
       },
     );
   }

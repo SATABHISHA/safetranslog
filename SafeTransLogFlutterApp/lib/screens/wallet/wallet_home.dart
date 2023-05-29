@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/screens/bank/add_bank.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/constants.dart';
 
@@ -107,7 +108,7 @@ class _WalletHomeState extends State<WalletHome> {
                                       padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                       child: RoundedButton(colour: Color.fromRGBO(11, 7, 84, 1.0), title: 'Add Money on Wallet', onPressed:() async {
                                         // EasyLoading.show(status: 'Loading...');
-                                        // Navigator.pushNamed(context, DriverList.id);
+                                        Navigator.pushNamed(context, AddBank.id);
                                       }
                                       ),
                                     ),
