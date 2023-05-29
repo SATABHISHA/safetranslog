@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 
 class NavigationDrawerList extends StatefulWidget {
@@ -35,14 +36,15 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
         // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: [
-          const DrawerHeader(
+           Container(
+             height: 80,
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
-            child: Text('Drawer Header'),
+            child: Center(child: Image.asset("images/safetranslogappbarlogo.png", width: 164, height: 48,)),
           ),
           ListTile(
-            title: const Text('Item 1'),
+            title: const Text('Place Your Bid'),
             onTap: () {
               // Update the state of the app
               // ...
@@ -51,11 +53,107 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
             },
           ),
           ListTile(
-            title: const Text('Item 2'),
+            title: const Text('KYC'),
             onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
+
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('Add Truck'),
+            onTap: () {
+
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('Driver'),
+            onTap: () {
+
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('Wallet'),
+            onTap: () {
+
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('Add Bank'),
+            onTap: () {
+
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('Enquiry'),
+            onTap: () {
+
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('Disel Card'),
+            onTap: () {
+
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('FasTag'),
+            onTap: () {
+
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('GPS 1'),
+            onTap: () {
+
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('GPS 2'),
+            onTap: () {
+
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('Vehicle Current Location'),
+            onTap: () {
+
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('Nearby Vehicle'),
+            onTap: () {
+
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('State Wise Price List'),
+            onTap: () {
+
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('City Wise Price List'),
+            onTap: () {
+
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('Pump Wise Price List'),
+            onTap: () {
+
               Navigator.pop(context);
             },
           ),
