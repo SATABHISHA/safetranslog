@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/screens/wallet/wallet_home.dart';
 
 
 class DriverList extends StatefulWidget {
@@ -76,7 +77,9 @@ class _DriverListState extends State<DriverList> {
                               // crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 AutoSizeText('All Driver List', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Colors.black),),
-                                MaterialButton(onPressed: () async {},child: AutoSizeText('Add', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Colors.blueAccent),)),
+                                MaterialButton(onPressed: () async {
+                                  Navigator.pushNamed(context, WalletHome.id);
+                                },child: AutoSizeText('Add', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Colors.blueAccent),)),
                               ],
                             ),
                           ),

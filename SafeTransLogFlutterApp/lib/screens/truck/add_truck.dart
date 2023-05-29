@@ -155,6 +155,6 @@ class _AddTruckState extends State<AddTruck> {
           ),
         ),
       ),
-    );;
+    );
   }
 }

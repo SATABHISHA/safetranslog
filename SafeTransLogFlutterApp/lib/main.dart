@@ -12,6 +12,7 @@ import 'package:safetranslog/screens/login/login_user.dart';
 import 'package:safetranslog/screens/login/verify_user_mobile.dart';
 import 'package:safetranslog/screens/splash_screen.dart';
 import 'package:safetranslog/screens/truck/add_truck.dart';
+import 'package:safetranslog/screens/wallet/wallet_home.dart';
 
 import 'screens/bid/loading/add_new_loading.dart';
 import 'screens/kyc/kyc_address.dart';
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
         KycDocs.id: (context)=> KycDocs(),
         AddTruck.id: (context)=> AddTruck(),
         DriverList.id: (context)=> DriverList(),
+        WalletHome.id: (context)=> WalletHome(),
       },
     );
   }
