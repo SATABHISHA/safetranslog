@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/screens/gps/gps1.dart';
 
 
 class NavigationDrawerList extends StatefulWidget {
@@ -112,7 +113,8 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
             title: const Text('GPS 1'),
             onTap: () {
 
-              Navigator.pop(context);
+              // Navigator.pop(context);
+              Navigator.pushNamed(context, Gps1.id);
             },
           ),
           ListTile(
