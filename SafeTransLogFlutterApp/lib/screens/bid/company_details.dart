@@ -42,10 +42,22 @@ class _CompanyDetailsState extends State<CompanyDetails> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisSize: MainAxisSize.max ,
               children: [
-                Center(child: Text('About Company', style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),)),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    IconButton(onPressed: () async {}, icon: Image.asset('images/menupic.png', width: 24, height: 13.33,)),
+                    SizedBox(width: 20,),
+                    Expanded(
+                      child: Container(
+                        width: double.infinity,
+                        child: Text('About Company', style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),),
+                      ),
+                    ),
+                  ],
+                ),
             Expanded(
               child: Padding(
                 padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
