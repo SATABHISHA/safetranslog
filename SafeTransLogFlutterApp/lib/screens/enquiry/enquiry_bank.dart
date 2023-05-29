@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/screens/diselcard/diselcard_home.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/constants.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/resusable_dropdown_formfield.dart';
@@ -266,7 +267,7 @@ class _EnquiryBankState extends State<EnquiryBank> {
                                 padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                 child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Check', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
-                                  // Navigator.pushNamed(context, EnquiryBank.id);
+                                  Navigator.pushNamed(context, DiselCardHome.id);
                                 }
                                 ),
                               ),
