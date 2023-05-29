@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:safetranslog/screens/bid/service_provider_details.dart';
+import 'package:safetranslog/widgets/reusable_common_widgets/navigation_drawer_list.dart';
 
 import '../../config/SizeConfig.dart';
 import '../../widgets/reusable_common_widgets/constants.dart';
@@ -15,6 +16,8 @@ class CompanyDetails extends StatefulWidget {
 }
 
 class _CompanyDetailsState extends State<CompanyDetails> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  bool _isDrawerOpen = false;
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -22,6 +25,21 @@ class _CompanyDetailsState extends State<CompanyDetails> {
           return false;
         },
        child: Scaffold(
+         key: _scaffoldKey,
+         drawer: NavigationDrawerList(
+           callback: (isOpen) {
+             print("isOpen ${isOpen}");
+             WidgetsBinding.instance.addPostFrameCallback((_) {
+               setState(() {
+                 if(isOpen == true){
+                   _isDrawerOpen = true;
+                 }else{
+                   _isDrawerOpen = false;
+                 }
+               });
+             });
+           },
+         ),
         body: Container(
           // color: Colors.lightGreenAccent,
           decoration: BoxDecoration(
@@ -45,7 +63,18 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    IconButton(onPressed: () async {}, icon: Image.asset('images/menupic.png', width: 24, height: 13.33,)),
+                    /*IconButton(onPressed: () async{
+                      print('Clicked');
+                      // Drawer(child: NavigationDrawerList(),);
+                      Scaffold.of(context).openDrawer();
+
+                      }, icon: Image.asset('images/menupic.png', width: 24, height: 13.33,)),*/
+
+                    Builder(
+                      builder: (context) {
+                        return IconButton(icon: Image.asset('images/menupic.png', width: 34, height: 15,), onPressed: () => Scaffold.of(context).openDrawer(),);
+                      }
+                    ),
                     SizedBox(width: 20,),
                     Expanded(
                       child: Container(
@@ -344,3 +373,4 @@ class _CompanyDetailsState extends State<CompanyDetails> {
     
   }
 }
+
