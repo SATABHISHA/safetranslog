@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/screens/fastag/fastag_home.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/constants.dart';
 
@@ -137,7 +138,7 @@ class _DiselCardHomeState extends State<DiselCardHome> {
                                                 child: RoundedButton(colour: Color.fromRGBO(
                                                     160, 160, 161, 1.0), title: 'Activate Digital Card', onPressed:() async {
                                                   // EasyLoading.show(status: 'Loading...');
-                                                  // Navigator.pushNamed(context, EnquiryBank.id);
+                                                  Navigator.pushNamed(context, FasTagHome.id);
                                                 }
                                                 ),
                                               ),
