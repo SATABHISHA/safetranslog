@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/screens/fastag/fastag_payment.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/constants.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/resusable_dropdown_formfield.dart';
@@ -213,7 +214,7 @@ class _FasTagHomeState extends State<FasTagHome> {
                                 padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                 child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Buy this Plan', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
-                                  // Navigator.pushNamed(context, DiselCardHome.id);
+                                  Navigator.pushNamed(context, FasTagPayment.id);
                                 }
                                 ),
                               ),
