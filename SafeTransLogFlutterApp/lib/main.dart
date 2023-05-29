@@ -16,6 +16,7 @@ import 'package:safetranslog/screens/truck/add_truck.dart';
 import 'package:safetranslog/screens/wallet/wallet_home.dart';
 
 import 'screens/bid/loading/add_new_loading.dart';
+import 'screens/enquiry/enquiry_bank.dart';
 import 'screens/kyc/kyc_address.dart';
 import 'screens/kyc/kyc_docs.dart';
 
@@ -56,6 +57,7 @@ class MyApp extends StatelessWidget {
         DriverList.id: (context)=> DriverList(),
         WalletHome.id: (context)=> WalletHome(),
         AddBank.id: (context)=> AddBank(),
+        EnquiryBank.id: (context)=> EnquiryBank(),
       },
     );
   }

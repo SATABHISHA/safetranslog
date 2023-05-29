@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:safetranslog/screens/enquiry/enquiry_bank.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/constants.dart';
+import 'package:safetranslog/widgets/reusable_common_widgets/resusable_dropdown_formfield.dart';
 
-class AddBank extends StatefulWidget {
-  // const AddBank({Key? key}) : super(key: key);
-  static String id = 'AddBank';
-
+class EnquiryBank extends StatefulWidget {
+  // const EnquiryBank({Key? key}) : super(key: key);
+static String id = 'EnquiryBank';
+// late final List<String> paymentModeList;
   @override
-  State<AddBank> createState() => _AddBankState();
+  State<EnquiryBank> createState() => _EnquiryBankState();
 }
 
-class _AddBankState extends State<AddBank> {
+class _EnquiryBankState extends State<EnquiryBank> {
+  final GlobalKey<FormFieldState> _paymentModeDropDown = new GlobalKey<FormFieldState>();
+  final GlobalKey<FormFieldState> _bankDropDown = new GlobalKey<FormFieldState>();
+  final List<String> paymentModeList = ['NEFT','IMPS','RTGS'];
+  final List<String> bankList = ['AMEX','BOI'];
+
   @override
   Widget build(BuildContext context) {
+
     return WillPopScope(
       onWillPop: () async {
         return false;
@@ -40,7 +46,7 @@ class _AddBankState extends State<AddBank> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisSize: MainAxisSize.max ,
               children: [
-                Center(child: Text('Add Bank', style: TextStyle(
+                Center(child: Text('Enquiry', style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
                     fontWeight: FontWeight.bold),)),
@@ -83,7 +89,7 @@ class _AddBankState extends State<AddBank> {
                                   child: Padding(
                                     padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
                                     child: AutoSizeText(
-                                      'Add Bank Account Number',
+                                      'IMPS / RTGS / NEFT Enquiry',
                                       style: TextStyle(color: Color.fromRGBO(
                                           37, 37, 37, 1.0),
                                           fontSize: 18,
@@ -99,14 +105,14 @@ class _AddBankState extends State<AddBank> {
                                   child: ListView(
                                     shrinkWrap: true,
                                     children: [
-                                      //---Account Number, code starts
+                                      //---Payment mode dropdown, code starts
                                       SizedBox(height: 15,),
                                       Align(
                                         alignment: Alignment.centerLeft,
                                         child: Padding(
                                           padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                                           child: AutoSizeText(
-                                            'Account Number',
+                                            'Select Payment Mode',
                                             style: TextStyle(color: Color.fromRGBO(
                                                 86, 85, 85, 1.0),
                                                 fontSize: 18,
@@ -120,71 +126,99 @@ class _AddBankState extends State<AddBank> {
                                       ),
                                       Padding(
                                         padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                                        child: SizedBox(
-                                          width: double.infinity,
-                                          height: 50,
-                                          child: TextField(
-                                            // controller: _controller_user_id,
-                                            textAlign: TextAlign.left,
-                                            keyboardType: TextInputType.text,
-                                            maxLines: 1,
+                                        child: Container(
+                                          height: 30,
+                                          color: Colors.white,
+                                          child: ReusabeleDropDownButtonFormField(
+                                            key: _paymentModeDropDown,
+                                            dropDownCustomDecorationPersonalDataMgnt: dropDownCustomDecorationPersonalDataMgntWeb,
+                                            hintName: 'IMPS',
+                                            list:  paymentModeList
+                                                .where((e) => e != null) //removes null items
+                                                .toSet()
+                                                .map((item) =>
+                                                DropdownMenuItem<String>(
+                                                  value: item,
+                                                  child: Text(
+                                                    item,
+                                                    style: const TextStyle(
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
+                                                ))
+                                                .toList(),
                                             onChanged: (value){
-                                              // userId = value;
-                                            },
-                                            style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
-                                            decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                246, 242, 242, 1.0),hintText: ''),
-                                          ),
-                                        ),
-                                      ),
-                                      //---Account Number, code ends
-                                      //---Confirm Account Number, code starts
-                                      SizedBox(height: 15,),
-                                      Align(
-                                        alignment: Alignment.centerLeft,
-                                        child: Padding(
-                                          padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                                          child: AutoSizeText(
-                                            'Confirm Account Number',
-                                            style: TextStyle(color: Color.fromRGBO(
-                                                86, 85, 85, 1.0),
-                                                fontSize: 18,
-                                                fontWeight: FontWeight.bold),
-                                            wrapWords: true,
-                                            minFontSize: 8,
-                                            maxFontSize: 15,
-                                            maxLines: 1,
-                                            textAlign: TextAlign.left,),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                                        child: SizedBox(
-                                          width: double.infinity,
-                                          height: 50,
-                                          child: TextField(
-                                            // controller: _controller_user_id,
-                                            textAlign: TextAlign.left,
-                                            keyboardType: TextInputType.text,
-                                            onChanged: (value){
-                                              // userId = value;
-                                            },
-                                            style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
-                                            decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                246, 242, 242, 1.0),hintText: ''),
-                                          ),
-                                        ),
-                                      ),
-                                      //---Confirm Account Number, code ends
+                                             /* proficiencyListSelectedValue = value.toString();
+                                              print('Testing898-=>$proficiencyListSelectedValue');*/
 
-                                      //---IFSC, code starts
+                                            },
+                                            onSaved: (value){},
+                                          ),
+                                        ),
+                                      ),
+                                      //---Payment mode dropdown, code ends
+
+                                      //---Bank dropdown, code starts
                                       SizedBox(height: 15,),
                                       Align(
                                         alignment: Alignment.centerLeft,
                                         child: Padding(
                                           padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                                           child: AutoSizeText(
-                                            'IFSC Code',
+                                            'Select Bank',
+                                            style: TextStyle(color: Color.fromRGBO(
+                                                86, 85, 85, 1.0),
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold),
+                                            wrapWords: true,
+                                            minFontSize: 8,
+                                            maxFontSize: 15,
+                                            maxLines: 1,
+                                            textAlign: TextAlign.left,),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                                        child: Container(
+                                          height: 30,
+                                          color: Colors.white,
+                                          child: ReusabeleDropDownButtonFormField(
+                                            key: _bankDropDown,
+                                            dropDownCustomDecorationPersonalDataMgnt: dropDownCustomDecorationPersonalDataMgntWeb,
+                                            hintName: 'Select Bank',
+                                            list:  bankList
+                                                .where((e) => e != null) //removes null items
+                                                .toSet()
+                                                .map((item) =>
+                                                DropdownMenuItem<String>(
+                                                  value: item,
+                                                  child: Text(
+                                                    item,
+                                                    style: const TextStyle(
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
+                                                ))
+                                                .toList(),
+                                            onChanged: (value){
+                                              /* proficiencyListSelectedValue = value.toString();
+                                              print('Testing898-=>$proficiencyListSelectedValue');*/
+
+                                            },
+                                            onSaved: (value){},
+                                          ),
+                                        ),
+                                      ),
+                                      //---Bank dropdown, code ends
+
+                                      //---UTR No, code starts
+                                      SizedBox(height: 15,),
+                                      Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Padding(
+                                          padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                          child: AutoSizeText(
+                                            'UTR no (Received from Bank)',
                                             style: TextStyle(color: Color.fromRGBO(
                                                 86, 85, 85, 1.0),
                                                 fontSize: 18,
@@ -214,47 +248,7 @@ class _AddBankState extends State<AddBank> {
                                           ),
                                         ),
                                       ),
-                                      //---IFSC, code ends
-
-                                      //---Account Holder Name, code starts
-                                      SizedBox(height: 15,),
-                                      Align(
-                                        alignment: Alignment.centerLeft,
-                                        child: Padding(
-                                          padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                                          child: AutoSizeText(
-                                            'Account Holder Name',
-                                            style: TextStyle(color: Color.fromRGBO(
-                                                86, 85, 85, 1.0),
-                                                fontSize: 18,
-                                                fontWeight: FontWeight.bold),
-                                            wrapWords: true,
-                                            minFontSize: 8,
-                                            maxFontSize: 15,
-                                            maxLines: 1,
-                                            textAlign: TextAlign.left,),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                                        child: SizedBox(
-                                          width: double.infinity,
-                                          height: 50,
-                                          child: TextField(
-                                            // controller: _controller_user_id,
-                                            textAlign: TextAlign.left,
-                                            keyboardType: TextInputType.text,
-                                            onChanged: (value){
-                                              // userId = value;
-                                            },
-                                            style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
-                                            decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                246, 242, 242, 1.0),hintText: ''),
-                                          ),
-                                        ),
-                                      ),
-                                      //---Account Holder Name, code ends
-
+                                      //---UTR no, code ends
                                     ],
                                   ),
                                 ),
@@ -270,9 +264,9 @@ class _AddBankState extends State<AddBank> {
                               height: 85,
                               child: Padding(
                                 padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                                child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'NEXT', onPressed:() async {
+                                child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Check', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
-                                  Navigator.pushNamed(context, EnquiryBank.id);
+                                  // Navigator.pushNamed(context, EnquiryBank.id);
                                 }
                                 ),
                               ),
