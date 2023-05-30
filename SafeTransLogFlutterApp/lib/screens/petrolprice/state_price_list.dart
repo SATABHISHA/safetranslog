@@ -78,7 +78,7 @@ class _StatePriceListState extends State<StatePriceList> {
                     Expanded(
                       child: Container(
                         width: double.infinity,
-                        child: Text('GPS 2', style: TextStyle(
+                        child: Text('State Wise Price List', style: TextStyle(
                             fontSize: 20,
                             color: Colors.white,
                             fontWeight: FontWeight.bold),),
@@ -113,6 +113,7 @@ class _StatePriceListState extends State<StatePriceList> {
                         ),
                       ),
                       child: Column(
+
                         children: [
                           Padding(
                             padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
@@ -120,10 +121,21 @@ class _StatePriceListState extends State<StatePriceList> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               // crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                AutoSizeText('See all GPS features', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),),
+                                AutoSizeText('State Wise List', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),),
                               ],
                             ),
                           ),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              // crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                AutoSizeText('Tap on a state for city wise list', style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: Colors.black),),
+                              ],
+                            ),
+                          ),
+
 
                           Expanded(
                             child: ListView(
@@ -131,184 +143,343 @@ class _StatePriceListState extends State<StatePriceList> {
                               children: [
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Expanded(
-                                        child: Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Image.asset('images/vehiclepic.png', width: 27, height: 18,),
-                                            SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('Real time vehicle track', style: TextStyle(fontSize: 13, color: Colors.black),))
-                                          ],
-                                        ),
+                                  child: Container(
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(width: 1, color: Color.fromRGBO(
+                                          219, 215, 215, 1.0))
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Flexible(child: Container(width: 110, child: AutoSizeText('Andhra Pradesh', style: TextStyle(fontSize: 15, color: Colors.black),))),
+                                          SizedBox(width: 10,),
+                                          Expanded(
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.end,
+                                              children: [
+                                                AutoSizeText('+0.00', style: TextStyle(fontSize: 15, color: Colors.lightGreen)),
+                                                SizedBox(width: 5,),
+                                                Container(
+                                                    width: 59,
+                                                    height: 33,
+                                                    color: Color.fromRGBO(
+                                                        217, 217, 217, 1.0),
+                                                    child: Padding(
+                                                    padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
+                                                )),
+                                                SizedBox(width: 5,),
+                                                Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(width: 10,),
+                                        ],
                                       ),
-                                      SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
-                                    ],
+                                    ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Expanded(
-                                        child: Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Image.asset('images/vehiclepic.png', width: 27, height: 18,),
-                                            SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('Theft Protection', style: TextStyle(fontSize: 13, color: Colors.black),))
-                                          ],
-                                        ),
+                                  child: Container(
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(width: 1, color: Color.fromRGBO(
+                                          219, 215, 215, 1.0))
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Flexible(child: Container(width: 110,child: AutoSizeText('Arunachal Pradesh', style: TextStyle(fontSize: 15, color: Colors.black),))),
+                                          SizedBox(width: 10,),
+                                          Expanded(
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.end,
+                                              children: [
+                                                AutoSizeText('+0.00', style: TextStyle(fontSize: 15, color: Colors.red)),
+                                                SizedBox(width: 5,),
+                                                Container(
+                                                    width: 59,
+                                                    height: 33,
+                                                    color: Color.fromRGBO(
+                                                        217, 217, 217, 1.0),
+                                                    child: Padding(
+                                                    padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
+                                                )),
+                                                SizedBox(width: 5,),
+                                                Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(width: 10,),
+                                        ],
                                       ),
-                                      SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
-                                    ],
+                                    ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Expanded(
-                                        child: Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Image.asset('images/vehiclepic.png', width: 27, height: 18,),
-                                            SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('Pan-India Technical Network', style: TextStyle(fontSize: 13, color: Colors.black),))
-                                          ],
-                                        ),
+                                  child: Container(
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(width: 1, color: Color.fromRGBO(
+                                          219, 215, 215, 1.0))
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+
+                                        children: [
+                                          Flexible(child: Container(width: 110,child: AutoSizeText('Assam', style: TextStyle(fontSize: 15, color: Colors.black),))),
+                                          SizedBox(width: 10,),
+                                          Expanded(
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.end,
+                                              children: [
+                                                AutoSizeText('+0.00', style: TextStyle(fontSize: 15, color: Colors.lightGreen)),
+                                                SizedBox(width: 5,),
+                                                Container(
+                                                    width: 59,
+                                                    height: 33,
+                                                    color: Color.fromRGBO(
+                                                        217, 217, 217, 1.0),
+                                                    child: Padding(
+                                                    padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
+                                                )),
+                                                SizedBox(width: 5,),
+                                                Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(width: 10,),
+                                        ],
                                       ),
-                                      SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
-                                    ],
+                                    ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Expanded(
-                                        child: Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Image.asset('images/vehiclepic.png', width: 27, height: 18,),
-                                            SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('24/7 Customer Support', style: TextStyle(fontSize: 13, color: Colors.black),))
-                                          ],
-                                        ),
+                                  child: Container(
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(width: 1, color: Color.fromRGBO(
+                                          219, 215, 215, 1.0))
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Flexible(child: Container(width: 110, child: AutoSizeText('Bihar', style: TextStyle(fontSize: 15, color: Colors.black),))),
+                                          SizedBox(width: 10,),
+                                          Expanded(
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.end,
+                                              children: [
+                                                AutoSizeText('+0.00', style: TextStyle(fontSize: 15, color: Colors.lightGreen)),
+                                                SizedBox(width: 5,),
+                                                Container(
+                                                    width: 59,
+                                                    height: 33,
+                                                    color: Color.fromRGBO(
+                                                        217, 217, 217, 1.0),
+                                                    child: Padding(
+                                                    padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
+                                                )),
+                                                SizedBox(width: 5,),
+                                                Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(width: 10,),
+                                        ],
                                       ),
-                                      SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
-                                    ],
+                                    ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Expanded(
-                                        child: Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Image.asset('images/vehiclepic.png', width: 27, height: 18,),
-                                            SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('Nearest Petrol Pump', style: TextStyle(fontSize: 13, color: Colors.black),))
-                                          ],
-                                        ),
+                                  child: Container(
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(width: 1, color: Color.fromRGBO(
+                                          219, 215, 215, 1.0))
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Flexible(child: Container(width: 110, child: AutoSizeText('Chattisgarh', style: TextStyle(fontSize: 15, color: Colors.black),))),
+                                          SizedBox(width: 10,),
+                                          Expanded(
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.end,
+                                              children: [
+                                                AutoSizeText('+0.00', style: TextStyle(fontSize: 15, color: Colors.red)),
+                                                SizedBox(width: 5,),
+                                                Container(
+                                                    width: 59,
+                                                    height: 33,
+                                                    color: Color.fromRGBO(
+                                                        217, 217, 217, 1.0),
+                                                    child: Padding(
+                                                    padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
+                                                )),
+                                                SizedBox(width: 5,),
+                                                Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(width: 10,),
+                                        ],
                                       ),
-                                      SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
-                                    ],
+                                    ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Expanded(
-                                        child: Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Image.asset('images/vehiclepic.png', width: 27, height: 18,),
-                                            SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('Nearby Vehicle', style: TextStyle(fontSize: 13, color: Colors.black),))
-                                          ],
-                                        ),
+                                  child: Container(
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(width: 1, color: Color.fromRGBO(
+                                          219, 215, 215, 1.0))
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Flexible(child: Container(width: 110, child: AutoSizeText('Gujrat', style: TextStyle(fontSize: 15, color: Colors.black),))),
+                                          SizedBox(width: 10,),
+                                          Expanded(
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.end,
+                                              children: [
+                                                AutoSizeText('+0.00', style: TextStyle(fontSize: 15, color: Colors.lightGreen)),
+                                                SizedBox(width: 5,),
+                                                Container(
+                                                    width: 59,
+                                                    height: 33,
+                                                    color: Color.fromRGBO(
+                                                        217, 217, 217, 1.0),
+                                                    child: Padding(
+                                                    padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
+                                                )),
+                                                SizedBox(width: 5,),
+                                                Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(width: 10,),
+                                        ],
                                       ),
-                                      SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
-                                    ],
+                                    ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Expanded(
-                                        child: Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Image.asset('images/vehiclepic.png', width: 27, height: 18,),
-                                            SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('Navigate', style: TextStyle(fontSize: 13, color: Colors.black),))
-                                          ],
-                                        ),
+                                  child: Container(
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(width: 1, color: Color.fromRGBO(
+                                          219, 215, 215, 1.0))
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Flexible(child: Container(width: 110, child: AutoSizeText('Uttar Pradesh', style: TextStyle(fontSize: 15, color: Colors.black),))),
+                                          SizedBox(width: 10,),
+                                          Expanded(
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.end,
+                                              children: [
+                                                AutoSizeText('+0.00', style: TextStyle(fontSize: 15, color: Colors.red)),
+                                                SizedBox(width: 5,),
+                                                Container(
+                                                    width: 59,
+                                                    height: 33,
+                                                    color: Color.fromRGBO(
+                                                        217, 217, 217, 1.0),
+                                                    child: Padding(
+                                                    padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
+                                                )),
+                                                SizedBox(width: 5,),
+                                                Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(width: 10,),
+                                        ],
                                       ),
-                                      SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
-                                    ],
+                                    ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Expanded(
-                                        child: Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Image.asset('images/vehiclepic.png', width: 27, height: 18,),
-                                            SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('Emergency', style: TextStyle(fontSize: 13, color: Colors.black),))
-                                          ],
-                                        ),
+                                  child: Container(
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(width: 1, color: Color.fromRGBO(
+                                          219, 215, 215, 1.0))
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Flexible(child: Container(width: 110, child: AutoSizeText('West Bengal', style: TextStyle(fontSize: 15, color: Colors.black),))),
+                                          SizedBox(width: 10,),
+                                          Expanded(
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.end,
+                                              children: [
+                                                AutoSizeText('+0.00', style: TextStyle(fontSize: 15, color: Colors.lightGreen)),
+                                                SizedBox(width: 5,),
+                                                Container(
+                                                    width: 59,
+                                                    height: 33,
+                                                    color: Color.fromRGBO(
+                                                        217, 217, 217, 1.0),
+                                                    child: Padding(
+                                                    padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
+                                                )),
+                                                SizedBox(width: 5,),
+                                                Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(width: 10,),
+                                        ],
                                       ),
-                                      SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
-                                    ],
+                                    ),
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Expanded(
-                                        child: Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Image.asset('images/vehiclepic.png', width: 27, height: 18,),
-                                            SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('Over speeding alert', style: TextStyle(fontSize: 13, color: Colors.black),))
-                                          ],
-                                        ),
-                                      ),
-                                      SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
-                                    ],
-                                  ),
-                                ),
+
                               ],
                             ),
                           )
