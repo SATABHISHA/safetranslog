@@ -25,6 +25,7 @@ import 'screens/diselcard/diselcard_home.dart';
 import 'screens/enquiry/enquiry_bank.dart';
 import 'screens/kyc/kyc_address.dart';
 import 'screens/kyc/kyc_docs.dart';
+import 'screens/petrolprice/city_price_list.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -70,6 +71,7 @@ class MyApp extends StatelessWidget {
         Gps1.id: (context)=> Gps1(),
         Gps2.id: (context)=> Gps2(),
         StatePriceList.id: (context)=> StatePriceList(),
+        CityPriceList.id: (context)=> CityPriceList(),
       },
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:safetranslog/screens/gps/gps1.dart';
 import 'package:safetranslog/screens/gps/gps2.dart';
+import 'package:safetranslog/screens/petrolprice/city_price_list.dart';
 import 'package:safetranslog/screens/petrolprice/state_price_list.dart';
 
 
@@ -153,7 +154,9 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
             title: const Text('City Wise Price List'),
             onTap: () {
 
-              Navigator.pop(context);
+              // Navigator.pop(context);
+
+              Navigator.pushNamed(context, CityPriceList.id);
             },
           ),
           ListTile(
@@ -161,6 +164,7 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
             onTap: () {
 
               Navigator.pop(context);
+
             },
           ),
         ],

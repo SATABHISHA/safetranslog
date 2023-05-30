@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:safetranslog/screens/petrolprice/city_price_list.dart';
-import 'package:safetranslog/widgets/reusable_common_widgets/navigation_drawer_list.dart';
 
-class StatePriceList extends StatefulWidget {
-  // const StatePriceList({Key? key}) : super(key: key);
-static String id = 'StatePriceList';
+import '../../widgets/reusable_common_widgets/navigation_drawer_list.dart';
+
+class CityPriceList extends StatefulWidget {
+  // const CityPriceList({Key? key}) : super(key: key);
+  static String id = 'CityPriceList';
+
   @override
-  State<StatePriceList> createState() => _StatePriceListState();
+  State<CityPriceList> createState() => _CityPriceListState();
 }
 
-class _StatePriceListState extends State<StatePriceList> {
+class _CityPriceListState extends State<CityPriceList> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   bool _isDrawerOpen = false;
-
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -79,7 +79,7 @@ class _StatePriceListState extends State<StatePriceList> {
                     Expanded(
                       child: Container(
                         width: double.infinity,
-                        child: Text('State Wise Price List', style: TextStyle(
+                        child: Text('City Wise Price List', style: TextStyle(
                             fontSize: 20,
                             color: Colors.white,
                             fontWeight: FontWeight.bold),),
@@ -117,27 +117,38 @@ class _StatePriceListState extends State<StatePriceList> {
 
                         children: [
                           Padding(
-                            padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              // crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                AutoSizeText('State Wise List', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),),
-                              ],
+                            padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                            child: Container(
+                              width: double.infinity,
+                              color: Color.fromRGBO(217, 217, 217, 1.0),
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                                  children: [
+                                    AutoSizeText('West Bengal', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),),
+                                    Row(
+                                      children: [
+                                        AutoSizeText('Average Disel Price', style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: Colors.black),),
+                                        SizedBox(width: 10,),
+                                        AutoSizeText('92.90', style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: Colors.green),),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+                            padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               // crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                AutoSizeText('Tap on a state for city wise list', style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: Colors.black),),
+                                AutoSizeText('City Wise List :', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),),
                               ],
                             ),
                           ),
-
-
                           Expanded(
                             child: ListView(
                               shrinkWrap: true,
@@ -147,9 +158,9 @@ class _StatePriceListState extends State<StatePriceList> {
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      border: Border.all(width: 1, color: Color.fromRGBO(
-                                          219, 215, 215, 1.0))
+                                        color: Colors.white,
+                                        border: Border.all(width: 1, color: Color.fromRGBO(
+                                            219, 215, 215, 1.0))
                                     ),
                                     child: Padding(
                                       padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
@@ -171,8 +182,8 @@ class _StatePriceListState extends State<StatePriceList> {
                                                     color: Color.fromRGBO(
                                                         217, 217, 217, 1.0),
                                                     child: Padding(
-                                                    padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
-                                                )),
+                                                      padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
+                                                    )),
                                                 SizedBox(width: 5,),
                                                 Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
                                               ],
@@ -189,9 +200,9 @@ class _StatePriceListState extends State<StatePriceList> {
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      border: Border.all(width: 1, color: Color.fromRGBO(
-                                          219, 215, 215, 1.0))
+                                        color: Colors.white,
+                                        border: Border.all(width: 1, color: Color.fromRGBO(
+                                            219, 215, 215, 1.0))
                                     ),
                                     child: Padding(
                                       padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
@@ -213,8 +224,8 @@ class _StatePriceListState extends State<StatePriceList> {
                                                     color: Color.fromRGBO(
                                                         217, 217, 217, 1.0),
                                                     child: Padding(
-                                                    padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
-                                                )),
+                                                      padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
+                                                    )),
                                                 SizedBox(width: 5,),
                                                 Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
                                               ],
@@ -231,9 +242,9 @@ class _StatePriceListState extends State<StatePriceList> {
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      border: Border.all(width: 1, color: Color.fromRGBO(
-                                          219, 215, 215, 1.0))
+                                        color: Colors.white,
+                                        border: Border.all(width: 1, color: Color.fromRGBO(
+                                            219, 215, 215, 1.0))
                                     ),
                                     child: Padding(
                                       padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
@@ -257,8 +268,8 @@ class _StatePriceListState extends State<StatePriceList> {
                                                     color: Color.fromRGBO(
                                                         217, 217, 217, 1.0),
                                                     child: Padding(
-                                                    padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
-                                                )),
+                                                      padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
+                                                    )),
                                                 SizedBox(width: 5,),
                                                 Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
                                               ],
@@ -275,9 +286,9 @@ class _StatePriceListState extends State<StatePriceList> {
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      border: Border.all(width: 1, color: Color.fromRGBO(
-                                          219, 215, 215, 1.0))
+                                        color: Colors.white,
+                                        border: Border.all(width: 1, color: Color.fromRGBO(
+                                            219, 215, 215, 1.0))
                                     ),
                                     child: Padding(
                                       padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
@@ -299,8 +310,8 @@ class _StatePriceListState extends State<StatePriceList> {
                                                     color: Color.fromRGBO(
                                                         217, 217, 217, 1.0),
                                                     child: Padding(
-                                                    padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
-                                                )),
+                                                      padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
+                                                    )),
                                                 SizedBox(width: 5,),
                                                 Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
                                               ],
@@ -317,9 +328,9 @@ class _StatePriceListState extends State<StatePriceList> {
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      border: Border.all(width: 1, color: Color.fromRGBO(
-                                          219, 215, 215, 1.0))
+                                        color: Colors.white,
+                                        border: Border.all(width: 1, color: Color.fromRGBO(
+                                            219, 215, 215, 1.0))
                                     ),
                                     child: Padding(
                                       padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
@@ -341,8 +352,8 @@ class _StatePriceListState extends State<StatePriceList> {
                                                     color: Color.fromRGBO(
                                                         217, 217, 217, 1.0),
                                                     child: Padding(
-                                                    padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
-                                                )),
+                                                      padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
+                                                    )),
                                                 SizedBox(width: 5,),
                                                 Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
                                               ],
@@ -359,9 +370,9 @@ class _StatePriceListState extends State<StatePriceList> {
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      border: Border.all(width: 1, color: Color.fromRGBO(
-                                          219, 215, 215, 1.0))
+                                        color: Colors.white,
+                                        border: Border.all(width: 1, color: Color.fromRGBO(
+                                            219, 215, 215, 1.0))
                                     ),
                                     child: Padding(
                                       padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
@@ -383,8 +394,8 @@ class _StatePriceListState extends State<StatePriceList> {
                                                     color: Color.fromRGBO(
                                                         217, 217, 217, 1.0),
                                                     child: Padding(
-                                                    padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
-                                                )),
+                                                      padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
+                                                    )),
                                                 SizedBox(width: 5,),
                                                 Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
                                               ],
@@ -401,9 +412,9 @@ class _StatePriceListState extends State<StatePriceList> {
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      border: Border.all(width: 1, color: Color.fromRGBO(
-                                          219, 215, 215, 1.0))
+                                        color: Colors.white,
+                                        border: Border.all(width: 1, color: Color.fromRGBO(
+                                            219, 215, 215, 1.0))
                                     ),
                                     child: Padding(
                                       padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
@@ -425,8 +436,8 @@ class _StatePriceListState extends State<StatePriceList> {
                                                     color: Color.fromRGBO(
                                                         217, 217, 217, 1.0),
                                                     child: Padding(
-                                                    padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
-                                                )),
+                                                      padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
+                                                    )),
                                                 SizedBox(width: 5,),
                                                 Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
                                               ],
@@ -438,49 +449,44 @@ class _StatePriceListState extends State<StatePriceList> {
                                     ),
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: (){
-                                    Navigator.pushNamed(context, CityPriceList.id);
-                                  },
-                                  child: Padding(
-                                    padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-                                    child: Container(
-                                      width: double.infinity,
-                                      decoration: BoxDecoration(
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                                  child: Container(
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
                                         color: Colors.white,
                                         border: Border.all(width: 1, color: Color.fromRGBO(
                                             219, 215, 215, 1.0))
-                                      ),
-                                      child: Padding(
-                                        padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Flexible(child: Container(width: 110, child: AutoSizeText('West Bengal', style: TextStyle(fontSize: 15, color: Colors.black),))),
-                                            SizedBox(width: 10,),
-                                            Expanded(
-                                              child: Row(
-                                                crossAxisAlignment: CrossAxisAlignment.center,
-                                                mainAxisAlignment: MainAxisAlignment.end,
-                                                children: [
-                                                  AutoSizeText('+0.00', style: TextStyle(fontSize: 15, color: Colors.lightGreen)),
-                                                  SizedBox(width: 5,),
-                                                  Container(
-                                                      width: 59,
-                                                      height: 33,
-                                                      color: Color.fromRGBO(
-                                                          217, 217, 217, 1.0),
-                                                      child: Padding(
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Flexible(child: Container(width: 110, child: AutoSizeText('West Bengal', style: TextStyle(fontSize: 15, color: Colors.black),))),
+                                          SizedBox(width: 10,),
+                                          Expanded(
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.end,
+                                              children: [
+                                                AutoSizeText('+0.00', style: TextStyle(fontSize: 15, color: Colors.lightGreen)),
+                                                SizedBox(width: 5,),
+                                                Container(
+                                                    width: 59,
+                                                    height: 33,
+                                                    color: Color.fromRGBO(
+                                                        217, 217, 217, 1.0),
+                                                    child: Padding(
                                                       padding: const EdgeInsets.all(8.0), child: AutoSizeText('98.33', style: TextStyle(fontSize: 15, color: Color.fromRGBO(124, 123, 123, 1.0))),
-                                                  )),
-                                                  SizedBox(width: 5,),
-                                                  Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
-                                                ],
-                                              ),
+                                                    )),
+                                                SizedBox(width: 5,),
+                                                Image.asset('images/rightarrowpic.png', width: 13, height: 13,)
+                                              ],
                                             ),
-                                            SizedBox(width: 10,),
-                                          ],
-                                        ),
+                                          ),
+                                          SizedBox(width: 10,),
+                                        ],
                                       ),
                                     ),
                                   ),
