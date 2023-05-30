@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/screens/bank/add_bank.dart';
+import 'package:safetranslog/screens/bid/company_details.dart';
+import 'package:safetranslog/screens/diselcard/diselcard_home.dart';
+import 'package:safetranslog/screens/driver/driver_list.dart';
+import 'package:safetranslog/screens/enquiry/enquiry_bank.dart';
+import 'package:safetranslog/screens/fastag/fastag_home.dart';
 import 'package:safetranslog/screens/gps/gps1.dart';
 import 'package:safetranslog/screens/gps/gps2.dart';
+import 'package:safetranslog/screens/kyc/kyc_name.dart';
 import 'package:safetranslog/screens/petrolprice/city_price_list.dart';
 import 'package:safetranslog/screens/petrolprice/pump_price_list.dart';
 import 'package:safetranslog/screens/petrolprice/state_price_list.dart';
+import 'package:safetranslog/screens/truck/add_truck.dart';
 import 'package:safetranslog/screens/vehicle/nearbyvehicle.dart';
 import 'package:safetranslog/screens/vehicle/vehicle_current_location.dart';
+import 'package:safetranslog/screens/wallet/wallet_home.dart';
 
 
 class NavigationDrawerList extends StatefulWidget {
@@ -44,11 +53,11 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
         padding: EdgeInsets.zero,
         children: [
            Container(
-             height: 80,
+             height: 130,
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
-            child: Center(child: Image.asset("images/safetranslogappbarlogo.png", width: 164, height: 48,)),
+            child: Center(child: Image.asset("images/safetranslogappbarlogo.png", width: 164, height: 54,)),
           ),
           ListTile(
             title: const Text('Place Your Bid'),
@@ -56,63 +65,74 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
               // Update the state of the app
               // ...
               // Then close the drawer
-              Navigator.pop(context);
+              // Navigator.pop(context);
+
+              Navigator.pushNamed(context, CompanyDetails.id);
             },
           ),
           ListTile(
             title: const Text('KYC'),
             onTap: () {
 
-              Navigator.pop(context);
+              // Navigator.pop(context);
+
+              Navigator.pushNamed(context, KycName.id);
             },
           ),
           ListTile(
             title: const Text('Add Truck'),
             onTap: () {
 
-              Navigator.pop(context);
+              // Navigator.pop(context);
+
+              Navigator.pushNamed(context, AddTruck.id);
             },
           ),
           ListTile(
             title: const Text('Driver'),
             onTap: () {
 
-              Navigator.pop(context);
+              // Navigator.pop(context);
+              Navigator.pushNamed(context, DriverList.id);
             },
           ),
           ListTile(
             title: const Text('Wallet'),
             onTap: () {
 
-              Navigator.pop(context);
+
+              Navigator.pushNamed(context, WalletHome.id);
             },
           ),
           ListTile(
             title: const Text('Add Bank'),
             onTap: () {
 
-              Navigator.pop(context);
+              Navigator.pushNamed(context, AddBank.id);
             },
           ),
           ListTile(
             title: const Text('Enquiry'),
             onTap: () {
 
-              Navigator.pop(context);
+              // Navigator.pop(context);
+              Navigator.pushNamed(context, EnquiryBank.id);
             },
           ),
           ListTile(
             title: const Text('Disel Card'),
             onTap: () {
 
-              Navigator.pop(context);
+              // Navigator.pop(context);
+              Navigator.pushNamed(context, DiselCardHome.id);
             },
           ),
           ListTile(
             title: const Text('FasTag'),
             onTap: () {
 
-              Navigator.pop(context);
+              // Navigator.pop(context);
+              Navigator.pushNamed(context, FasTagHome.id);
             },
           ),
           ListTile(
@@ -157,7 +177,7 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
               Navigator.pushNamed(context, StatePriceList.id);
             },
           ),
-          ListTile(
+          /*ListTile(
             title: const Text('City Wise Price List'),
             onTap: () {
 
@@ -165,7 +185,7 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
 
               Navigator.pushNamed(context, CityPriceList.id);
             },
-          ),
+          ),*/
           ListTile(
             title: const Text('Pump Wise Price List'),
             onTap: () {
