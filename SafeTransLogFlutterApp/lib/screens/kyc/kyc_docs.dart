@@ -298,7 +298,7 @@ class _KycDocsState extends State<KycDocs> {
                                 padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                 child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Submit', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
-                                  Navigator.pushNamed(context, AddTruck.id);
+                                  // Navigator.pushNamed(context, AddTruck.id);
                                 }
                                 ),
                               ),

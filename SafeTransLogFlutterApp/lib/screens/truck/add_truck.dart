@@ -185,7 +185,7 @@ class _AddTruckState extends State<AddTruck> {
                                 padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                 child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Add Truck', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
-                                  Navigator.pushNamed(context, DriverList.id);
+                                  // Navigator.pushNamed(context, DriverList.id);
                                 }
                                 ),
                               ),

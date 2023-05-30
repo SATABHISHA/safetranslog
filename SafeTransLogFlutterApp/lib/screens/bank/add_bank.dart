@@ -318,7 +318,7 @@ class _AddBankState extends State<AddBank> {
                                 padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                 child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'NEXT', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
-                                  Navigator.pushNamed(context, EnquiryBank.id);
+                                  // Navigator.pushNamed(context, EnquiryBank.id);
                                 }
                                 ),
                               ),

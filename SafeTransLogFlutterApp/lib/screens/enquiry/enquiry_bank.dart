@@ -313,7 +313,7 @@ class _EnquiryBankState extends State<EnquiryBank> {
                                 padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                 child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Check', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
-                                  Navigator.pushNamed(context, DiselCardHome.id);
+                                  // Navigator.pushNamed(context, DiselCardHome.id);
                                 }
                                 ),
                               ),

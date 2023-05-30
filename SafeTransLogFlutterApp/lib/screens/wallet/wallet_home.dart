@@ -153,7 +153,7 @@ class _WalletHomeState extends State<WalletHome> {
                                       padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                       child: RoundedButton(colour: Color.fromRGBO(11, 7, 84, 1.0), title: 'Add Money on Wallet', onPressed:() async {
                                         // EasyLoading.show(status: 'Loading...');
-                                        Navigator.pushNamed(context, AddBank.id);
+                                        // Navigator.pushNamed(context, AddBank.id);
                                       }
                                       ),
                                     ),

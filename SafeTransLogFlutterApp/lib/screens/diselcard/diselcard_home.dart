@@ -184,7 +184,7 @@ class _DiselCardHomeState extends State<DiselCardHome> {
                                                 child: RoundedButton(colour: Color.fromRGBO(
                                                     160, 160, 161, 1.0), title: 'Activate Digital Card', onPressed:() async {
                                                   // EasyLoading.show(status: 'Loading...');
-                                                  Navigator.pushNamed(context, FasTagHome.id);
+                                                  // Navigator.pushNamed(context, FasTagHome.id);
                                                 }
                                                 ),
                                               ),

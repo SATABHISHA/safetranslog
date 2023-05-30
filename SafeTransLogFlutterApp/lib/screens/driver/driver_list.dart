@@ -123,7 +123,7 @@ class _DriverListState extends State<DriverList> {
                               children: [
                                 AutoSizeText('All Driver List', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Colors.black),),
                                 MaterialButton(onPressed: () async {
-                                  Navigator.pushNamed(context, WalletHome.id);
+                                  // Navigator.pushNamed(context, WalletHome.id);
                                 },child: AutoSizeText('Add', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Colors.blueAccent),)),
                               ],
                             ),
