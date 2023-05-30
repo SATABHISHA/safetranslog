@@ -73,7 +73,10 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
                       ),
                     ),
                   ),
-                  Center(child: Image.asset("images/safetranslogappbarlogo.png", width: 164, height: 54,))
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 25, 0, 0),
+                    child: Center(child: Image.asset("images/safetranslogappbarlogo.png", width: 164, height: 64,)),
+                  )
             ]),
           ),
           ListTile(
