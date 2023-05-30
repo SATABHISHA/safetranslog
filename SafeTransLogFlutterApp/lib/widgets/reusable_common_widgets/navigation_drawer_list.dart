@@ -5,6 +5,7 @@ import 'package:safetranslog/screens/gps/gps2.dart';
 import 'package:safetranslog/screens/petrolprice/city_price_list.dart';
 import 'package:safetranslog/screens/petrolprice/pump_price_list.dart';
 import 'package:safetranslog/screens/petrolprice/state_price_list.dart';
+import 'package:safetranslog/screens/vehicle/nearbyvehicle.dart';
 import 'package:safetranslog/screens/vehicle/vehicle_current_location.dart';
 
 
@@ -143,7 +144,9 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
             title: const Text('Nearby Vehicle'),
             onTap: () {
 
-              Navigator.pop(context);
+              // Navigator.pop(context);
+
+              Navigator.pushNamed(context, NearbyVehicle.id);
             },
           ),
           ListTile(

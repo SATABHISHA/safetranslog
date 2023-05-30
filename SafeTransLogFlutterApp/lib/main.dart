@@ -27,6 +27,7 @@ import 'screens/enquiry/enquiry_bank.dart';
 import 'screens/kyc/kyc_address.dart';
 import 'screens/kyc/kyc_docs.dart';
 import 'screens/petrolprice/city_price_list.dart';
+import 'screens/vehicle/nearbyvehicle.dart';
 import 'screens/vehicle/vehicle_current_location.dart';
 
 void main() async{
@@ -76,6 +77,7 @@ class MyApp extends StatelessWidget {
         CityPriceList.id: (context)=> CityPriceList(),
         PumpPriceList.id: (context)=> PumpPriceList(),
         VehicleCurrentLocation.id: (context)=> VehicleCurrentLocation(),
+        NearbyVehicle.id: (context)=> NearbyVehicle(),
       },
     );
   }
