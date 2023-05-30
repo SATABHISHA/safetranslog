@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:safetranslog/screens/gps/gps1.dart';
 import 'package:safetranslog/screens/gps/gps2.dart';
+import 'package:safetranslog/screens/petrolprice/state_price_list.dart';
 
 
 class NavigationDrawerList extends StatefulWidget {
@@ -144,7 +145,8 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
             title: const Text('State Wise Price List'),
             onTap: () {
 
-              Navigator.pop(context);
+              // Navigator.pop(context);
+              Navigator.pushNamed(context, StatePriceList.id);
             },
           ),
           ListTile(
