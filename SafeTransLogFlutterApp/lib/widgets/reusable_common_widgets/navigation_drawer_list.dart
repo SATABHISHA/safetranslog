@@ -5,6 +5,7 @@ import 'package:safetranslog/screens/gps/gps2.dart';
 import 'package:safetranslog/screens/petrolprice/city_price_list.dart';
 import 'package:safetranslog/screens/petrolprice/pump_price_list.dart';
 import 'package:safetranslog/screens/petrolprice/state_price_list.dart';
+import 'package:safetranslog/screens/vehicle/vehicle_current_location.dart';
 
 
 class NavigationDrawerList extends StatefulWidget {
@@ -133,7 +134,9 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
             title: const Text('Vehicle Current Location'),
             onTap: () {
 
-              Navigator.pop(context);
+              // Navigator.pop(context);
+              Navigator.pushNamed(context, VehicleCurrentLocation.id);
+
             },
           ),
           ListTile(
@@ -164,7 +167,7 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
             title: const Text('Pump Wise Price List'),
             onTap: () {
 
-              Navigator.pop(context);
+              // Navigator.pop(context);
 
               Navigator.pushNamed(context, PumpPriceList.id);
             },
