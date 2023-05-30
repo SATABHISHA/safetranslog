@@ -79,6 +79,7 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
                   )
             ]),
           ),
+
           ListTile(
             title: const Text('Place Your Bid'),
             onTap: () {
