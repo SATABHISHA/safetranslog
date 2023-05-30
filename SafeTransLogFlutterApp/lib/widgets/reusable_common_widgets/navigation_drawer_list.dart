@@ -57,7 +57,24 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
-            child: Center(child: Image.asset("images/safetranslogappbarlogo.png", width: 164, height: 54,)),
+            child: Stack(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 20, 10, 0),
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: MaterialButton(
+                        onPressed: (){Navigator.pop(context);print('Clicked');},
+                        child: Container(
+                          width: 60,
+                          height: 60,
+                          child: Icon(Icons.close, color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Center(child: Image.asset("images/safetranslogappbarlogo.png", width: 164, height: 54,))
+            ]),
           ),
           ListTile(
             title: const Text('Place Your Bid'),
