@@ -15,6 +15,7 @@ import 'package:safetranslog/screens/gps/gps2.dart';
 import 'package:safetranslog/screens/kyc/kyc_name.dart';
 import 'package:safetranslog/screens/login/login_user.dart';
 import 'package:safetranslog/screens/login/verify_user_mobile.dart';
+import 'package:safetranslog/screens/petrolprice/pump_price_list.dart';
 import 'package:safetranslog/screens/petrolprice/state_price_list.dart';
 import 'package:safetranslog/screens/splash_screen.dart';
 import 'package:safetranslog/screens/truck/add_truck.dart';
@@ -72,6 +73,7 @@ class MyApp extends StatelessWidget {
         Gps2.id: (context)=> Gps2(),
         StatePriceList.id: (context)=> StatePriceList(),
         CityPriceList.id: (context)=> CityPriceList(),
+        PumpPriceList.id: (context)=> PumpPriceList(),
       },
     );
   }
