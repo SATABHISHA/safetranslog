@@ -34,13 +34,14 @@ const kTextFieldDecorationForMFA = InputDecoration(
     contentPadding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(2)),
+        borderSide: BorderSide(color: Color.fromRGBO(221, 218, 218, 1.0), width: 1)
     ),
     enabledBorder: OutlineInputBorder(
-      borderSide: BorderSide(color: Color.fromRGBO(221, 218, 218, 1.0), width: 0),
+      borderSide: BorderSide(color: Color.fromRGBO(221, 218, 218, 1.0), width: 1),
       borderRadius: BorderRadius.all(Radius.circular(2.0)),
     ),
     focusedBorder: OutlineInputBorder(
-      borderSide: BorderSide(color: Color.fromRGBO(221, 218, 218, 1.0), width: 0),
+      borderSide: BorderSide(color: Color.fromRGBO(221, 218, 218, 1.0), width: 1),
       borderRadius: BorderRadius.all(Radius.circular(2.0)),
     )
 );

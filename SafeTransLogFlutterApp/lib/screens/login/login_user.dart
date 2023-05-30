@@ -53,7 +53,7 @@ class _LoginUserState extends State<LoginUser> {
         body: Container(
           // color: Colors.lightGreenAccent,
           decoration: BoxDecoration(
-              gradient: LinearGradient(
+              /*gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: [
@@ -63,7 +63,8 @@ class _LoginUserState extends State<LoginUser> {
                   Colors.redAccent,
 
                 ],
-              )
+              )*/
+            color: Color.fromRGBO(2, 72, 254, 1.0)
           ),
           child: SafeArea(
             child: Stack(
@@ -82,7 +83,7 @@ class _LoginUserState extends State<LoginUser> {
                  Image.asset("images/safetransloglogo.png", width: 150, height: 150,),
                  SizedBox(height: 20,),
                  Center(child: Text('SafeTranslog.com', style: TextStyle(color: Color.fromRGBO(
-                     70, 70, 70, 1.0), fontSize: 20, fontWeight: FontWeight.bold),)),
+                     250, 250, 250, 1.0), fontSize: 20, fontWeight: FontWeight.bold),)),
                ],
                   ),
                 Column(
@@ -96,14 +97,14 @@ class _LoginUserState extends State<LoginUser> {
                         width: double.infinity,
                         // color: Colors.white,
                         decoration: BoxDecoration(
-                            boxShadow: [
+                            /*boxShadow: [
                               BoxShadow(
                                 color: Color.fromRGBO(215, 227, 105, 1.0),
                                 blurRadius: 15.0,
                                 spreadRadius: 2.0,
                                 offset: Offset(0.0, 0.0),
                               )
-                            ],
+                            ],*/
                             borderRadius: BorderRadius.circular(20),
                             color: Colors.white
                             /*gradient: LinearGradient(

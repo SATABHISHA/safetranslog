@@ -43,7 +43,7 @@ class _PlaceBidState extends State<PlaceBid> {
         body: Container(
           // color: Colors.lightGreenAccent,
           decoration: BoxDecoration(
-              gradient: LinearGradient(
+            /*  gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: [
@@ -53,7 +53,8 @@ class _PlaceBidState extends State<PlaceBid> {
                   Colors.redAccent,
 
                 ],
-              )
+              )*/
+              color: Color.fromRGBO(2, 72, 254, 1.0)
           ),
           child: SafeArea(
             child: Column(
@@ -99,22 +100,24 @@ class _PlaceBidState extends State<PlaceBid> {
                       width: double.infinity,
                       height: double.infinity,
                       decoration: BoxDecoration(
-                        boxShadow: [
+                        /*boxShadow: [
                           BoxShadow(
                             color: Color.fromRGBO(215, 227, 105, 1.0),
                             blurRadius: 15.0,
                             spreadRadius: 2.0,
                             offset: Offset(0.0, 0.0),
                           )
-                        ],
+                        ],*/
                         // color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         gradient: LinearGradient(
                           begin: Alignment.topRight,
                           end: Alignment.bottomLeft,
                           colors: [
-                            Colors.white,
-                            Colors.lightGreenAccent,
+                            /*Colors.white,
+                            Colors.lightGreenAccent,*/
+                            Color.fromRGBO(243, 238, 238, 1.0),
+                            Color.fromRGBO(255, 255, 255, 1.0),
                           ],
                         ),
                       ),
@@ -136,7 +139,7 @@ class _PlaceBidState extends State<PlaceBid> {
                                       ),),
                                     ),
                                     SizedBox(width: 15,),
-                                    Center(child: AutoSizeText('Calcutta Express Company', style: TextStyle(fontSize: 14, color: Colors.black),textAlign: TextAlign.center,)),
+                                    Flexible(fit: FlexFit.loose, child: Center(child: AutoSizeText('Calcutta Express Company', style: TextStyle(fontSize: 17, color: Colors.black, fontWeight:  FontWeight.bold),textAlign: TextAlign.center,))),
                                   ],
                                 ),
                               ),
@@ -149,9 +152,9 @@ class _PlaceBidState extends State<PlaceBid> {
                                     Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        AutoSizeText('LCV Required', style: TextStyle(fontSize: 14, color: Colors.black),textAlign: TextAlign.center,),
+                                        AutoSizeText('LCV Required', style: TextStyle(fontSize: 15, color: Colors.black, fontWeight:  FontWeight.bold),textAlign: TextAlign.center,),
                                         SizedBox(height: 10,),
-                                        AutoSizeText('Kolkata To Shiliguri', style: TextStyle(fontSize: 14, color: Colors.blueAccent),textAlign: TextAlign.center,),
+                                        AutoSizeText('Kolkata To Shiliguri', style: TextStyle(fontSize: 15, color: Colors.blueAccent, fontWeight:  FontWeight.bold),textAlign: TextAlign.center,),
                                       ],
                                     ),
                                     Image.asset('images/truckpic.png', width: 51, height: 36,)
@@ -165,7 +168,7 @@ class _PlaceBidState extends State<PlaceBid> {
                                 child: AutoSizeText(
                                   'Enter Your Price',
                                   style: TextStyle(color: Color.fromRGBO(
-                                      133, 132, 132, 1.0),
+                                      94, 94, 94, 1.0),
                                       fontSize: 18,
                                       fontWeight: FontWeight.normal),
                                   wrapWords: true,
@@ -188,7 +191,7 @@ class _PlaceBidState extends State<PlaceBid> {
                                     },
                                     style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                     decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                        246, 242, 242, 1.0),hintText: ''),
+                                        255, 255, 255, 1.0),hintText: ''),
                                   ),
                                 ),
                               ),

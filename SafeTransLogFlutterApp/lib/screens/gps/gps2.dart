@@ -38,7 +38,7 @@ class _Gps2State extends State<Gps2> {
         ),
         body: Container(
           // color: Colors.lightGreenAccent,
-          decoration: BoxDecoration(
+          /*decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
@@ -50,7 +50,8 @@ class _Gps2State extends State<Gps2> {
 
                 ],
               )
-          ),
+          ),*/
+          color: Color.fromRGBO(2, 72, 254, 1.0),
           child: SafeArea(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -94,22 +95,24 @@ class _Gps2State extends State<Gps2> {
                       width: double.infinity,
                       height: double.infinity,
                       decoration: BoxDecoration(
-                        boxShadow: [
+                        /*boxShadow: [
                           BoxShadow(
                             color: Color.fromRGBO(215, 227, 105, 1.0),
                             blurRadius: 15.0,
                             spreadRadius: 2.0,
                             offset: Offset(0.0, 0.0),
                           )
-                        ],
+                        ],*/
                         // color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         gradient: LinearGradient(
                           begin: Alignment.topRight,
                           end: Alignment.bottomLeft,
                           colors: [
-                            Colors.white,
-                            Colors.lightGreenAccent,
+                            /*Colors.white,
+                            Colors.lightGreenAccent,*/
+                            Color.fromRGBO(243, 238, 238, 1.0),
+                            Color.fromRGBO(255, 255, 255, 1.0),
                           ],
                         ),
                       ),
@@ -121,7 +124,7 @@ class _Gps2State extends State<Gps2> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               // crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                AutoSizeText('See all GPS features', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),),
+                                AutoSizeText('See all GPS features', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),),
                               ],
                             ),
                           ),
@@ -131,7 +134,7 @@ class _Gps2State extends State<Gps2> {
                               shrinkWrap: true,
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                                  padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
@@ -141,17 +144,17 @@ class _Gps2State extends State<Gps2> {
                                           children: [
                                             Image.asset('images/vehiclepic.png', width: 27, height: 18,),
                                             SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('Real time vehicle track', style: TextStyle(fontSize: 13, color: Colors.black),))
+                                            Flexible(child: AutoSizeText('Real time vehicle track', style: TextStyle(fontSize: 17, color: Colors.black),))
                                           ],
                                         ),
                                       ),
                                       SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
+                                      Image.asset('images/addpic.png', width: 15, height: 15,),
                                     ],
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                                  padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
@@ -161,17 +164,17 @@ class _Gps2State extends State<Gps2> {
                                           children: [
                                             Image.asset('images/vehiclepic.png', width: 27, height: 18,),
                                             SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('Theft Protection', style: TextStyle(fontSize: 13, color: Colors.black),))
+                                            Flexible(child: AutoSizeText('Theft Protection', style: TextStyle(fontSize: 17, color: Colors.black),))
                                           ],
                                         ),
                                       ),
                                       SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
+                                      Image.asset('images/addpic.png', width: 15, height: 15,),
                                     ],
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                                  padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
@@ -181,17 +184,17 @@ class _Gps2State extends State<Gps2> {
                                           children: [
                                             Image.asset('images/vehiclepic.png', width: 27, height: 18,),
                                             SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('Pan-India Technical Network', style: TextStyle(fontSize: 13, color: Colors.black),))
+                                            Flexible(child: AutoSizeText('Pan-India Technical Network', style: TextStyle(fontSize: 17, color: Colors.black),))
                                           ],
                                         ),
                                       ),
                                       SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
+                                      Image.asset('images/addpic.png', width: 15, height: 15,),
                                     ],
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                                  padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
@@ -201,17 +204,17 @@ class _Gps2State extends State<Gps2> {
                                           children: [
                                             Image.asset('images/vehiclepic.png', width: 27, height: 18,),
                                             SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('24/7 Customer Support', style: TextStyle(fontSize: 13, color: Colors.black),))
+                                            Flexible(child: AutoSizeText('24/7 Customer Support', style: TextStyle(fontSize: 17, color: Colors.black),))
                                           ],
                                         ),
                                       ),
                                       SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
+                                      Image.asset('images/addpic.png', width: 15, height: 15,),
                                     ],
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                                  padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
@@ -221,17 +224,17 @@ class _Gps2State extends State<Gps2> {
                                           children: [
                                             Image.asset('images/vehiclepic.png', width: 27, height: 18,),
                                             SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('Nearest Petrol Pump', style: TextStyle(fontSize: 13, color: Colors.black),))
+                                            Flexible(child: AutoSizeText('Nearest Petrol Pump', style: TextStyle(fontSize: 17, color: Colors.black),))
                                           ],
                                         ),
                                       ),
                                       SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
+                                      Image.asset('images/addpic.png', width: 15, height: 15,),
                                     ],
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                                  padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
@@ -241,17 +244,17 @@ class _Gps2State extends State<Gps2> {
                                           children: [
                                             Image.asset('images/vehiclepic.png', width: 27, height: 18,),
                                             SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('Nearby Vehicle', style: TextStyle(fontSize: 13, color: Colors.black),))
+                                            Flexible(child: AutoSizeText('Nearby Vehicle', style: TextStyle(fontSize: 17, color: Colors.black),))
                                           ],
                                         ),
                                       ),
                                       SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
+                                      Image.asset('images/addpic.png', width: 15, height: 15,),
                                     ],
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                                  padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
@@ -261,17 +264,17 @@ class _Gps2State extends State<Gps2> {
                                           children: [
                                             Image.asset('images/vehiclepic.png', width: 27, height: 18,),
                                             SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('Navigate', style: TextStyle(fontSize: 13, color: Colors.black),))
+                                            Flexible(child: AutoSizeText('Navigate', style: TextStyle(fontSize: 17, color: Colors.black),))
                                           ],
                                         ),
                                       ),
                                       SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
+                                      Image.asset('images/addpic.png', width: 15, height: 15,),
                                     ],
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                                  padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
@@ -281,17 +284,17 @@ class _Gps2State extends State<Gps2> {
                                           children: [
                                             Image.asset('images/vehiclepic.png', width: 27, height: 18,),
                                             SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('Emergency', style: TextStyle(fontSize: 13, color: Colors.black),))
+                                            Flexible(child: AutoSizeText('Emergency', style: TextStyle(fontSize: 17, color: Colors.black),))
                                           ],
                                         ),
                                       ),
                                       SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
+                                      Image.asset('images/addpic.png', width: 15, height: 15,),
                                     ],
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                                  padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
@@ -301,12 +304,12 @@ class _Gps2State extends State<Gps2> {
                                           children: [
                                             Image.asset('images/vehiclepic.png', width: 27, height: 18,),
                                             SizedBox(width: 10,),
-                                            Flexible(child: AutoSizeText('Over speeding alert', style: TextStyle(fontSize: 13, color: Colors.black),))
+                                            Flexible(child: AutoSizeText('Over speeding alert', style: TextStyle(fontSize: 17, color: Colors.black),))
                                           ],
                                         ),
                                       ),
                                       SizedBox(width: 10,),
-                                      Image.asset('images/addpic.png', width: 13, height: 13,),
+                                      Image.asset('images/addpic.png', width: 15, height: 15,),
                                     ],
                                   ),
                                 ),

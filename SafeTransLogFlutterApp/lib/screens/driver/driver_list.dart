@@ -38,7 +38,7 @@ class _DriverListState extends State<DriverList> {
         ),
         body: Container(
           // color: Colors.lightGreenAccent,
-          decoration: BoxDecoration(
+          /*decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
@@ -50,7 +50,9 @@ class _DriverListState extends State<DriverList> {
 
                 ],
               )
-          ),
+          ),*/
+          color: Color.fromRGBO(2, 72, 254, 1.0),
+
           child: SafeArea(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -94,22 +96,24 @@ class _DriverListState extends State<DriverList> {
                       width: double.infinity,
                       height: double.infinity,
                       decoration: BoxDecoration(
-                        boxShadow: [
+                        /*boxShadow: [
                           BoxShadow(
                             color: Color.fromRGBO(215, 227, 105, 1.0),
                             blurRadius: 15.0,
                             spreadRadius: 2.0,
                             offset: Offset(0.0, 0.0),
                           )
-                        ],
+                        ],*/
                         // color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         gradient: LinearGradient(
                           begin: Alignment.topRight,
                           end: Alignment.bottomLeft,
                           colors: [
-                            Colors.white,
-                            Colors.lightGreenAccent,
+                            /*Colors.white,
+                            Colors.lightGreenAccent,*/
+                            Color.fromRGBO(243, 238, 238, 1.0),
+                            Color.fromRGBO(255, 255, 255, 1.0),
                           ],
                         ),
                       ),
@@ -121,10 +125,10 @@ class _DriverListState extends State<DriverList> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               // crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                AutoSizeText('All Driver List', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Colors.black),),
+                                AutoSizeText('All Driver List', style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold, color: Colors.black),),
                                 MaterialButton(onPressed: () async {
                                   // Navigator.pushNamed(context, WalletHome.id);
-                                },child: AutoSizeText('Add', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Colors.blueAccent),)),
+                                },child: AutoSizeText('Add', style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal, color: Colors.blueAccent),)),
                               ],
                             ),
                           ),
@@ -155,9 +159,9 @@ class _DriverListState extends State<DriverList> {
                                                 children: [
                                                   AutoSizeText('Rohan Saha', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Colors.black),),
                                                   AutoSizeText('Kolkata West Bengal', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Color.fromRGBO(
-                                                      176, 175, 175, 1.0)),),
+                                                      91, 91, 91, 1.0)),),
                                                   AutoSizeText('9831098902', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Color.fromRGBO(
-                                                      176, 175, 175, 1.0)),),
+                                                      91, 91, 91, 1.0)),),
                                                 ],
                                               )
                                             ],

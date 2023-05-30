@@ -40,7 +40,7 @@ class _KycDocsState extends State<KycDocs> {
         ),
         body: Container(
           // color: Colors.lightGreenAccent,
-          decoration: BoxDecoration(
+          /*decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
@@ -52,7 +52,8 @@ class _KycDocsState extends State<KycDocs> {
 
                 ],
               )
-          ),
+          ),*/
+          color: Color.fromRGBO(2, 72, 254, 1.0),
           child: SafeArea(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -96,22 +97,24 @@ class _KycDocsState extends State<KycDocs> {
                       width: double.infinity,
                       height: double.infinity,
                       decoration: BoxDecoration(
-                        boxShadow: [
+                        /*boxShadow: [
                           BoxShadow(
                             color: Color.fromRGBO(215, 227, 105, 1.0),
                             blurRadius: 15.0,
                             spreadRadius: 2.0,
                             offset: Offset(0.0, 0.0),
                           )
-                        ],
+                        ],*/
                         // color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         gradient: LinearGradient(
                           begin: Alignment.topRight,
                           end: Alignment.bottomLeft,
                           colors: [
-                            Colors.white,
-                            Colors.lightGreenAccent,
+                            /*Colors.white,
+                            Colors.lightGreenAccent,*/
+                            Color.fromRGBO(243, 238, 238, 1.0),
+                            Color.fromRGBO(255, 255, 255, 1.0),
                           ],
                         ),
                       ),
@@ -132,7 +135,7 @@ class _KycDocsState extends State<KycDocs> {
                                       style: TextStyle(color: Color.fromRGBO(
                                           37, 37, 37, 1.0),
                                           fontSize: 18,
-                                          fontWeight: FontWeight.bold),
+                                          fontWeight: FontWeight.normal),
                                       wrapWords: true,
                                       minFontSize: 8,
                                       maxFontSize: 20,
@@ -147,7 +150,7 @@ class _KycDocsState extends State<KycDocs> {
                                     children: [
                                       Image.asset('images/kycverificationarrow.png', width: 28, height: 27,),
                                       SizedBox(width: 10,),
-                                      AutoSizeText('RC Photo', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Colors.black),)
+                                      AutoSizeText('RC Photo', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black),)
                                     ],
                                   ),
                                 ),
@@ -158,7 +161,7 @@ class _KycDocsState extends State<KycDocs> {
                                     children: [
                                       Image.asset('images/kycverificationarrow.png', width: 28, height: 27,),
                                       SizedBox(width: 10,),
-                                      AutoSizeText('Truck Owner Details', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Colors.black),)
+                                      AutoSizeText('Truck Owner Details', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black),)
                                     ],
                                   ),
                                 ),
@@ -173,7 +176,7 @@ class _KycDocsState extends State<KycDocs> {
                                         child: Row(
                                           children: [
                                             Flexible(
-                                              flex: 4,
+                                              flex: 2,
                                               child: SizedBox(
                                                 width: double.infinity,
                                                 height: 50,
@@ -187,7 +190,7 @@ class _KycDocsState extends State<KycDocs> {
                                                   },
                                                   style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                                   decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                      246, 242, 242, 1.0),hintText: 'RC Photo'),
+                                                      255, 255, 255, 1.0),hintText: 'RC Photo'),
                                                 ),
                                               ),
                                             ),
@@ -208,7 +211,7 @@ class _KycDocsState extends State<KycDocs> {
                                                     minWidth: 200.0,
                                                     height: 50.0,
                                                     child: AutoSizeText(
-                                                      'Browse',
+                                                      'Browse Files',
                                                       style: TextStyle(color: Colors.black, fontSize: 15,),
                                                       textAlign: TextAlign.center,
                                                       maxLines: 1,
@@ -230,7 +233,7 @@ class _KycDocsState extends State<KycDocs> {
                                         child: Row(
                                           children: [
                                             Flexible(
-                                              flex: 4,
+                                              flex: 2,
                                               child: SizedBox(
                                                 width: double.infinity,
                                                 height: 50,
@@ -243,8 +246,7 @@ class _KycDocsState extends State<KycDocs> {
                                                     // userId = value;
                                                   },
                                                   style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
-                                                  decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                      246, 242, 242, 1.0),hintText: 'Truck Owner Details'),
+                                                  decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(255, 255, 255, 1.0),hintText: 'Truck Owner Details'),
                                                 ),
                                               ),
                                             ),
@@ -265,7 +267,7 @@ class _KycDocsState extends State<KycDocs> {
                                                     minWidth: 200.0,
                                                     height: 50.0,
                                                     child: AutoSizeText(
-                                                      'Browse',
+                                                      'Browse Files',
                                                       style: TextStyle(color: Colors.black, fontSize: 15,),
                                                       textAlign: TextAlign.center,
                                                       maxLines: 1,

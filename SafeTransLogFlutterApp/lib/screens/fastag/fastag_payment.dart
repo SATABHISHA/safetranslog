@@ -44,7 +44,7 @@ class _FasTagPaymentState extends State<FasTagPayment> {
         body: Container(
           // color: Colors.lightGreenAccent,
           decoration: BoxDecoration(
-              gradient: LinearGradient(
+              /*gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: [
@@ -54,7 +54,8 @@ class _FasTagPaymentState extends State<FasTagPayment> {
                   Colors.redAccent,
 
                 ],
-              )
+              )*/
+              color: Color.fromRGBO(2, 72, 254, 1.0)
           ),
           child: SafeArea(
             child: Column(
@@ -99,22 +100,25 @@ class _FasTagPaymentState extends State<FasTagPayment> {
                       width: double.infinity,
                       height: double.infinity,
                       decoration: BoxDecoration(
-                        boxShadow: [
+                        /*boxShadow: [
                           BoxShadow(
                             color: Color.fromRGBO(215, 227, 105, 1.0),
                             blurRadius: 15.0,
                             spreadRadius: 2.0,
                             offset: Offset(0.0, 0.0),
                           )
-                        ],
+                        ],*/
                         // color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         gradient: LinearGradient(
                           begin: Alignment.topRight,
                           end: Alignment.bottomLeft,
                           colors: [
-                            Colors.white,
-                            Colors.lightGreenAccent,
+                            /*Colors.white,
+                            Colors.lightGreenAccent,*/
+                            Color.fromRGBO(243, 238, 238, 1.0),
+                            Color.fromRGBO(255, 255, 255, 1.0),
+
                           ],
                         ),
                       ),

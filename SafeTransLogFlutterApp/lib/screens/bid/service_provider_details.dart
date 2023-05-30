@@ -43,7 +43,7 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
           body: Container(
             // color: Colors.lightGreenAccent,
             decoration: BoxDecoration(
-                gradient: LinearGradient(
+                /*gradient: LinearGradient(
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                   colors: [
@@ -53,7 +53,8 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
                     Colors.redAccent,
 
                   ],
-                )
+                )*/
+                color: Color.fromRGBO(2, 72, 254, 1.0)
             ),
             child: SafeArea(
               child: Column(
@@ -98,22 +99,24 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
                         width: double.infinity,
                         height: double.infinity,
                         decoration: BoxDecoration(
-                          boxShadow: [
+                          /*boxShadow: [
                             BoxShadow(
                               color: Color.fromRGBO(215, 227, 105, 1.0),
                               blurRadius: 15.0,
                               spreadRadius: 2.0,
                               offset: Offset(0.0, 0.0),
                             )
-                          ],
+                          ],*/
                           // color: Colors.white,
                           borderRadius: BorderRadius.circular(20),
                           gradient: LinearGradient(
                             begin: Alignment.topRight,
                             end: Alignment.bottomLeft,
                             colors: [
-                              Colors.white,
-                              Colors.lightGreenAccent,
+                              /*Colors.white,
+                              Colors.lightGreenAccent,*/
+                              Color.fromRGBO(243, 238, 238, 1.0),
+                              Color.fromRGBO(255, 255, 255, 1.0),
                             ],
                           ),
                         ),
@@ -141,7 +144,7 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
                                       shrinkWrap: true,
                                       children: [
                                         ListTile(
-                                          title: const Text('Load'),
+                                          title: const Text('Load',),
                                           leading: Radio<Service>(
                                             value: Service.load,
                                             groupValue: _character,

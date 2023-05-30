@@ -43,7 +43,7 @@ class _CompanyDetailsState extends State<CompanyDetails> {
         body: Container(
           // color: Colors.lightGreenAccent,
           decoration: BoxDecoration(
-              gradient: LinearGradient(
+              /*gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: [
@@ -53,7 +53,8 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                   Colors.redAccent,
 
                 ],
-              )
+              )*/
+              color: Color.fromRGBO(2, 72, 254, 1.0)
           ),
           child: SafeArea(
             child: Column(
@@ -94,22 +95,25 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                 width: double.infinity,
                 height: double.infinity,
                 decoration: BoxDecoration(
-                    boxShadow: [
+                    /*boxShadow: [
                       BoxShadow(
                         color: Color.fromRGBO(215, 227, 105, 1.0),
                         blurRadius: 15.0,
                         spreadRadius: 2.0,
                         offset: Offset(0.0, 0.0),
                       )
-                    ],
+                    ],*/
                     // color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
                     gradient: LinearGradient(
                       begin: Alignment.topRight,
                       end: Alignment.bottomLeft,
                       colors: [
-                        Colors.white,
-                        Colors.lightGreenAccent,
+                        /*Colors.white,
+                        Colors.lightGreenAccent,*/
+                        Color.fromRGBO(243, 238, 238, 1.0),
+                        Color.fromRGBO(255, 255, 255, 1.0),
+
                       ],
                     ),
                 ),
@@ -176,8 +180,7 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                                             // userId = value;
                                           },
                                           style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
-                                          decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                              246, 242, 242, 1.0),hintText: 'Enter Company Name'),
+                                          decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(246, 242, 242, 1.0),hintText: ''),
                                         ),
                                       ),
                                     ),
@@ -215,7 +218,7 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                                           },
                                           style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                           decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                              246, 242, 242, 1.0),hintText: 'Enter Address'),
+                                              246, 242, 242, 1.0),hintText: ''),
                                         ),
                                       ),
                                     ),
@@ -254,7 +257,7 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                                           },
                                           style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                           decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                              246, 242, 242, 1.0),hintText: 'Enter Zip Code'),
+                                              246, 242, 242, 1.0),hintText: ''),
                                         ),
                                       ),
                                     ),
@@ -293,7 +296,7 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                                           },
                                           style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                           decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                              246, 242, 242, 1.0),hintText: 'Enter Phone No'),
+                                              246, 242, 242, 1.0),hintText: ''),
                                         ),
                                       ),
                                     ),
@@ -332,7 +335,7 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                                           },
                                           style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                           decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                              246, 242, 242, 1.0),hintText: 'Enter Email Address'),
+                                              246, 242, 242, 1.0),hintText: ''),
                                         ),
                                       ),
                                     ),

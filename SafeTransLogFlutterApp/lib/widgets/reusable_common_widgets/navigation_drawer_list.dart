@@ -55,7 +55,7 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
            Container(
              height: 130,
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: Color.fromRGBO(2, 72, 254, 1.0),
             ),
             child: Stack(
                 children: [

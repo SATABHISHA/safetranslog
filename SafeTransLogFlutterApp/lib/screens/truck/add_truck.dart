@@ -41,7 +41,7 @@ class _AddTruckState extends State<AddTruck> {
         body: Container(
           // color: Colors.lightGreenAccent,
           decoration: BoxDecoration(
-              gradient: LinearGradient(
+              /*gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: [
@@ -51,7 +51,8 @@ class _AddTruckState extends State<AddTruck> {
                   Colors.redAccent,
 
                 ],
-              )
+              )*/
+           color: Color.fromRGBO(2, 72, 254, 1.0),
           ),
           child: SafeArea(
             child: Column(
@@ -98,22 +99,24 @@ class _AddTruckState extends State<AddTruck> {
                       width: double.infinity,
                       height: double.infinity,
                       decoration: BoxDecoration(
-                        boxShadow: [
+                        /*boxShadow: [
                           BoxShadow(
                             color: Color.fromRGBO(215, 227, 105, 1.0),
                             blurRadius: 15.0,
                             spreadRadius: 2.0,
                             offset: Offset(0.0, 0.0),
                           )
-                        ],
+                        ],*/
                         // color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         gradient: LinearGradient(
                           begin: Alignment.topRight,
                           end: Alignment.bottomLeft,
                           colors: [
-                            Colors.white,
-                            Colors.lightGreenAccent,
+                            /*Colors.white,
+                            Colors.lightGreenAccent,*/
+                            Color.fromRGBO(243, 238, 238, 1.0),
+                            Color.fromRGBO(255, 255, 255, 1.0),
                           ],
                         ),
                       ),
@@ -129,7 +132,7 @@ class _AddTruckState extends State<AddTruck> {
                                     shrinkWrap: true,
                                     children: [
                                       //---Expected Price, code starts
-                                      SizedBox(height: 15,),
+                                      SizedBox(height: 30,),
                                       Align(
                                         alignment: Alignment.centerLeft,
                                         child: Padding(
@@ -162,7 +165,7 @@ class _AddTruckState extends State<AddTruck> {
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                246, 242, 242, 1.0),hintText: ''),
+                                                255, 255, 255, 1.0),hintText: ''),
                                           ),
                                         ),
                                       ),

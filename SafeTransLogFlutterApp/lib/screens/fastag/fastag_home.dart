@@ -44,7 +44,7 @@ class _FasTagHomeState extends State<FasTagHome> {
         body: Container(
           // color: Colors.lightGreenAccent,
           decoration: BoxDecoration(
-              gradient: LinearGradient(
+              /*gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: [
@@ -54,7 +54,8 @@ class _FasTagHomeState extends State<FasTagHome> {
                   Colors.redAccent,
 
                 ],
-              )
+              )*/
+              color: Color.fromRGBO(2, 72, 254, 1.0)
           ),
           child: SafeArea(
             child: Column(
@@ -99,22 +100,24 @@ class _FasTagHomeState extends State<FasTagHome> {
                       width: double.infinity,
                       height: double.infinity,
                       decoration: BoxDecoration(
-                        boxShadow: [
+                        /*boxShadow: [
                           BoxShadow(
                             color: Color.fromRGBO(215, 227, 105, 1.0),
                             blurRadius: 15.0,
                             spreadRadius: 2.0,
                             offset: Offset(0.0, 0.0),
                           )
-                        ],
+                        ],*/
                         // color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         gradient: LinearGradient(
                           begin: Alignment.topRight,
                           end: Alignment.bottomLeft,
                           colors: [
-                            Colors.white,
-                            Colors.lightGreenAccent,
+                            /*Colors.white,
+                            Colors.lightGreenAccent,*/
+                            Color.fromRGBO(243, 238, 238, 1.0),
+                            Color.fromRGBO(255, 255, 255, 1.0),
                           ],
                         ),
                       ),
@@ -225,7 +228,7 @@ class _FasTagHomeState extends State<FasTagHome> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                        padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
                                         child: SizedBox(
                                           width: double.infinity,
                                           height: 100,
@@ -238,7 +241,7 @@ class _FasTagHomeState extends State<FasTagHome> {
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                246, 242, 242, 1.0),hintText: ''),
+                                                255, 255, 255, 1.0),hintText: ''),
                                           ),
                                         ),
                                       ),

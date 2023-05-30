@@ -23,7 +23,7 @@ class _BidConfirmationState extends State<BidConfirmation> {
       child: Scaffold(
         body: Container(
           // color: Colors.lightGreenAccent,
-          decoration: BoxDecoration(
+          /*decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
@@ -35,7 +35,8 @@ class _BidConfirmationState extends State<BidConfirmation> {
 
                 ],
               )
-          ),
+          ),*/
+          color: Color.fromRGBO(2, 72, 254, 1.0),
           child: SafeArea(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -52,22 +53,25 @@ class _BidConfirmationState extends State<BidConfirmation> {
                       width: double.infinity,
                       height: double.infinity,
                       decoration: BoxDecoration(
-                        boxShadow: [
+                        /*boxShadow: [
                           BoxShadow(
                             color: Color.fromRGBO(215, 227, 105, 1.0),
                             blurRadius: 15.0,
                             spreadRadius: 2.0,
                             offset: Offset(0.0, 0.0),
                           )
-                        ],
+                        ],*/
                         // color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         gradient: LinearGradient(
                           begin: Alignment.topRight,
                           end: Alignment.bottomLeft,
                           colors: [
-                            Colors.white,
-                            Colors.lightGreenAccent,
+                            /*Colors.white,
+                            Colors.lightGreenAccent,*/
+                            Color.fromRGBO(243, 238, 238, 1.0),
+                            Color.fromRGBO(255, 255, 255, 1.0),
+
                           ],
                         ),
                       ),
@@ -75,8 +79,9 @@ class _BidConfirmationState extends State<BidConfirmation> {
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
+                              SizedBox(height: 60,),
                               Image.asset('images/bidpic.png', width: 183, height: 223,),
                               SizedBox(height: 10,),
                               Image.asset('images/bidconfirmationmsg.png', width: 296, height: 88,),

@@ -37,7 +37,7 @@ class _PumpPriceListState extends State<PumpPriceList> {
         body: Container(
           // color: Colors.lightGreenAccent,
           decoration: BoxDecoration(
-              gradient: LinearGradient(
+              /*gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: [
@@ -47,7 +47,8 @@ class _PumpPriceListState extends State<PumpPriceList> {
                   Colors.redAccent,
 
                 ],
-              )
+              )*/
+              color: Color.fromRGBO(2, 72, 254, 1.0)
           ),
           child: SafeArea(
             child: Column(
@@ -92,22 +93,24 @@ class _PumpPriceListState extends State<PumpPriceList> {
                       width: double.infinity,
                       height: double.infinity,
                       decoration: BoxDecoration(
-                        boxShadow: [
+                        /*boxShadow: [
                           BoxShadow(
                             color: Color.fromRGBO(215, 227, 105, 1.0),
                             blurRadius: 15.0,
                             spreadRadius: 2.0,
                             offset: Offset(0.0, 0.0),
                           )
-                        ],
+                        ],*/
                         // color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         gradient: LinearGradient(
                           begin: Alignment.topRight,
                           end: Alignment.bottomLeft,
                           colors: [
-                            Colors.white,
-                            Colors.lightGreenAccent,
+                            /*Colors.white,
+                            Colors.lightGreenAccent,*/
+                            Color.fromRGBO(243, 238, 238, 1.0),
+                            Color.fromRGBO(255, 255, 255, 1.0),
                           ],
                         ),
                       ),
@@ -165,7 +168,7 @@ class _PumpPriceListState extends State<PumpPriceList> {
                                                 children: [
                                                   AutoSizeText('HP Petrol Pump Balaji', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Colors.black),),
                                                   AutoSizeText('DN-60, Street Number 13 · 033 4006 2536', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Color.fromRGBO(
-                                                      176, 175, 175, 1.0)),),
+                                                      103, 103, 103, 1.0)),),
                                                   Row(
                                                     children: [
                                                       AutoSizeText('Average Disel Price', style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: Colors.black),),
