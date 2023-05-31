@@ -174,10 +174,10 @@ class _LoginUserState extends State<LoginUser> {
                     Padding(
                       padding: EdgeInsets.fromLTRB(22, 0, 22, 30),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Text('Updated on 28.04.2023', style: TextStyle(color: Colors.white),),
+                          // Text('Updated on 28.04.2023', style: TextStyle(color: Colors.white),),
                           Text('Version 1.1', style: TextStyle(color: Colors.white),)
                         ],
                       ),
