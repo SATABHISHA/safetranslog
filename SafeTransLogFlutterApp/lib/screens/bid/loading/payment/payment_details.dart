@@ -22,7 +22,7 @@ class _AddPaymentDetailsState extends State<AddPaymentDetails> {
   bool _isDrawerOpen = false;
 
   PriceType? _pricetype = PriceType.Fixed;
-  PaymentType? _paymenttype = PaymentType.Advance;
+  PaymentType? _paymenttype = PaymentType.ToPay;
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -165,14 +165,14 @@ class _AddPaymentDetailsState extends State<AddPaymentDetails> {
                                           child: TextField(
                                             // controller: _controller_user_id,
                                             textAlign: TextAlign.left,
-                                            keyboardType: TextInputType.text,
+                                            keyboardType: TextInputType.number,
                                             maxLines: 1,
                                             onChanged: (value){
                                               // userId = value;
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                255, 255, 255, 1.0),hintText: ''),
+                                                255, 255, 255, 1.0),hintText: '24000'),
                                           ),
                                         ),
                                       ),
