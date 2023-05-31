@@ -1,9 +1,12 @@
 
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:pinput/pinput.dart';
 import 'package:safetranslog/screens/bid/company_details.dart';
+import 'package:safetranslog/screens/bid/service_provider_details.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
 
 class VerifyUserMobile extends StatefulWidget {
@@ -169,7 +172,8 @@ class _VerifyUserMobileState extends State<VerifyUserMobile> {
                                   padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                   child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'VERIFY', onPressed:() async {
                                     // EasyLoading.show(status: 'Loading...');
-                                    Navigator.pushNamed(context, CompanyDetails.id);
+                                    // Navigator.pushNamed(context, CompanyDetails.id);
+                                    Navigator.pushNamed(context, ServiceProviderDetails.id);
                                   }
                                   ),
                                 ),
