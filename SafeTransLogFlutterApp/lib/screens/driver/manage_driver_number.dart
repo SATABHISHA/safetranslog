@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:safetranslog/screens/driver/manage_driver_number.dart';
-import 'package:safetranslog/screens/wallet/wallet_home.dart';
+import 'package:safetranslog/screens/login/rounded_button.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/navigation_drawer_list.dart';
 
-
-class DriverList extends StatefulWidget {
-  // const DriverList({Key? key}) : super(key: key);
-static String id = "DriverList";
+class ManageDriver extends StatefulWidget {
+  // const ManageDriver({Key? key}) : super(key: key);
+static String id = 'ManageDriver';
   @override
-  State<DriverList> createState() => _DriverListState();
+  State<ManageDriver> createState() => _ManageDriverState();
 }
 
-class _DriverListState extends State<DriverList> {
+class _ManageDriverState extends State<ManageDriver> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   bool _isDrawerOpen = false;
   @override
@@ -39,8 +37,8 @@ class _DriverListState extends State<DriverList> {
         ),
         body: Container(
           // color: Colors.lightGreenAccent,
-          /*decoration: BoxDecoration(
-              gradient: LinearGradient(
+          decoration: BoxDecoration(
+            /*gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: [
@@ -50,16 +48,15 @@ class _DriverListState extends State<DriverList> {
                   Colors.redAccent,
 
                 ],
-              )
-          ),*/
-          color: Color.fromRGBO(2, 72, 254, 1.0),
-
+              )*/
+              color: Color.fromRGBO(2, 72, 254, 1.0)
+          ),
           child: SafeArea(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisSize: MainAxisSize.max ,
               children: [
-                /*Center(child: Text('Driver', style: TextStyle(
+                /*Center(child: Text('Wallet', style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
                     fontWeight: FontWeight.bold),)),*/
@@ -82,7 +79,7 @@ class _DriverListState extends State<DriverList> {
                     Expanded(
                       child: Container(
                         width: double.infinity,
-                        child: Text('Driver', style: TextStyle(
+                        child: AutoSizeText('Manage Driver Number', style: TextStyle(
                             fontSize: 20,
                             color: Colors.white,
                             fontWeight: FontWeight.bold),),
@@ -118,65 +115,43 @@ class _DriverListState extends State<DriverList> {
                           ],
                         ),
                       ),
-                      child: Column(
+                      child: Stack(
                         children: [
                           Padding(
-                            padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              // crossAxisAlignment: CrossAxisAlignment.start,
+                            padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                AutoSizeText('All Driver List', style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold, color: Colors.black),),
-                                MaterialButton(onPressed: () async {
-                                  Navigator.pushNamed(context, ManageDriver.id);
-                                },child: AutoSizeText('Add', style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal, color: Colors.blueAccent),)),
+                                SizedBox(height: 20,),
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                  child: AutoSizeText('You will receive OTP on this number', style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.normal),),
+                                ),
+
+                                //----button code starts
+                                Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: Container(
+                                    width: double.infinity,
+                                    height: 85,
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                      child: RoundedButton(colour: Color.fromRGBO(11, 7, 84, 1.0), title: 'Add New Number', onPressed:() async {
+                                        // EasyLoading.show(status: 'Loading...');
+                                        // Navigator.pushNamed(context, AddBank.id);
+                                      }
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                //----button code ends
+
+
                               ],
                             ),
                           ),
 
-                          Expanded(
-                            child: ListView.builder(
-                                shrinkWrap: true,
-                                itemCount: 5,
-                                itemBuilder: (context, int index) {
-                                  return Padding(
-                                    padding: EdgeInsets.fromLTRB(20, 15, 20, 0),
-                                    child: Container(
-                                      width: double.infinity,
-                                      child: Column(
-                                        children: [
-                                          Row(
-                                            children: [
-                                              Center(
-                                                child: Container(width: 54, height: 54, decoration: BoxDecoration(borderRadius: BorderRadius.circular(100), color: Color.fromRGBO(
-                                                    23, 171, 232, 1.0)), child: Padding(
-                                                  padding: const EdgeInsets.all(5.0),
-                                                  child: Image.asset('images/profile.png'),
-                                                ),),
-                                              ),
-                                              SizedBox(width: 15,),
-                                              Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                  AutoSizeText('Rohan Saha', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Colors.black),),
-                                                  AutoSizeText('Kolkata West Bengal', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Color.fromRGBO(
-                                                      91, 91, 91, 1.0)),),
-                                                  AutoSizeText('9831098902', style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: Color.fromRGBO(
-                                                      91, 91, 91, 1.0)),),
-                                                ],
-                                              )
-                                            ],
-                                          ),
-                                          SizedBox(height: 15,),
-                                          Container(width: double.infinity, height: 0.4, color: Color.fromRGBO(
-                                              199, 198, 198, 1.0),)
-                                        ],
-                                      ),
-                                    ),
-                                  );
-                                }
-                            ),
-                          ),
+
                         ],
                       ),
                     ),

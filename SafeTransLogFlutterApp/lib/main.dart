@@ -23,6 +23,7 @@ import 'package:safetranslog/screens/wallet/wallet_home.dart';
 
 import 'screens/bid/loading/add_new_loading.dart';
 import 'screens/diselcard/diselcard_home.dart';
+import 'screens/driver/manage_driver_number.dart';
 import 'screens/enquiry/enquiry_bank.dart';
 import 'screens/kyc/kyc_address.dart';
 import 'screens/kyc/kyc_docs.dart';
@@ -78,6 +79,7 @@ class MyApp extends StatelessWidget {
         PumpPriceList.id: (context)=> PumpPriceList(),
         VehicleCurrentLocation.id: (context)=> VehicleCurrentLocation(),
         NearbyVehicle.id: (context)=> NearbyVehicle(),
+        ManageDriver.id: (context)=> ManageDriver(),
       },
     );
   }
