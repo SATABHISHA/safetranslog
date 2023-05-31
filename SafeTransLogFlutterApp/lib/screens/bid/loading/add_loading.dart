@@ -185,7 +185,7 @@ class _AddLoadingState extends State<AddLoading> {
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                246, 242, 242, 1.0),hintText: ''),
+                                                246, 242, 242, 1.0),hintText: 'Furnitures'),
                                           ),
                                         ),
                                       ),
@@ -223,7 +223,7 @@ class _AddLoadingState extends State<AddLoading> {
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                246, 242, 242, 1.0),hintText: ''),
+                                                246, 242, 242, 1.0),hintText: 'ARB Software India Pvt Plot Y-7, Block EP Sector V Kolkata -700091'),
                                           ),
                                         ),
                                       ),
@@ -262,7 +262,7 @@ class _AddLoadingState extends State<AddLoading> {
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                246, 242, 242, 1.0),hintText: ''),
+                                                246, 242, 242, 1.0),hintText: 'Delhi Goods Transport Services B-189A, First Floor, Block -B, Uttam Nagar, Delhi - 110059'),
                                           ),
                                         ),
                                       ),
@@ -301,7 +301,7 @@ class _AddLoadingState extends State<AddLoading> {
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                246, 242, 242, 1.0),hintText: ''),
+                                                246, 242, 242, 1.0),hintText: 'Wood'),
                                           ),
                                         ),
                                       ),
@@ -328,20 +328,45 @@ class _AddLoadingState extends State<AddLoading> {
                                       ),
                                       Padding(
                                         padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                                        child: SizedBox(
-                                          width: double.infinity,
-                                          height: 50,
-                                          child: TextField(
-                                            // controller: _controller_user_id,
-                                            textAlign: TextAlign.left,
-                                            keyboardType: TextInputType.text,
-                                            onChanged: (value){
-                                              // userId = value;
-                                            },
-                                            style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
-                                            decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                246, 242, 242, 1.0),hintText: ''),
-                                          ),
+                                        child: Row(
+                                          children: [
+                                            Flexible(
+                                              flex: 5,
+                                              child: SizedBox(
+                                                width: double.infinity,
+                                                height: 50,
+                                                child: TextField(
+                                                  // controller: _controller_user_id,
+                                                  textAlign: TextAlign.left,
+                                                  keyboardType: TextInputType.text,
+                                                  onChanged: (value){
+                                                    // userId = value;
+                                                  },
+                                                  style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                                  decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
+                                                      246, 242, 242, 1.0),hintText: '20'),
+                                                ),
+                                              ),
+                                            ),
+                                            Flexible(
+                                              flex: 1,
+                                              child: SizedBox(
+                                                  width: double.infinity,
+                                                height: 50,
+                                                child: TextField(
+                                                  // controller: _controller_user_id,
+                                                  textAlign: TextAlign.left,
+                                                  keyboardType: TextInputType.text,
+                                                  onChanged: (value){
+                                                    // userId = value;
+                                                  },
+                                                  style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                                  decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
+                                                      246, 242, 242, 1.0),hintText: 'Kg'),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                       //---Weight, code ends
