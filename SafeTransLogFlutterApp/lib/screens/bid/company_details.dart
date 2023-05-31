@@ -4,6 +4,7 @@ import 'package:safetranslog/screens/bid/loading/add_loading.dart';
 import 'package:safetranslog/screens/bid/service_provider_details.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/navigation_drawer_list.dart';
 
+
 import '../../config/SizeConfig.dart';
 import '../../widgets/reusable_common_widgets/constants.dart';
 import '../login/rounded_button.dart';
@@ -19,6 +20,17 @@ class CompanyDetails extends StatefulWidget {
 class _CompanyDetailsState extends State<CompanyDetails> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   bool _isDrawerOpen = false;
+  // var email;
+
+  String? validateEmail(String? value) {
+    if (value != null) {
+      if (value.length > 5 && value.contains('@') && value.endsWith('.com')) {
+        return null;
+      }
+      return 'Enter a Valid Email Address';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -181,7 +193,7 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                                             // userId = value;
                                           },
                                           style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
-                                          decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(246, 242, 242, 1.0),hintText: ''),
+                                          decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(246, 242, 242, 1.0),hintText: 'ARB Software India Pvt Ltd'),
                                         ),
                                       ),
                                     ),
@@ -219,7 +231,7 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                                           },
                                           style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                           decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                              246, 242, 242, 1.0),hintText: ''),
+                                              246, 242, 242, 1.0),hintText: 'Plot Y-7, Block EP Sector V Kolkata -700091'),
                                         ),
                                       ),
                                     ),
@@ -252,13 +264,13 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                                         child: TextField(
                                           // controller: _controller_user_id,
                                           textAlign: TextAlign.left,
-                                          keyboardType: TextInputType.text,
+                                          keyboardType: TextInputType.number,
                                           onChanged: (value){
                                             // userId = value;
                                           },
                                           style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                           decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                              246, 242, 242, 1.0),hintText: ''),
+                                              246, 242, 242, 1.0),hintText: '700021'),
                                         ),
                                       ),
                                     ),
@@ -287,17 +299,18 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                                       padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
                                       child: SizedBox(
                                         width: double.infinity,
-                                        height: 50,
+                                        height: 80,
                                         child: TextField(
                                           // controller: _controller_user_id,
                                           textAlign: TextAlign.left,
-                                          keyboardType: TextInputType.text,
+                                          keyboardType: TextInputType.phone,
+                                          maxLength: 10,
                                           onChanged: (value){
                                             // userId = value;
                                           },
                                           style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                           decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                              246, 242, 242, 1.0),hintText: ''),
+                                              246, 242, 242, 1.0),hintText: '8595621546'),
                                         ),
                                       ),
                                     ),
@@ -327,16 +340,21 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                                       child: SizedBox(
                                         width: double.infinity,
                                         height: 50,
-                                        child: TextField(
-                                          // controller: _controller_user_id,
-                                          textAlign: TextAlign.left,
-                                          keyboardType: TextInputType.text,
-                                          onChanged: (value){
-                                            // userId = value;
-                                          },
-                                          style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
-                                          decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                              246, 242, 242, 1.0),hintText: ''),
+                                        child: Form(
+                                          autovalidateMode: AutovalidateMode.always,
+                                          child: TextFormField(
+                                            // controller: _controller_user_id,
+                                            validator: validateEmail,
+                                            textAlign: TextAlign.left,
+                                            keyboardType: TextInputType.emailAddress,
+                                            onChanged: (value){
+                                              // userId = value;
+
+                                            },
+                                            style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                            decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
+                                                246, 242, 242, 1.0),hintText: 'satabhishar@arbsoft.com'),
+                                          ),
                                         ),
                                       ),
                                     ),
