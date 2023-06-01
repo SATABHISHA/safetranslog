@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:safetranslog/screens/bid/loading/load_listing.dart';
@@ -12,6 +14,8 @@ enum PaymentType {Advance, ToPay}
 class AddPaymentDetails extends StatefulWidget {
   // const AddPaymentDetails({Key? key}) : super(key: key);
   static String id = 'AddPaymentDetails';
+  bool isAdvance = false;
+  var expectedPrice = '24000.00', advanceAmount = '24000.00';
 
   @override
   State<AddPaymentDetails> createState() => _AddPaymentDetailsState();
@@ -20,6 +24,8 @@ class AddPaymentDetails extends StatefulWidget {
 class _AddPaymentDetailsState extends State<AddPaymentDetails> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   bool _isDrawerOpen = false;
+  final TextEditingController _expectedPriceController = new TextEditingController();
+  final TextEditingController _advancePaymentController = new TextEditingController();
 
   PriceType? _pricetype = PriceType.Fixed;
   PaymentType? _paymenttype = PaymentType.ToPay;
@@ -163,12 +169,16 @@ class _AddPaymentDetailsState extends State<AddPaymentDetails> {
                                           width: double.infinity,
                                           height: 50,
                                           child: TextField(
-                                            // controller: _controller_user_id,
+                                            controller: _expectedPriceController,
                                             textAlign: TextAlign.left,
                                             keyboardType: TextInputType.number,
                                             maxLines: 1,
                                             onChanged: (value){
                                               // userId = value;
+                                              setState(() {
+                                                widget.expectedPrice = value;
+                                              });
+
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
@@ -247,6 +257,7 @@ class _AddPaymentDetailsState extends State<AddPaymentDetails> {
                                                 onChanged: (PaymentType? value) {
                                                   setState(() {
                                                     _paymenttype = value;
+                                                    widget.isAdvance = true;
                                                   });
                                                 },
                                               ),
@@ -262,6 +273,7 @@ class _AddPaymentDetailsState extends State<AddPaymentDetails> {
                                                 onChanged: (PaymentType? value) {
                                                   setState(() {
                                                     _paymenttype = value;
+                                                    widget.isAdvance = false;
                                                   });
                                                 },
                                               ),
@@ -272,6 +284,43 @@ class _AddPaymentDetailsState extends State<AddPaymentDetails> {
                                       ),
                                       //---radio button, code ends
 
+
+                                      //---for advance, code starts
+                                      Visibility(
+                                        visible: widget.isAdvance,
+                                        child: Padding(
+                                          padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                                          child: SizedBox(
+                                            width: double.infinity,
+                                            height: 50,
+                                            child: TextField(
+                                              controller: _advancePaymentController,
+                                              textAlign: TextAlign.left,
+                                              keyboardType: TextInputType.number,
+                                              maxLines: 1,
+                                              onChanged: (value){
+                                                // userId = value;
+                                                setState(() {
+                                                  if(double.parse(value.toString()) > double.parse(widget.expectedPrice)){
+                                                    // print('Error');
+                                                    _advancePaymentController.clear();
+                                                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                                      content: Text("Advance Payment amount should not be greater than expected amount"),
+                                                    ));
+                                                  }else{
+                                                    widget.advanceAmount = value;
+                                                  }
+                                                });
+
+                                              },
+                                              style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                              decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
+                                                  255, 255, 255, 1.0),hintText: widget.expectedPrice != ''? '${widget.expectedPrice}' : '24000'),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      //---for advance, code ends
                                       SizedBox(height: 15,),
                                       Align(
                                         alignment: Alignment.centerLeft,
