@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/config/CustomSnackBar.dart';
+import 'package:safetranslog/screens/fastag/fastag_home.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/constants.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/navigation_drawer_list.dart';
@@ -16,9 +18,10 @@ class FasTagPayment extends StatefulWidget {
 class _FasTagPaymentState extends State<FasTagPayment> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   bool _isDrawerOpen = false;
+  var insuranceCharge = '99.00';
 
   final GlobalKey<FormFieldState> _vehicleDropDown = new GlobalKey<FormFieldState>();
-  final List<String> vehicleModelList = ['1','2','3'];
+  final List<String> vehicleModelList = ['1'];
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -242,7 +245,7 @@ class _FasTagPaymentState extends State<FasTagPayment> {
                                                       maxLines: 2,
                                                       textAlign: TextAlign.left,),
                                                     AutoSizeText(
-                                                      '200.00',
+                                                      '${FasTagHome.rechargeAmount}',
                                                       style: TextStyle(color: Color.fromRGBO(
                                                           37, 37, 37, 1.0),
                                                           fontSize: 15,
@@ -298,7 +301,7 @@ class _FasTagPaymentState extends State<FasTagPayment> {
                                                       maxLines: 2,
                                                       textAlign: TextAlign.left,),
                                                     AutoSizeText(
-                                                      '299.00',
+                                                      '${double.parse(FasTagHome.rechargeAmount)+ double.parse(insuranceCharge)}',
                                                       style: TextStyle(color: Color.fromRGBO(
                                                           37, 37, 37, 1.0),
                                                           fontSize: 15,
@@ -361,6 +364,7 @@ class _FasTagPaymentState extends State<FasTagPayment> {
                                 child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Pay Now', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
                                   // Navigator.pushNamed(context, DiselCardHome.id);
+                                  CustomSnackBar.showToast(context, title: 'Payment done successfully');
                                 }
                                 ),
                               ),

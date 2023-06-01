@@ -9,12 +9,14 @@ import 'package:safetranslog/widgets/reusable_common_widgets/resusable_dropdown_
 class FasTagHome extends StatefulWidget {
   // const FastTagHome({Key? key}) : super(key: key);
 static String id = 'FasTagHome';
+static var rechargeAmount = '200';
   @override
   State<FasTagHome> createState() => _FasTagHomeState();
 }
 
 class _FasTagHomeState extends State<FasTagHome> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final TextEditingController _rechargeAmountController = new TextEditingController();
   bool _isDrawerOpen = false;
 
   final GlobalKey<FormFieldState> _fastTagBankProviderDropDown = new GlobalKey<FormFieldState>();
@@ -207,6 +209,54 @@ class _FasTagHomeState extends State<FasTagHome> {
                                       ),
                                       //---FasTag Provider dropdown, code ends
 
+                                      //---Recharge amount, code starts
+                                      SizedBox(height: 15,),
+                                      Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Padding(
+                                          padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                          child: AutoSizeText(
+                                            'Enter Recharge Amount',
+                                            style: TextStyle(color: Color.fromRGBO(
+                                                0, 0, 0, 1.0),
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.normal),
+                                            wrapWords: true,
+                                            minFontSize: 8,
+                                            maxFontSize: 15,
+                                            maxLines: 1,
+                                            textAlign: TextAlign.left,),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
+                                        child: SizedBox(
+                                          width: double.infinity,
+                                          height: 50,
+                                          child: TextField(
+                                            controller: _rechargeAmountController,
+                                            textAlign: TextAlign.left,
+                                            keyboardType: TextInputType.number,
+                                            maxLines: 1,
+                                            onChanged: (value){
+                                              // userId = value;
+                                              setState(() {
+                                                FasTagHome.rechargeAmount = value;
+                                                if(value.isEmpty){
+                                                  FasTagHome.rechargeAmount = '200';
+                                                }else{
+                                                  FasTagHome.rechargeAmount = value;
+                                                }
+                                              });
+
+                                            },
+                                            style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                            decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
+                                                255, 255, 255, 1.0),hintText: '200'),
+                                          ),
+                                        ),
+                                      ),
+                                      //---Recharge amount, code ends
 
                                       //---Plan Detail, code starts
                                       SizedBox(height: 15,),
