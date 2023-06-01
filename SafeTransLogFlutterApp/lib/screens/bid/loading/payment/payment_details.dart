@@ -16,6 +16,7 @@ class AddPaymentDetails extends StatefulWidget {
   static String id = 'AddPaymentDetails';
   bool isAdvance = false;
   var expectedPrice = '24000.00', advanceAmount = '24000.00';
+  static var enteredPrice = '24000.00';
 
   @override
   State<AddPaymentDetails> createState() => _AddPaymentDetailsState();
@@ -177,6 +178,11 @@ class _AddPaymentDetailsState extends State<AddPaymentDetails> {
                                               // userId = value;
                                               setState(() {
                                                 widget.expectedPrice = value;
+                                                if(value.isEmpty){
+                                                  AddPaymentDetails.enteredPrice = '24000';
+                                                }else{
+                                                  AddPaymentDetails.enteredPrice = value;
+                                                }
                                               });
 
                                             },
