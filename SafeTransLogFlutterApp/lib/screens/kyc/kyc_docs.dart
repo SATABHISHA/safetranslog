@@ -306,7 +306,7 @@ class _KycDocsState extends State<KycDocs> {
                                   if(ServiceProviderDetails.isLoad == false){
                                     Navigator.pushNamed(context, LoadListing.id);
                                   }
-                                  _showToast(context, title: 'KYC has been submitted sucessfully');
+                                  _showToast(context, title: 'KYC has been submitted successfully');
                                 }
                                 ),
                               ),

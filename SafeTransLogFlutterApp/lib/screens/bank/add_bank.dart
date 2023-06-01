@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/config/CustomSnackBar.dart';
 import 'package:safetranslog/screens/enquiry/enquiry_bank.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/constants.dart';
@@ -182,7 +183,7 @@ class _AddBankState extends State<AddBank> {
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                255, 255, 255, 1.0),hintText: ''),
+                                                255, 255, 255, 1.0),hintText: 'KYL24879584000'),
                                           ),
                                         ),
                                       ),
@@ -220,7 +221,7 @@ class _AddBankState extends State<AddBank> {
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                255, 255, 255, 1.0),hintText: ''),
+                                                255, 255, 255, 1.0),hintText: 'KYL24879584000'),
                                           ),
                                         ),
                                       ),
@@ -259,7 +260,7 @@ class _AddBankState extends State<AddBank> {
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                255, 255, 255, 1.0),hintText: ''),
+                                                255, 255, 255, 1.0),hintText: 'KYL0065'),
                                           ),
                                         ),
                                       ),
@@ -298,7 +299,7 @@ class _AddBankState extends State<AddBank> {
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                255, 255, 255, 1.0),hintText: ''),
+                                                255, 255, 255, 1.0),hintText: 'Angelina Joe'),
                                           ),
                                         ),
                                       ),
@@ -319,9 +320,10 @@ class _AddBankState extends State<AddBank> {
                               height: 85,
                               child: Padding(
                                 padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                                child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'NEXT', onPressed:() async {
+                                child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'ADD', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
                                   // Navigator.pushNamed(context, EnquiryBank.id);
+                                  CustomSnackBar.showToast(context, title: 'Bank account added successfully');
                                 }
                                 ),
                               ),
