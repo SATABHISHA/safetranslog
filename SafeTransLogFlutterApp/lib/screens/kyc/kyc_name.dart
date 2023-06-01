@@ -168,7 +168,7 @@ class _KycNameState extends State<KycName> {
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                255, 255, 255, 1.0),hintText: ''),
+                                                255, 255, 255, 1.0),hintText: 'Angelina Joe'),
                                           ),
                                         ),
                                       ),

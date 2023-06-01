@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/screens/bid/company_details.dart';
+import 'package:safetranslog/screens/bid/loading/add_loading.dart';
 import 'package:safetranslog/screens/bid/loading/payment/payment_details.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/navigation_drawer_list.dart';
@@ -146,16 +148,17 @@ class _AddNewLoadingState extends State<AddNewLoading> with SingleTickerProvider
                                                   Flexible(
                                                     flex: 1,
                                                     child: Column(
+                                                      crossAxisAlignment: CrossAxisAlignment.start,
                                                       children: [
                                                         AutoSizeText('Pick Up Location', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 17,),minFontSize: 15,),
                                                         SizedBox(height: 15,),
                                                         Padding(
-                                                          padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                                                          child: AutoSizeText('ARB Software India Pvt Ltd.', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14,),minFontSize: 12,),
+                                                          padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                                          child: AutoSizeText('${CompanyDetails.companyName}', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14,),minFontSize: 12,),
                                                         ),
                                                         Padding(
-                                                          padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                                                          child: AutoSizeText('Plot Y-7, Block EP Sector V Kolkata -700091', style: TextStyle(color: Colors.black, fontWeight: FontWeight.normal, fontSize: 10,),minFontSize: 8,),
+                                                          padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                                          child: AutoSizeText('${AddLoading.pickupLocation}', style: TextStyle(color: Colors.black, fontWeight: FontWeight.normal, fontSize: 10,),minFontSize: 8,),
                                                         ),
                                                       ],
                                                     ),
@@ -164,18 +167,19 @@ class _AddNewLoadingState extends State<AddNewLoading> with SingleTickerProvider
                                                   Flexible(
                                                     flex: 1,
                                                     child: Column(
+                                                      crossAxisAlignment: CrossAxisAlignment.start,
                                                       /*mainAxisAlignment: MainAxisAlignment.start,
                                                       crossAxisAlignment: CrossAxisAlignment.start,*/
                                                       children: [
                                                         AutoSizeText('Drop Location', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 17), minFontSize: 15,),
                                                         SizedBox(height: 15,),
                                                         Padding(
-                                                          padding: EdgeInsets.fromLTRB(17, 0, 0, 0),
+                                                          padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                                                           child: AutoSizeText('Delhi Goods Transport', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14,),minFontSize: 12,),
                                                         ),
                                                         Padding(
-                                                          padding: EdgeInsets.fromLTRB(17, 0, 0, 0),
-                                                          child: AutoSizeText('ServicesB-189A, First Floor, Block -B,Uttam Nagar, Delhi - 110059', style: TextStyle(color: Colors.black, fontWeight: FontWeight.normal, fontSize: 10,),minFontSize: 8,),
+                                                          padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                                          child: AutoSizeText('${AddLoading.dropLocation}', style: TextStyle(color: Colors.black, fontWeight: FontWeight.normal, fontSize: 10,),minFontSize: 8,),
                                                         ),
                                                       ],
                                                     ),
@@ -193,9 +197,9 @@ class _AddNewLoadingState extends State<AddNewLoading> with SingleTickerProvider
                                                     child: Row(
                                                       crossAxisAlignment: CrossAxisAlignment.start,
                                                       children: [
-                                                        Flexible(flex: 1, child: AutoSizeText('Type of Materia : Cotton', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14,),minFontSize: 12, wrapWords: true,)),
+                                                        Flexible(flex: 1, child: AutoSizeText('Type of Material : ${AddLoading.materialType}', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14,),minFontSize: 12, wrapWords: true,)),
                                                         SizedBox(width: 20,),
-                                                        Flexible(flex: 1, child: AutoSizeText('Weight : 200 Ton', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14,),minFontSize: 12, wrapWords: true,)),
+                                                        Flexible(flex: 1, child: AutoSizeText('Weight : ${AddLoading.weight}', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14,),minFontSize: 12, wrapWords: true,)),
                                                       ],
                                                     ),
                                                   ),

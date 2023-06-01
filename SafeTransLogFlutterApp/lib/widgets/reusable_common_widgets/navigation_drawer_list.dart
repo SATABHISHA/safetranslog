@@ -9,6 +9,7 @@ import 'package:safetranslog/screens/fastag/fastag_home.dart';
 import 'package:safetranslog/screens/gps/gps1.dart';
 import 'package:safetranslog/screens/gps/gps2.dart';
 import 'package:safetranslog/screens/kyc/kyc_name.dart';
+import 'package:safetranslog/screens/login/login_user.dart';
 import 'package:safetranslog/screens/petrolprice/city_price_list.dart';
 import 'package:safetranslog/screens/petrolprice/pump_price_list.dart';
 import 'package:safetranslog/screens/petrolprice/state_price_list.dart';
@@ -215,6 +216,27 @@ class _NavigationDrawerListState extends State<NavigationDrawerList> {
 
               Navigator.pushNamed(context, PumpPriceList.id);
             },
+          ),
+          SizedBox(height: 10,),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: double.infinity,
+              height: 1,
+              color: Color.fromRGBO(105, 104, 104, 1.0),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(0, 0, 0, 30),
+            child: ListTile(
+              title: const Text('Logout'),
+              onTap: () {
+
+                // Navigator.pop(context);
+
+                Navigator.pushNamed(context, LoginUser.id);
+              },
+            ),
           ),
         ],
       ),

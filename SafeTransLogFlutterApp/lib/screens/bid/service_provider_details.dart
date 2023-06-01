@@ -11,6 +11,7 @@ enum Service {load, individual, transporter, agent}
 class ServiceProviderDetails extends StatefulWidget {
   // const ServiceProviderDetails({Key? key}) : super(key: key);
  static String id = 'ServiceProviderDetails';
+ static bool isLoad = true;
   @override
   State<ServiceProviderDetails> createState() => _ServiceProviderDetailsState();
 }
@@ -19,6 +20,14 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   bool _isDrawerOpen = false;
   Service? _character = Service.load;
+
+  @override
+  void initState() {
+    setState(() {
+      ServiceProviderDetails.isLoad = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -27,7 +36,7 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
        },
         child: Scaffold(
           key: _scaffoldKey,
-          drawer: NavigationDrawerList(
+          /*drawer: NavigationDrawerList(
             callback: (isOpen) {
               print("isOpen ${isOpen}");
               WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -40,7 +49,7 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
                 });
               });
             },
-          ),
+          ),*/
           body: Container(
             // color: Colors.lightGreenAccent,
             decoration: BoxDecoration(
@@ -76,11 +85,11 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
 
                       }, icon: Image.asset('images/menupic.png', width: 24, height: 13.33,)),*/
 
-                      Builder(
+                    /*  Builder(
                           builder: (context) {
                             return IconButton(icon: Image.asset('images/menupic.png', width: 34, height: 15,), onPressed: () => Scaffold.of(context).openDrawer(),);
                           }
-                      ),
+                      ),*/
                       SizedBox(width: 20,),
                       Expanded(
                         child: Container(
@@ -152,6 +161,8 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
                                             onChanged: (Service? value) {
                                               setState(() {
                                                 _character = value;
+                                                ServiceProviderDetails.isLoad = true;
+                                                print('test-=> ${_character}');
                                               });
                                             },
                                           ),
@@ -166,6 +177,7 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
                                             onChanged: (Service? value) {
                                               setState(() {
                                                 _character = value;
+                                                ServiceProviderDetails.isLoad = false;
                                               });
                                             },
                                           ),
@@ -179,6 +191,7 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
                                             onChanged: (Service? value) {
                                               setState(() {
                                                 _character = value;
+                                                ServiceProviderDetails.isLoad = false;
                                               });
                                             },
                                           ),
@@ -192,6 +205,7 @@ class _ServiceProviderDetailsState extends State<ServiceProviderDetails> {
                                             onChanged: (Service? value) {
                                               setState(() {
                                                 _character = value;
+                                                ServiceProviderDetails.isLoad = false;
                                               });
                                             },
                                           ),

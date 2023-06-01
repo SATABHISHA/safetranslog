@@ -240,21 +240,57 @@ class _KycAddressState extends State<KycAddress> {
                                       //---Upload ID Proof, code starts
                                       SizedBox(height: 15,),
                                       Padding(
-                                        padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                                        child: SizedBox(
-                                          width: double.infinity,
-                                          height: 50,
-                                          child: TextField(
-                                            // controller: _controller_user_id,
-                                            textAlign: TextAlign.left,
-                                            keyboardType: TextInputType.text,
-                                            onChanged: (value){
-                                              // userId = value;
-                                            },
-                                            style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
-                                            decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                255, 255, 255, 1.0),hintText: 'Upload Your ID Proof'),
-                                          ),
+                                        padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                                        child: Row(
+                                          children: [
+                                            Flexible(
+                                              flex: 2,
+                                              child: SizedBox(
+                                                width: double.infinity,
+                                                height: 50,
+                                                child: TextField(
+                                                  // controller: _controller_user_id,
+                                                  textAlign: TextAlign.left,
+                                                  keyboardType: TextInputType.text,
+                                                  maxLines: 1,
+                                                  onChanged: (value){
+                                                    // userId = value;
+                                                  },
+                                                  style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                                  decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
+                                                      255, 255, 255, 1.0),hintText: 'Upload Your ID Proof'),
+                                                ),
+                                              ),
+                                            ),
+                                            //----button code starts
+                                            Flexible(
+                                              flex: 1,
+                                              child: Container(
+                                                width: double.infinity,
+                                                height: 48,
+                                                color: Color.fromRGBO(
+                                                    173, 171, 171, 1.0),
+                                                child: Padding(
+                                                  padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                                  child: MaterialButton(
+                                                    onPressed: () async{
+
+                                                    },
+                                                    minWidth: 200.0,
+                                                    height: 50.0,
+                                                    child: AutoSizeText(
+                                                      'Browse Files',
+                                                      style: TextStyle(color: Colors.black, fontSize: 15,),
+                                                      textAlign: TextAlign.center,
+                                                      maxLines: 1,
+                                                      minFontSize: 10,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            //----button code ends
+                                          ],
                                         ),
                                       ),
                                       //---Upload ID Proof, code ends

@@ -8,6 +8,10 @@ import 'package:safetranslog/widgets/reusable_common_widgets/navigation_drawer_l
 class AddLoading extends StatefulWidget {
   // const AddLoading({Key? key}) : super(key: key);
   static String id = 'AddLoading';
+  static String materialType = 'Cotton';
+  static String weight = '20Kg';
+  static var pickupLocation = 'Plot Y-7, Block EP Sector V Kolkata -700091';
+  static var dropLocation = 'B-189A, First Floor, Block -B, Uttam Nagar, Delhi - 110059';
 
   @override
   State<AddLoading> createState() => _AddLoadingState();
@@ -185,7 +189,7 @@ class _AddLoadingState extends State<AddLoading> {
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                246, 242, 242, 1.0),hintText: 'Furnitures'),
+                                                246, 242, 242, 1.0),hintText: 'Dress'),
                                           ),
                                         ),
                                       ),
@@ -220,6 +224,13 @@ class _AddLoadingState extends State<AddLoading> {
                                             keyboardType: TextInputType.text,
                                             onChanged: (value){
                                               // userId = value;
+                                              setState(() {
+                                                if(value.isEmpty){
+                                                  AddLoading.pickupLocation = 'Plot Y-7, Block EP Sector V Kolkata -700091';
+                                                }else{
+                                                  AddLoading.pickupLocation = value;
+                                                }
+                                              });
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
@@ -259,6 +270,13 @@ class _AddLoadingState extends State<AddLoading> {
                                             keyboardType: TextInputType.text,
                                             onChanged: (value){
                                               // userId = value;
+                                              setState(() {
+                                                if(value.isEmpty){
+                                                  AddLoading.dropLocation = 'B-189A, First Floor, Block -B, Uttam Nagar, Delhi - 110059';
+                                                }else{
+                                                  AddLoading.dropLocation = value;
+                                                }
+                                              });
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
@@ -298,10 +316,17 @@ class _AddLoadingState extends State<AddLoading> {
                                             keyboardType: TextInputType.text,
                                             onChanged: (value){
                                               // userId = value;
+                                              setState(() {
+                                                if(value.isEmpty){
+                                                  AddLoading.materialType = 'Cotton';
+                                                }else{
+                                                  AddLoading.materialType = value;
+                                                }
+                                              });
                                             },
                                             style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                             decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                                246, 242, 242, 1.0),hintText: 'Wood'),
+                                                246, 242, 242, 1.0),hintText: 'Cotton'),
                                           ),
                                         ),
                                       ),
@@ -341,6 +366,13 @@ class _AddLoadingState extends State<AddLoading> {
                                                   keyboardType: TextInputType.text,
                                                   onChanged: (value){
                                                     // userId = value;
+                                                    setState(() {
+                                                      if(value.isEmpty){
+                                                        AddLoading.weight = '20Kg';
+                                                      }else{
+                                                        AddLoading.weight = '${value}Kg';
+                                                      }
+                                                    });
                                                   },
                                                   style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
                                                   decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(

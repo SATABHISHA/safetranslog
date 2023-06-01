@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/screens/bid/loading/load_listing.dart';
+import 'package:safetranslog/screens/bid/service_provider_details.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
 import 'package:safetranslog/screens/truck/add_truck.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/constants.dart';
@@ -301,6 +303,10 @@ class _KycDocsState extends State<KycDocs> {
                                 child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Submit', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
                                   // Navigator.pushNamed(context, AddTruck.id);
+                                  if(ServiceProviderDetails.isLoad == false){
+                                    Navigator.pushNamed(context, LoadListing.id);
+                                  }
+                                  _showToast(context, title: 'KYC has been submitted sucessfully');
                                 }
                                 ),
                               ),
@@ -316,6 +322,22 @@ class _KycDocsState extends State<KycDocs> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  void _showToast(BuildContext context,  {required var title}) {
+    final scaffold = ScaffoldMessenger.of(context);
+    scaffold.showSnackBar(
+      SnackBar(
+        content: Text('${title}'),
+        action: SnackBarAction(label: 'OK', onPressed: (){
+          scaffold.hideCurrentSnackBar;
+          /*if(ServiceProviderDetails.isLoad == false){
+            Navigator.pushNamed(context, LoadListing.id);
+          }*/
+
+        }),
       ),
     );
   }
