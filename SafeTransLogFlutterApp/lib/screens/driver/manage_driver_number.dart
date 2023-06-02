@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/screens/driver/driver_popup.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
 import 'package:safetranslog/widgets/reusable_common_widgets/navigation_drawer_list.dart';
 
@@ -11,6 +12,8 @@ static String id = 'ManageDriver';
 }
 
 class _ManageDriverState extends State<ManageDriver> {
+  var driverName, mobileNo;
+  // final String mobileNo = '';
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   bool _isDrawerOpen = false;
   @override
@@ -139,6 +142,33 @@ class _ManageDriverState extends State<ManageDriver> {
                                       child: RoundedButton(colour: Color.fromRGBO(11, 7, 84, 1.0), title: 'Add New Number', onPressed:() async {
                                         // EasyLoading.show(status: 'Loading...');
                                         // Navigator.pushNamed(context, AddBank.id);
+
+                                        showDialog(context: context, builder: (BuildContext context) {
+
+                                          return DriverPopup(colorMessageBody: Colors.redAccent,driverName: driverName, driverMobNo: mobileNo, onPressed: (){
+
+                                            setState(() {
+
+                                              if(DriverPopup.name == '' || DriverPopup.mobno == ''){
+                                                final scaffold = ScaffoldMessenger.of(context);
+                                                scaffold.showSnackBar(
+                                                  SnackBar(
+                                                    content: Text('Field(s) cannot be left blank'),
+                                                    action: SnackBarAction(label: 'OK', onPressed: (){
+                                                      scaffold.hideCurrentSnackBar;
+
+                                                    }),
+                                                  ),
+                                                );
+                                              }else{
+                                                this.driverName = driverName;
+                                                this.mobileNo = mobileNo;
+                                                Navigator.pop(context);
+                                                print(DriverPopup.name);
+                                              }
+                                            });
+                                            },);
+                                        });
                                       }
                                       ),
                                     ),
@@ -146,6 +176,23 @@ class _ManageDriverState extends State<ManageDriver> {
                                 ),
                                 //----button code ends
 
+                                SizedBox(height: 15,),
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                                  child: Row(
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+
+                                          AutoSizeText(DriverPopup.name, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+                                          AutoSizeText(DriverPopup.mobno, style: TextStyle(fontSize: 16)),
+
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
 
                               ],
                             ),
