@@ -150,6 +150,7 @@ class _ManageDriverState extends State<ManageDriver> {
                                             setState(() {
 
                                               if(DriverPopup.name == '' || DriverPopup.mobno == ''){
+
                                                 final scaffold = ScaffoldMessenger.of(context);
                                                 scaffold.showSnackBar(
                                                   SnackBar(
@@ -164,7 +165,7 @@ class _ManageDriverState extends State<ManageDriver> {
                                                 this.driverName = driverName;
                                                 this.mobileNo = mobileNo;
                                                 Navigator.pop(context);
-                                                print(DriverPopup.name);
+                                                print(driverName);
                                               }
                                             });
                                             },);
@@ -180,8 +181,9 @@ class _ManageDriverState extends State<ManageDriver> {
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
                                   child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Column(
+                                      (DriverPopup.name == '' && DriverPopup.mobno == '') || (DriverPopup.name == '' || DriverPopup.mobno == '')? Container() :Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
 
@@ -189,7 +191,17 @@ class _ManageDriverState extends State<ManageDriver> {
                                           AutoSizeText(DriverPopup.mobno, style: TextStyle(fontSize: 16)),
 
                                         ],
-                                      )
+                                      ),
+                                      InkWell(
+                                        onTap: (){
+                                          setState(() {
+                                            DriverPopup.name = '';
+                                            DriverPopup.mobno = '';
+                                          });
+                                        },
+                                        child: (DriverPopup.name == '' && DriverPopup.mobno == '') || (DriverPopup.name == '' || DriverPopup.mobno == '') ?Container():AutoSizeText('Unassign|Delete', style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: Color.fromRGBO(
+                                            36, 62, 200, 1.0)),),
+                                      ),
                                     ],
                                   ),
                                 ),

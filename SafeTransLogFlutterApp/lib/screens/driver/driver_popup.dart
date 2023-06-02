@@ -19,6 +19,15 @@ class _DriverPopupState extends State<DriverPopup> {
   final TextEditingController _nameController = new TextEditingController();
   final TextEditingController _mobileNumberController = new TextEditingController();
 
+
+  @override
+  void initState() {
+    setState(() {
+      DriverPopup.name = '';
+      DriverPopup.mobno = '';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
