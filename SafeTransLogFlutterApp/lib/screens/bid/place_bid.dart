@@ -123,98 +123,152 @@ class _PlaceBidState extends State<PlaceBid> {
                       ),
                       child: Stack(
                         children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(0, 0, 0, 50),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                ListView(
+                                  shrinkWrap: true,
                                   children: [
-                                    Center(
-                                      child: Container(width: 54, height: 54, decoration: BoxDecoration(borderRadius: BorderRadius.circular(100), color: Color.fromRGBO(187, 186, 180, 1.0)), child: Padding(
-                                        padding: const EdgeInsets.all(5.0),
-                                        child: Image.asset('images/profile.png'),
-                                      ),),
+                                    Padding(
+                                      padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                                      child: Row(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Center(
+                                            child: Container(width: 54, height: 54, decoration: BoxDecoration(borderRadius: BorderRadius.circular(100), color: Color.fromRGBO(187, 186, 180, 1.0)), child: Padding(
+                                              padding: const EdgeInsets.all(5.0),
+                                              child: Image.asset('images/profile.png'),
+                                            ),),
+                                          ),
+                                          SizedBox(width: 15,),
+                                          Flexible(fit: FlexFit.loose, child: Center(child: AutoSizeText('Calcutta Express Company', style: TextStyle(fontSize: 17, color: Colors.black, fontWeight:  FontWeight.bold),textAlign: TextAlign.center,))),
+                                        ],
+                                      ),
                                     ),
-                                    SizedBox(width: 15,),
-                                    Flexible(fit: FlexFit.loose, child: Center(child: AutoSizeText('Calcutta Express Company', style: TextStyle(fontSize: 17, color: Colors.black, fontWeight:  FontWeight.bold),textAlign: TextAlign.center,))),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 15,),
-                              Padding(
-                                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        AutoSizeText('LCV Required', style: TextStyle(fontSize: 15, color: Colors.black, fontWeight:  FontWeight.bold),textAlign: TextAlign.center,),
-                                        SizedBox(height: 10,),
-                                        AutoSizeText('Kolkata To Shiliguri', style: TextStyle(fontSize: 15, color: Colors.blueAccent, fontWeight:  FontWeight.bold),textAlign: TextAlign.center,),
-                                      ],
+                                    SizedBox(height: 15,),
+                                    Padding(
+                                      padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              AutoSizeText('LCV Required', style: TextStyle(fontSize: 15, color: Colors.black, fontWeight:  FontWeight.bold),textAlign: TextAlign.center,),
+                                              SizedBox(height: 10,),
+                                              AutoSizeText('Kolkata To Shiliguri', style: TextStyle(fontSize: 15, color: Colors.blueAccent, fontWeight:  FontWeight.bold),textAlign: TextAlign.center,),
+                                            ],
+                                          ),
+                                          Image.asset('images/truckpic.png', width: 51, height: 36,)
+                                        ],
+                                      ),
                                     ),
-                                    Image.asset('images/truckpic.png', width: 51, height: 36,)
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 20,),
-                              //---Price filed, code starts
-                              Padding(
-                                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                                child: AutoSizeText(
-                                  'Enter Your Price',
-                                  style: TextStyle(color: Color.fromRGBO(
-                                      94, 94, 94, 1.0),
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.normal),
-                                  wrapWords: true,
-                                  minFontSize: 8,
-                                  maxFontSize: 15,
-                                  maxLines: 1,
-                                  textAlign: TextAlign.left,),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                                child: SizedBox(
-                                  width: double.infinity,
-                                  height: 100,
-                                  child: TextFormField(
-                                    textAlign: TextAlign.left,
-                                    keyboardType: TextInputType.text,
-                                    maxLines: 10,
-                                    onChanged: (value){
-                                      // userId = value;
-                                    },
-                                    style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
-                                    decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
-                                        255, 255, 255, 1.0),hintText: ''),
-                                  ),
-                                ),
-                              ),
-                              //---Price filed, code ends
+                                    SizedBox(height: 20,),
 
-                              //----button code starts
-                              Align(
-                                alignment: Alignment.centerRight,
-                                child: Container(
-                                  width: 150,
-                                  height: 75,
-                                  child: Padding(
-                                    padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                                    child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Place Bid', onPressed:() async {
-                                      // EasyLoading.show(status: 'Loading...');
-                                      Navigator.pushNamed(context, BidConfirmation.id);
-                                    }
+
+                                    //---Amount, code starts
+                                    Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                        padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                                        child: AutoSizeText(
+                                          'Enter Your Amount',
+                                          style: TextStyle(color: Color.fromRGBO(
+                                              86, 85, 85, 1.0),
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
+                                          wrapWords: true,
+                                          minFontSize: 8,
+                                          maxFontSize: 15,
+                                          maxLines: 1,
+                                          textAlign: TextAlign.left,),
+                                      ),
                                     ),
-                                  ),
+                                    Padding(
+                                      padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
+                                      child: SizedBox(
+                                        width: double.infinity,
+                                        height: 50,
+                                        child: TextField(
+                                          // controller: _controller_user_id,
+                                          textAlign: TextAlign.left,
+                                          keyboardType: TextInputType.number,
+                                          maxLines: 1,
+                                          onChanged: (value){
+                                            // userId = value;
+                                          },
+                                          style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                          decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
+                                              246, 242, 242, 1.0),hintText: ''),
+                                        ),
+                                      ),
+                                    ),
+                                    //---Amount, code ends
+
+                                    SizedBox(height: 20,),
+
+
+
+                                    //---Price filed, code starts
+                                    Padding(
+                                      padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                      child: AutoSizeText(
+                                        'Enter Your Price',
+                                        style: TextStyle(color: Color.fromRGBO(
+                                            86, 85, 85, 1.0),
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.normal),
+                                        wrapWords: true,
+                                        minFontSize: 8,
+                                        maxFontSize: 15,
+                                        maxLines: 1,
+                                        textAlign: TextAlign.left,),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                      child: SizedBox(
+                                        width: double.infinity,
+                                        height: 100,
+                                        child: TextFormField(
+                                          textAlign: TextAlign.left,
+                                          keyboardType: TextInputType.text,
+                                          maxLines: 10,
+                                          onChanged: (value){
+                                            // userId = value;
+                                          },
+                                          style: TextStyle(color: Colors.black, fontFamily: 'Gilroy'),
+                                          decoration: kTextFieldDecorationForMFA.copyWith(fillColor: Color.fromRGBO(
+                                              255, 255, 255, 1.0),hintText: ''),
+                                        ),
+                                      ),
+                                    ),
+                                    //---Price filed, code ends
+
+                                    //----button code starts
+                                    Align(
+                                      alignment: Alignment.centerRight,
+                                      child: Container(
+                                        width: 150,
+                                        height: 75,
+                                        child: Padding(
+                                          padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                          child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Place Bid', onPressed:() async {
+                                            // EasyLoading.show(status: 'Loading...');
+                                            Navigator.pushNamed(context, BidConfirmation.id);
+                                          }
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    //----button code ends
+                                  ],
                                 ),
-                              ),
-                              //----button code ends
-                            ],
+
+                              ],
+                            ),
                           )
                         ],
                       ),

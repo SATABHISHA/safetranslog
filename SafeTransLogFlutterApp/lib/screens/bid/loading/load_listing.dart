@@ -466,7 +466,7 @@ class _LoadListingState extends State<LoadListing> {
                             ),
                           ),
                           //----button code starts
-                          Align(
+                          /*Align(
                             alignment: Alignment.bottomCenter,
                             child: Container(
                               width: double.infinity,
@@ -480,7 +480,7 @@ class _LoadListingState extends State<LoadListing> {
                                 ),
                               ),
                             ),
-                          ),
+                          ),*/
                           //----button code ends
                         ],
                       ),

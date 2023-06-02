@@ -2,6 +2,9 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:safetranslog/config/CustomSnackBar.dart';
+import 'package:safetranslog/screens/bid/loading/add_loading.dart';
+import 'package:safetranslog/screens/bid/loading/add_new_loading.dart';
 import 'package:safetranslog/screens/bid/loading/load_listing.dart';
 import 'package:safetranslog/screens/login/rounded_button.dart';
 import 'package:safetranslog/screens/login/verify_user_mobile.dart';
@@ -385,9 +388,10 @@ class _AddPaymentDetailsState extends State<AddPaymentDetails> {
                               height: 85,
                               child: Padding(
                                 padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                                child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'NEXT', onPressed:() async {
+                                child: RoundedButton(colour: Color.fromRGBO(223, 137, 0, 1.0), title: 'Place Bid', onPressed:() async {
                                   // EasyLoading.show(status: 'Loading...');
-                                  Navigator.pushNamed(context, LoadListing.id);
+                                  Navigator.pushNamed(context, AddLoading.id);
+                                  CustomSnackBar.showToast(context, title: 'You have been successfully placed your bid');
                                 }
                                 ),
                               ),
